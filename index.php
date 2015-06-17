@@ -16,6 +16,7 @@ define( 'INTERGEO_PLUGIN_NAME', 'intergeo' ); // don't change it whatever
 define( 'INTERGEO_VERSION',     '1.0.0.78' );
 define( 'INTERGEO_ABSPATH',     dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL',      plugins_url( '/', __FILE__ ) );
+define( 'WPLANG', '' );
 
 // </editor-fold>
 
