@@ -1,4 +1,4 @@
-<form id="intergeo_frm" method="post"<?php echo !$post_id ? ' target="_parent"' : '' ?>>
+<form id="intergeo_frm" method="post"<?php echo !$post_id ? ' origtarget="_parent" target="_parent"' : 'origtarget="self"' ?>>
 	<input type="hidden" id="intergeo_map_lat" name="lat" value="<?php echo isset( $json['lat'] ) ? esc_attr( $json['lat'] ) : 48.1366069 ?>">
 	<input type="hidden" id="intergeo_map_lng" name="lng" value="<?php echo isset( $json['lng'] ) ? esc_attr( $json['lng'] ) : 11.577085099999977 ?>">
 	<input type="hidden" id="intergeo_map_zoom" name="zoom" value="<?php echo isset( $json['zoom'] ) ? esc_attr( $json['zoom'] ) : 5 ?>">
@@ -27,6 +27,10 @@
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/adsense.php' ?>
 			</li>
+<?php
+            // Added by Ash/Upwork
+            include_once trailingslashit(dirname(__FILE__)) . "extra.php";
+?>
 		</ul>
 	</div>
 	<div id="intergeo_canvas_wrapper">

@@ -124,4 +124,26 @@
 			</p>
 		</div>
 	</li>
+
+<?php
+    // Added by Ash/Upwork
+    if( defined( 'IntergeoMaps_Pro' ) ){
+        global $IntergeoMaps_Pro;
+        $IntergeoMaps_Pro->addForm("layers", $json);
+    }else{
+?>
+    <li class="intergeo_tlbr_ul_li_ul_li">
+		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Custom layer', INTERGEO_PLUGIN_NAME ) ?></span>
+		<div class="intergeo_tlbr_cntrl_items">
+			<div class="intergeo_tlbr_cntrl_item">
+                <p class="intergeo_tlbr_grp_dsc">
+                    <a>something here</a>
+                </p>
+            </div>
+        </div>
+    </li>
+<?php
+    }
+    // Added by Ash/Upwork
+?>
 </ul>

@@ -18,6 +18,12 @@ define( 'INTERGEO_ABSPATH',     dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL',      plugins_url( '/', __FILE__ ) );
 define( 'WPLANG', '' );
 
+// Added by Ash/Upwork
+if ( class_exists( 'IntergeoMaps_Pro', false ) ){
+    define( 'IntergeoMaps_Pro', true);
+}
+// Added by Ash/Upwork
+
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="plugin init">
@@ -220,6 +226,13 @@ function intergeo_map_popup_init() {
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_style( 'intergeo-editor', INTERGEO_ABSURL . 'css/editor.css', array(), INTERGEO_VERSION );
 
+    // Added by Ash/Upwork
+    if( defined( 'IntergeoMaps_Pro' ) ){
+        global $IntergeoMaps_Pro;
+        $IntergeoMaps_Pro->enqueueScriptsAndStyles(array('intergeo-editor'), array("mapID" => $map_id));
+    }
+    // Added by Ash/Upwork
+
 	wp_iframe( 'intergeo_iframe', $post_id, $map_id );
 }
 
@@ -414,7 +427,7 @@ function intergeo_filter_input() {
 	$color_regexp = '/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/';
 	$postion_filter = array( 'filter' => FILTER_CALLBACK, 'options' => 'intergeo_filter_position' );
 
-	$options = filter_input_array( INPUT_POST, array (
+	$validationArray = array (
 		'lat'                                   => array( 'filter' => FILTER_VALIDATE_FLOAT, 'flags' => FILTER_REQUIRE_SCALAR, 'options' => array( 'min_range' => -90, 'max_range' => 90, 'default' => 48.1366069 ) ),
 		'lng'                                   => array( 'filter' => FILTER_VALIDATE_FLOAT, 'flags' => FILTER_REQUIRE_SCALAR, 'options' => array( 'min_range' => -180, 'max_range' => 180, 'default' => 11.577085099999977 ) ),
 		'zoom'                                  => array( 'filter' => FILTER_VALIDATE_INT, 'flags' => FILTER_REQUIRE_SCALAR, 'options' => array( 'min_range' => 0, 'max_range' => 19, 'default' => 5 ) ),
@@ -469,7 +482,7 @@ function intergeo_filter_input() {
 		'overlays_rectangle'                    => array( 'filter' => FILTER_DEFAULT, 'flags' => FILTER_REQUIRE_ARRAY ),
 		'overlays_circle'                       => array( 'filter' => FILTER_DEFAULT, 'flags' => FILTER_REQUIRE_ARRAY ),
 		'directions'                            => array( 'filter' => FILTER_DEFAULT, 'flags' => FILTER_REQUIRE_ARRAY ),
-	) );
+	);
 
 	$defaults = array (
 		'lat'                                   => 48.1366069,
@@ -528,6 +541,15 @@ function intergeo_filter_input() {
 		'directions'                            => array(),
 	);
 
+    // Added by Ash/Upwork
+    if( defined( 'IntergeoMaps_Pro' ) ){
+        global $IntergeoMaps_Pro;
+        $IntergeoMaps_Pro->addValidations($validationArray, $defaults);
+    }
+    // Added by Ash/Upwork
+
+	$options = filter_input_array( INPUT_POST, $validationArray );
+
 	$results = array();
 	foreach ( $options as $key => $value ) {
 		if ( array_key_exists( $key, $defaults ) ) {
@@ -560,6 +582,13 @@ function intergeo_filter_input() {
 			$results[$overlay] = array_filter( array_map( 'intergeo_filter_overlays_polyoverlay',  $results[$overlay] ) );
 		}
 	}
+
+    // Added by Ash/Upwork
+    if( defined( 'IntergeoMaps_Pro' ) ){
+        global $IntergeoMaps_Pro;
+        $IntergeoMaps_Pro->processResults($results);
+    }
+    // Added by Ash/Upwork
 
 	return $results;
 }
@@ -817,6 +846,14 @@ function intergeo_library() {
 	wp_localize_script( 'intergeo-rendering', 'intergeo_options', array(
 		'adsense' => array( 'publisher_id' => get_option( 'intergeo_adsense_publisher_id' ) )
 	) );
+
+    // Added by Ash/Upwork
+    if( defined( 'IntergeoMaps_Pro' ) ){
+        global $IntergeoMaps_Pro;
+        $IntergeoMaps_Pro->enqueueScriptsAndStyles(array('intergeo-rendering'));
+    }
+    // Added by Ash/Upwork
+
 }
 
 function intergeo_library_delete() {
