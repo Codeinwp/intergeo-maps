@@ -28,7 +28,18 @@ To create new maps you just can input simple shortcode into your post, page, tex
 
 `[intergeo]Your address[/intergeo]`
 
-This shortcode will be displayed as Google Map centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. The following table describes all possible attributes, which users can use with shortcodes:
+This shortcode will be displayed as Google Map centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. 
+
+> **Time-saving features available in the Pro version:**
+>
+> * Custom layers for maps
+> * Import markers in bulk
+> * Priority email support from the developer of the plugin
+> * Support and updates for 1 year
+>
+> **[Learn more about Intergeo Maps Pro](http://themeisle.com/plugins/intergeo-maps-pro/)**
+
+The following table describes all possible attributes, which users can use with shortcodes:
 
 **Width**
 Sets width of the map container. Accepts all valid CSS values as css width property accepts. For example, the value could be set in pixels like 500px, or in percentage like 75%. Default value is 100%.
@@ -49,6 +60,8 @@ So your shortcode could looks like this one:
 
 `[intergeo zoom=”12” width=”50%” heigth=”400px” style=”border: 3px solid red; margin: 0 auto;”]Central Park, NY[/intergeo]`
 
+Check-out the <a href="http://themeisle.com/plugins/intergeo-maps-lite/" rel="frield">#1 free Google Maps plugin</a>
+
 ### Create map with UI builder ###
 
 Another way to create map is to use UI builder. This is more recommended way to build a Google map as this way provides much more features and wide range of settings to customize. To create a map with UI builder, pass following steps:
@@ -68,6 +81,8 @@ All maps which have been created with UI builder are stored in WordPress databas
 The library shows you maps preview as you will see it at front end pages. Here users can copy shortcode of a Google map, edit or clone maps, and delete unnecessary or deprecated maps. 
 
 Also users can create a Google map from library page. To do it just click on **Add New** button next to the page title and UI builder popup immediately appears. The builder interacts in the same way as it does at edit posts page, except that popup doesn't insert shortcode into somewhere, popup just save a map into database for future reuse.
+
+Check-out the <a href="http://www.codeinwp.com/blog/intergeo-maps-plugin-review/" target="_blank" rel="friend">Intergeo review</a> and find out some of the <a href="http://www.codeinwp.com/blog/top-non-obvious-wordpress-plugins/" target="_blank" rel="friend">best WordPress plugins</a>.
 
 == Installation ==
 
