@@ -16,7 +16,9 @@ define( 'INTERGEO_PLUGIN_NAME', 'intergeo' ); // don't change it whatever
 define( 'INTERGEO_VERSION',     '1.0.2' );
 define( 'INTERGEO_ABSPATH',     dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL',      plugins_url( '/', __FILE__ ) );
-define( 'WPLANG', '' );
+// Added by Ash/Upwork
+defined('WPLANG') || define( 'WPLANG', '' );
+// Added by Ash/Upwork
 
 // Added by Ash/Upwork
 if ( class_exists( 'IntergeoMaps_Pro', false ) ){
@@ -759,6 +761,7 @@ function intergeo_shortcode( $attrs, $address = '' ) {
 			/* <![CDATA[ */
 			if (!window.intergeo_maps) window.intergeo_maps = [];
 			window.intergeo_maps.push( { container: \'intergeo_map%1$s\', options: %5$s } );
+			if (!window.intergeo_maps_current) window.intergeo_maps_current = null;
 			/* ]]> */
 		</script>
 		',

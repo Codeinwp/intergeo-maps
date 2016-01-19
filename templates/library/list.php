@@ -7,6 +7,7 @@
 	<script type="text/javascript">
 		/* <![CDATA[ */
 		window.intergeo_maps = [];
+		window.intergeo_maps_maps = [];
 		/* ]]> */
 	</script>
 	

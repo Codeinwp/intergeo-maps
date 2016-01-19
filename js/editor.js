@@ -895,6 +895,12 @@ if (!window.intergeo.maps) {
                 }
             }
         },
+        _pro: function(f){
+            var e = this;
+            if(window._proFeatures){
+                _proFeatures(f, e);
+            }
+        },
         createDirection: function() {
             var f = this,
                 e = d("#intergeo_drctn_ppp"),
@@ -997,7 +1003,8 @@ if (!window.intergeo.maps) {
             f._weather(g);
             f._cloud(g);
             f._panoramio(g);
-            f._adsense(g)
+            f._adsense(g);
+            f._pro(g);
         }
     };
     d(document).ready(function() {
@@ -1012,7 +1019,7 @@ if (!window.intergeo.maps) {
         var xxxx = window.dialogArguments || opener || parent || top;
         xxxx.intergeo_maps_current = f;
         e = d("#intergeo_frm");
-        e.find("input[name], select[name], textarea[name]").change(function() {
+        e.find("input[name], select[name], textarea[name]").not("input[type='file']").change(function() {
             f.preview()
         });
         e.find(".intergeo_tlbr_cntrl_onkeyup").keyup(function() {
