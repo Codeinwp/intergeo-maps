@@ -137,7 +137,7 @@
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
                 <p class="intergeo_tlbr_grp_dsc">
-                    <a>something here</a>
+                    <a>Custom Layers are available in the PRO version</a>
                 </p>
             </div>
         </div>
