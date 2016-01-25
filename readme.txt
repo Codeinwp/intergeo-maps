@@ -1,17 +1,17 @@
-=== Intergeo Maps - Google Maps Plugin ===
+=== WordPress Google Maps Plugin ===
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.2.2
+Tested up to: 4.4.1
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
-A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages.
+A simple, easy and quite powerful Google Maps tool to create, manage and embed custom Google Maps into your WordPress posts and pages.
 
 == Description ==
 
-The Intergeo Google Map plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder. Created maps could be easily edited and saved with new settings. To increase the speed of creation process the plugin has ability to clone a map with all it's settings. Finally the plugin has attractive library which allows users to browse all maps in the system and delete unnecessary maps.
+The Intergeo Google Maps WordPress plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. This simple WordPress map plugin allow users to create new maps by using powerful UI builder. Created maps could be easily edited and saved with new settings. To increase the speed of creation process the plugin has ability to clone a map with all it's settings. Finally the plugin has attractive library which allows users to browse all maps in the system and delete unnecessary maps.
 
 The powerful UI builder allows users to:
 
@@ -22,13 +22,13 @@ The powerful UI builder allows users to:
 * Create directions routes from A address to B address;
 * Integrate AdSense service into your maps and earn money by displaying ads on maps.
 
-### Create Google map with shortcode ###
+### Create Google maps with shortcode ###
 
-To create new maps you just can input simple shortcode into your post, page, text widget or taxonomy description:
+To create new WordPress maps you just can input simple shortcode into your post, page, text widget or taxonomy description:
 
 `[intergeo]Your address[/intergeo]`
 
-This shortcode will be displayed as Google Map centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. 
+This shortcode will be displayed as Google Maps centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. 
 
 > **Time-saving features available in the Pro version:**
 >
