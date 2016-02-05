@@ -32,6 +32,8 @@
 			</p>
 		</div>
 	</li>
+    <!--
+    Deprecated - Changed by Ash/Upwork
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Weather & Cloud layers', INTERGEO_PLUGIN_NAME ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
@@ -124,7 +126,7 @@
 			</p>
 		</div>
 	</li>
-
+    -->
 <?php
     // Added by Ash/Upwork
     if( defined( 'IntergeoMaps_Pro' ) ){
