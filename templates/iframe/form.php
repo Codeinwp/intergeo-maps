@@ -29,7 +29,7 @@
 			</li>
 <?php
             // Added by Ash/Upwork
-            include_once trailingslashit(dirname(__FILE__)) . "extra.php";
+            include INTERGEO_ABSPATH . '/templates/iframe/extra.php';
 ?>
 		</ul>
 	</div>
