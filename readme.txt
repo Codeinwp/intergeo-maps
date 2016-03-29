@@ -2,7 +2,7 @@
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.4.1
+Tested up to: 4.4.2
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -121,9 +121,15 @@ function filter_intergeo_map_settings( $options ) {
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Fixed issue with warning error when including some templates
+
 = 1.0.2 =
+
 * Fixed minZoom and maxZoom settings.
 
 = 1.0.1 =
+
 * Fixed compatibility with Wordpress 4.3 versions
 
