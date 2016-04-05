@@ -121,6 +121,12 @@ function filter_intergeo_map_settings( $options ) {
 
 == Changelog ==
 
+
+= 1.0.4 =
+
+* Added uninstall feedback
+* Added support for pro version
+
 = 1.0.3 =
 
 * Fixed issue with warning error when including some templates
