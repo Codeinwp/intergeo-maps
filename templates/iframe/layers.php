@@ -134,16 +134,16 @@
         $IntergeoMaps_Pro->addForm("layers", $json);
     }else{
 ?>
-  <!--  <li class="intergeo_tlbr_ul_li_ul_li">
-		<span class="intergeo_tlbr_cntrl_ttl"><?php /*esc_html_e( 'Custom layer', INTERGEO_PLUGIN_NAME ) */?></span>
+    <li class="intergeo_tlbr_ul_li_ul_li">
+		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Custom layer', INTERGEO_PLUGIN_NAME ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
                 <p class="intergeo_tlbr_grp_dsc">
-                    <a>Custom Layers are available in the PRO version</a>
+                    <a target="_blank"   href="<?php echo INTERGEO_PRO_URL; ?>">Custom Layers are available in the PRO version</a>
                 </p>
             </div>
         </div>
-    </li>-->
+    </li>
 <?php
     }
     // Added by Ash/Upwork

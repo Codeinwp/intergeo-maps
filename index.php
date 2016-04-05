@@ -16,6 +16,7 @@ define( 'INTERGEO_PLUGIN_NAME', 'intergeo' ); // don't change it whatever
 define( 'INTERGEO_VERSION',     '1.0.3' );
 define( 'INTERGEO_ABSPATH',     dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL',      plugins_url( '/', __FILE__ ) );
+define( 'INTERGEO_PRO_URL',      "http://themeisle.com/plugins/intergeo-maps-pro/" );
 // Added by Ash/Upwork
 defined('WPLANG') || define( 'WPLANG', '' );
 // Added by Ash/Upwork
@@ -29,6 +30,37 @@ if ( class_exists( 'IntergeoMaps_Pro', false ) ){
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="plugin init">
+
+function im_fs() {
+	global $im_fs;
+
+	if ( ! isset( $im_fs ) ) {
+		// Include Freemius SDK.
+		require_once dirname(__FILE__) . '/freemius/start.php';
+
+		$im_fs = fs_dynamic_init( array(
+			'id'                => '239',
+			'slug'              => 'intergeo-maps',
+			'public_key'        => 'pk_35c86b731f06c8d4ba25b490af632',
+			'is_premium'        => false,
+			'has_addons'        => false,
+			'has_paid_plans'    => false,
+			'anonymous_mode'    => true,
+			'menu'              => array(
+				'slug'       => 'intergeo',
+				'account'    => false,
+				'support'    => false,
+				'parent'     => array(
+					'slug' => 'upload.php',
+				),
+			),
+		) );
+	}
+
+	return $im_fs;
+}
+// Init Freemius.
+im_fs();
 
 add_filter( 'plugin_action_links', 'intergeo_action_links', 10, 2 );
 function intergeo_action_links( $links, $file ) {
