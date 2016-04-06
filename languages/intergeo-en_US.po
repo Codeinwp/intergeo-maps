@@ -269,8 +269,8 @@ msgid "The center of the map"
 msgstr "The center of the map"
 
 #: intergeo/templates/iframe/form.php:37
-msgid "Go to addrses"
-msgstr "Go to addrses"
+msgid "Go to address"
+msgstr "Go to address"
 
 #: intergeo/templates/iframe/overlays.php:1
 msgid "Overlays"

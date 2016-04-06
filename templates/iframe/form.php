@@ -38,7 +38,7 @@
 		<div id="intergeo_canvas_center" title="<?php esc_attr_e( 'The center of the map', INTERGEO_PLUGIN_NAME ) ?>"<?php echo !$show_map_center ? ' style="display:none;"' : ''; ?>></div>
 	</div>
 	<div id="intergeo_footer">
-		<a id="intergeo_go_to_address" class="button button-large" href="javascript:;"><?php esc_html_e( 'Go to addrses', INTERGEO_PLUGIN_NAME ) ?></a>
+		<a id="intergeo_go_to_address" class="button button-large" href="javascript:;"><?php esc_html_e( 'Go to address', INTERGEO_PLUGIN_NAME ) ?></a>
 		<input type="submit" class="button button-primary button-large" value="<?php echo $submit_text ?>">
 	</div>
 </form>

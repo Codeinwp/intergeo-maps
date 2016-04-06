@@ -15,7 +15,7 @@
                         <label>
                             <input type="hidden" name="layer_importcsv" value="0">
                             <input type="checkbox" name="layer_importcsv" value="1" disabled>
-                            <?php esc_html_e( 'Enabled ( Available in PRO )', INTERGEO_PLUGIN_NAME ) ?>
+                            <a href="<?php echo INTERGEO_PRO_URL; ?>" target="_blank"><?php esc_html_e( 'Enabled ( Available in PRO )', INTERGEO_PLUGIN_NAME ) ?></a>
                         </label>
                     </div>
                     <p class="intergeo_tlbr_cntrl_dsc">

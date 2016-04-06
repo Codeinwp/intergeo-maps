@@ -139,7 +139,7 @@
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
                 <p class="intergeo_tlbr_grp_dsc">
-                    <a>Custom Layers are available in the PRO version</a>
+                    <a target="_blank"   href="<?php echo INTERGEO_PRO_URL; ?>">Custom Layers are available in the PRO version</a>
                 </p>
             </div>
         </div>
