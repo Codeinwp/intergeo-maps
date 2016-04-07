@@ -85,6 +85,15 @@ function intergeo_frontend_enqueue_scripts() {
 	wp_register_style( 'intergeo-frontend', INTERGEO_ABSURL . 'css/frontend.css', array(), INTERGEO_VERSION );
 }
 
+add_action("plugins_loaded", 'intergeo_i18n');
+function intergeo_i18n(){
+    $pluginDirName  = dirname(plugin_basename(__FILE__));
+    $domain         = INTERGEO_PLUGIN_NAME;
+    $locale         = apply_filters("plugin_locale", get_locale(), $domain);
+    load_textdomain($domain, WP_LANG_DIR . "/" . $pluginDirName . "/" . $domain . "-" . $locale . ".mo");
+    load_plugin_textdomain($domain, "", $pluginDirName . "/languages/");
+}
+
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="settings">
@@ -100,15 +109,15 @@ add_action( 'admin_init', 'intergeo_settings_init' );
 function intergeo_settings_init() {
 	register_setting( 'media', 'intergeo-settings-map-api-key', 'trim' );
 	add_settings_section( 'intergeo-settings-maps', 'Intergeo Google Maps', 'intergeo_settings_init_map', 'media' );
-	add_settings_field( 'intergeo_map_api_key', 'Maps API Key', 'intergeo_settings_print_field', 'media', 'intergeo-settings-maps', array(
+	add_settings_field( 'intergeo_map_api_key', __('Maps API Key', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', 'media', 'intergeo-settings-maps', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_map_api_key',
 		esc_attr( get_option( 'intergeo_map_api_key' ) ),
 	) );
 
 	register_setting( 'media', 'intergeo_adsense_publisher_id', 'trim' );
-	add_settings_section( 'intergeo-settings-adsense', 'Intergeo Google Maps AdSense Integration', 'intergeo_settings_init_adsense', 'media' );
-	add_settings_field( 'intergeo_adsense_publisher_id', 'AdSense Publisher Id', 'intergeo_settings_print_field', 'media', 'intergeo-settings-adsense', array(
+	add_settings_section( 'intergeo-settings-adsense', __('Intergeo Google Maps AdSense Integration', INTERGEO_PLUGIN_NAME), 'intergeo_settings_init_adsense', 'media' );
+	add_settings_field( 'intergeo_adsense_publisher_id', __('AdSense Publisher Id', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', 'media', 'intergeo-settings-adsense', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_adsense_publisher_id',
 		esc_attr( get_option( 'intergeo_adsense_publisher_id' ) ),
@@ -956,7 +965,7 @@ function intergeo_print_messages() {
 	}
 
 	foreach ( $messages[$user_id] as $message ) {
-		printf( $message[1] ? '<div class="updated"><p>%s</p></div>' : '<div class="error"><p>%s</p></div>', $message[0] );
+		printf( $message[1] ? '<div class="updated"><p>%s</p></div>' : '<div class="error"><p>%s</p></div>', __($message[0], INTERGEO_PLUGIN_NAME) );
 	}
 
 	$messages[$user_id] = array();
