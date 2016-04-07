@@ -8,6 +8,8 @@ Author: Themeisle
 Author URI: http://themeisle.com
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
+Text Domain: intergeo
+Domain Path: /languages
 */
 
 // <editor-fold defaultstate="collapsed" desc="constants">
