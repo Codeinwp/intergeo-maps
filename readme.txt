@@ -29,6 +29,7 @@ To create new WordPress maps you just can input simple shortcode into your post,
 `[intergeo]Your address[/intergeo]`
 
 This shortcode will be displayed as Google Maps centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. 
+If you are using WordPress Google Maps Plugin for your business website, then you should take a look at some of the <a href="http://www.codeinwp.com/blog/free-wordpress-business-themes/" rel="friend">best free business WordPress themes</a> we have developed which integrate perfectly with this plugin.
 
 > **Time-saving features available in the Pro version:**
 >
