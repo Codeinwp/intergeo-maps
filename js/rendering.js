@@ -202,6 +202,7 @@
                 if (typeof j === "boolean") {
                     j = j ? "1" : "0";
                 }
+                if(typeof j === "number") {
                     j = j.toString();
                 }
                 if (typeof j === "string") {
