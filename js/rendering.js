@@ -202,6 +202,8 @@
                 if (typeof j === "boolean") {
                     j = j ? "1" : "0";
                 }
+                    j = j.toString();
+                }
                 if (typeof j === "string") {
                     g[i] = h[i](j)
                 } else {
