@@ -955,6 +955,10 @@ add_action( 'admin_notices', 'intergeo_print_messages' );
 function intergeo_print_messages() {
 	global $pagenow;
 
+    // Added by Ash/Upwork
+    intergeo_show_nag();
+    // Added by Ash/Upwork
+
 	if ( $pagenow != 'upload.php' ) {
 		return;
 	}
@@ -973,5 +977,31 @@ function intergeo_print_messages() {
 	$messages[$user_id] = array();
 	update_option( 'intergeo_messages', $messages );
 }
+
+// Added by Ash/Upwork
+add_action( 'admin_enqueue_scripts', 'intergeo_enqueue_scripts' );
+function intergeo_enqueue_scripts()
+{
+	wp_enqueue_script( 'intergeo-misc', INTERGEO_ABSURL . 'js/misc.js', array( 'jquery' ), INTERGEO_VERSION );
+	wp_localize_script( 'intergeo-misc', 'intergeo_misc', array(
+        "ajax"  => array("action" => "intergeo_dismiss_nag")
+    ));
+}
+
+add_action( 'wp_ajax_intergeo_dismiss_nag', 'intergeo_dismiss_nag' );
+function intergeo_dismiss_nag() {
+    update_option("intergeo_nag_dismissed", true);
+    wp_die();
+}
+
+function intergeo_show_nag()
+{
+	global $pagenow;
+
+    if ( $pagenow == 'plugins.php' && !get_option("intergeo_nag_dismissed", false)) {
+        include_once INTERGEO_ABSPATH . '/templates/nag.php';
+    }
+}
+// Added by Ash/Upwork
 
 // </editor-fold>
