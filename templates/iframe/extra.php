@@ -1,5 +1,5 @@
 <li class="intergeo_tlbr_ul_li">
-    <h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Import Markers', INTERGEO_PLUGIN_NAME ) ?></h3>
+    <h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Import/Export Markers', INTERGEO_PLUGIN_NAME ) ?></h3>
     <ul class="intergeo_tlbr_ul_li_ul">
     <?php
         if( defined( 'IntergeoMaps_Pro' ) ){
