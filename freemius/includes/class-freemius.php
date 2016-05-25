@@ -5888,6 +5888,8 @@
 
 			$found_submenu_item = false;
 
+            if (empty($top_level_menu)) return;
+
 			foreach ( $top_level_menu as $submenu_id => $meta ) {
 				if ( $found_submenu_item ) {
 					// Remove all submenu items after the plugin's submenu item.
