@@ -4,6 +4,7 @@
             url: ajaxurl,
             data: {
                 'action'    : im.ajax["action"],
+                'security'  : im.ajax["nonce"]
             }
         });
     });

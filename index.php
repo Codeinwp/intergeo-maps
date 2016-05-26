@@ -984,12 +984,17 @@ function intergeo_enqueue_scripts()
 {
 	wp_enqueue_script( 'intergeo-misc', INTERGEO_ABSURL . 'js/misc.js', array( 'jquery' ), INTERGEO_VERSION );
 	wp_localize_script( 'intergeo-misc', 'intergeo_misc', array(
-        "ajax"  => array("action" => "intergeo_dismiss_nag")
+        "ajax"  => array(
+            "action"    => "intergeo_dismiss_nag",
+            "nonce"     => wp_create_nonce(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION),
+        )
     ));
 }
 
 add_action( 'wp_ajax_intergeo_dismiss_nag', 'intergeo_dismiss_nag' );
 function intergeo_dismiss_nag() {
+    check_ajax_referer(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION, "security");
+
     update_option("intergeo_nag_dismissed", true);
     wp_die();
 }
