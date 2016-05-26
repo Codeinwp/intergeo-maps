@@ -2,7 +2,7 @@
 
 ### 1.0.4.1 - 05/04/2016
 
- Changes: 
+**Changes:** 
 
 
  * added freemius
@@ -10,7 +10,7 @@
 
 ### 1.0.4 - 05/04/2016
 
- Changes: 
+**Changes:** 
 
 
  * fix readme
