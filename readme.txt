@@ -2,7 +2,7 @@
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.4.2
+Tested up to: 4.5.2
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -12,6 +12,7 @@ A simple, easy and quite powerful Google Maps tool to create, manage and embed c
 == Description ==
 
 The Intergeo Google Maps WordPress plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. This simple WordPress map plugin allow users to create new maps by using powerful UI builder. Created maps could be easily edited and saved with new settings. To increase the speed of creation process the plugin has ability to clone a map with all it's settings. Finally the plugin has attractive library which allows users to browse all maps in the system and delete unnecessary maps.
+We've also built some fantastic <a href="http://themeisle.com/wordpress-themes/business/" rel="friend" target="_blank">business themes</a> that integrate with Intergeo Google Maps perfectly, check them out.
 
 The powerful UI builder allows users to:
 
@@ -82,6 +83,18 @@ The library shows you maps preview as you will see it at front end pages. Here u
 
 Also users can create a Google map from library page. To do it just click on **Add New** button next to the page title and UI builder popup immediately appears. The builder interacts in the same way as it does at edit posts page, except that popup doesn't insert shortcode into somewhere, popup just save a map into database for future reuse.
 
+**About us:**
+
+We are a young team of WordPress enthusiasts who enjoy developing <a href="http://themeisle.com/wordpress-plugins/" rel="friend" target="_blank">free WordPress plugins</a> and <a href="http://themeisle.com/wordpress-themes/" rel="friend" target="_blank">themes</a> for small businesses and startups. Check them out and let us know what you think, our goal is to build fully fledged products that will solve your needs.
+
+We also love to blog at CodeinWP and help our users finding the <a href="http://www.codeinwp.com/blog/best-wordpress-shared-hosting-providers/" rel="friend">best hosting</a> or <a href="http://justfreethemes.com/" rel="friend">themes</a>.
+
+**More from us**
+
+- <a href="http://justfreethemes.com/" rel="friend" target="_blank">JustFreeThemes</a> - Find the best free WordPress Themes
+- <a href="http://www.codeinwp.com/" rel="friend" target="_blank">CodeinWP</a> - Turn your PSD file into a WordPress Theme
+- <a href="http://revive.social/" rel="friend" target="_blank">Revive.Social</a> - WordPress plugins for Social Media marketers
+
 Check-out the <a href="http://www.codeinwp.com/blog/intergeo-maps-plugin-review/" target="_blank" rel="friend">Intergeo review</a> and find out some of the <a href="http://www.codeinwp.com/blog/top-non-obvious-wordpress-plugins/" target="_blank" rel="friend">best WordPress plugins</a>.
 
 == Installation ==
@@ -120,6 +133,11 @@ function filter_intergeo_map_settings( $options ) {
 6. Markers settings
 
 == Changelog ==
+
+= 1.0.5 =
+
+* Added information for map new installs
+* Fix issue for non-admins in freemius
 
 
 = 1.0.4 =

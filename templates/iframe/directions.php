@@ -2,7 +2,7 @@
 <ul class="intergeo_tlbr_ul_li_ul">
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<p class="intergeo_tlbr_grp_dsc">
-			<?php esc_html_e( 'To add a new direction just click the button below:' ) ?>
+			<?php esc_html_e( 'To add a new direction just click the button below', INTERGEO_PLUGIN_NAME ) ?>:
 		</p>
 		<p class="intergeo_tlbr_grp_dsc">
 			<a id="intergeo_tlbr_new_drctn" class="button button-small" href="javascript:;">

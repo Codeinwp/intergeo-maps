@@ -1,0 +1,1 @@
+<div class="updated activated notice is-dismissible intergeo_nag"><p><?php printf( __( 'You have just enabled the Intergeo - Google Maps Plugin. You can now go to <a href="%s">Media > Intergeo Maps</a> and start builg one your map.', INTERGEO_PLUGIN_NAME ), admin_url("upload.php?page=intergeo") ); ?></p></div>

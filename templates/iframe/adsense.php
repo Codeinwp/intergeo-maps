@@ -131,31 +131,31 @@
 				<b><?php esc_html_e( 'Background color', INTERGEO_PLUGIN_NAME ) ?></b>
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<input class="color-picker-hex" type="text" name="adsense_backgroundColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ) ?>" value="<?php echo isset( $json['adsense']['backgroundColor'] ) ? esc_attr( $json['adsense']['backgroundColor'] ) : '#c4d4f3' ?>" data-default-color="#c4d4f3">
+				<input class="color-picker-hex" type="text" name="adsense_backgroundColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', INTERGEO_PLUGIN_NAME ) ?>" value="<?php echo isset( $json['adsense']['backgroundColor'] ) ? esc_attr( $json['adsense']['backgroundColor'] ) : '#c4d4f3' ?>" data-default-color="#c4d4f3">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
 				<b><?php esc_html_e( 'Border color', INTERGEO_PLUGIN_NAME ) ?></b>
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<input class="color-picker-hex" type="text" name="adsense_borderColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ) ?>" value="<?php echo isset( $json['adsense']['borderColor'] ) ? esc_attr( $json['adsense']['borderColor'] ) : '#e5ecf9' ?>" data-default-color="#e5ecf9">
+				<input class="color-picker-hex" type="text" name="adsense_borderColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', INTERGEO_PLUGIN_NAME ) ?>" value="<?php echo isset( $json['adsense']['borderColor'] ) ? esc_attr( $json['adsense']['borderColor'] ) : '#e5ecf9' ?>" data-default-color="#e5ecf9">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
 				<b><?php esc_html_e( 'Title color', INTERGEO_PLUGIN_NAME ) ?></b>
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<input class="color-picker-hex" type="text" name="adsense_titleColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ) ?>" value="<?php echo isset( $json['adsense']['titleColor'] ) ? esc_attr( $json['adsense']['titleColor'] ) : '#0000cc' ?>" data-default-color="#0000cc">
+				<input class="color-picker-hex" type="text" name="adsense_titleColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', INTERGEO_PLUGIN_NAME ) ?>" value="<?php echo isset( $json['adsense']['titleColor'] ) ? esc_attr( $json['adsense']['titleColor'] ) : '#0000cc' ?>" data-default-color="#0000cc">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
 				<b><?php esc_html_e( 'Text color', INTERGEO_PLUGIN_NAME ) ?></b>
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<input class="color-picker-hex" type="text" name="adsense_textColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ) ?>" value="<?php echo isset( $json['adsense']['textColor'] ) ? esc_attr( $json['adsense']['textColor'] ) : '#000000' ?>" data-default-color="#000000">
+				<input class="color-picker-hex" type="text" name="adsense_textColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', INTERGEO_PLUGIN_NAME ) ?>" value="<?php echo isset( $json['adsense']['textColor'] ) ? esc_attr( $json['adsense']['textColor'] ) : '#000000' ?>" data-default-color="#000000">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
 				<b><?php esc_html_e( 'URL color', INTERGEO_PLUGIN_NAME ) ?></b>
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<input class="color-picker-hex" type="text" name="adsense_urlColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ) ?>" value="<?php echo isset( $json['adsense']['urlColor'] ) ? esc_attr( $json['adsense']['urlColor'] ) : '#009900' ?>" data-default-color="#009900">
+				<input class="color-picker-hex" type="text" name="adsense_urlColor" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', INTERGEO_PLUGIN_NAME ) ?>" value="<?php echo isset( $json['adsense']['urlColor'] ) ? esc_attr( $json['adsense']['urlColor'] ) : '#009900' ?>" data-default-color="#009900">
 			</div>
 		</div>
 	</li>
