@@ -67,3 +67,11 @@
 .computer-btn{
 	text-shadow: none !important;
 }
+
+table.intergeo_tlbr_marker_add input[type="button"] {
+	float: right;
+}
+
+table.intergeo_tlbr_marker_add input[type="button"]::after {
+	clear: both;
+}

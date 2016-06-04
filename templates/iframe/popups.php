@@ -42,11 +42,7 @@
 			</tr>
 			<tr>
 				<td>
-					<textarea cols="20" rows="5"
-							  class="intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt" 
-							  title="<?php esc_attr_e( 'Enter html for info window', INTERGEO_PLUGIN_NAME ) ?>"
-							  placeholder="<?php esc_attr_e( 'Enter html for info window', INTERGEO_PLUGIN_NAME ) ?>"
-					></textarea>
+                    <?php wp_editor("", "intergeo-marker-editor", array("media_buttons" => false, "textarea_rows" => 5, "teeny"=> true, "editor_class" => "intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt"));?>
 				</td>
 			</tr>
 			<tr>

@@ -1,26 +1,8 @@
 <h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Overlays', INTERGEO_PLUGIN_NAME ) ?></h3>
-<ul class="intergeo_tlbr_ul_li_ul">
-	<li class="intergeo_tlbr_li_ul_li">
-		<p class="intergeo_tlbr_grp_dsc">
-			<?php esc_html_e( 'Drawing tools allows you to add overlays over the map. You can add markers, polylines, polygons, circles and rectangles. To enable drawing tools just put a tick in the checkbox below.', INTERGEO_PLUGIN_NAME ) ?>
-		</p>
-		<p class="intergeo_tlbr_grp_dsc">
-			<?php esc_html_e( 'To delete a marker, just double click on it and an item will be removed.', INTERGEO_PLUGIN_NAME ) ?>
-		</p>
-	</li>
-	<li class="intergeo_tlbr_ul_li_ul_li">
-		<div class="intergeo_tlbr_cntrl_items" style="display:block">
-			<div class="intergeo_tlbr_cntrl_item">
-				<label>
-					<input type="checkbox" id="intergeo_tlbr_drawing_tools">
-					<?php esc_html_e( 'Enable drawing tools', INTERGEO_PLUGIN_NAME ) ?>
-				</label>
-			</div>
-		</div>
-	</li>
+<ul class="intergeo_tlbr_ul_li_ul"  style="display:block">
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<script id="intergeo_tlbr_marker_tmpl" type="text/html">
-			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0">
+			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0" data-table-num="%num%">
 				<tr>
 					<td class="intergeo_tlbr_marker_title_td">
 						#%num% <?php esc_html_e( 'marker', INTERGEO_PLUGIN_NAME ) ?>
@@ -39,10 +21,11 @@
 		</script>
 		
 		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Markers', INTERGEO_PLUGIN_NAME ) ?></span>
-		<div id="intergeo_tlbr_markers" class="intergeo_tlbr_cntrl_items">
+		<div class="intergeo_tlbr_cntrl_items"  style="display:block">
+		<div id="intergeo_tlbr_markers">
 			<?php if ( !empty( $json['overlays']['marker'] ) ) : ?>
 				<?php foreach ( $json['overlays']['marker'] as $i => $overlay ) : ?>
-					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0">
+					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0" data-table-num="<?php echo $i + 1;?>">
 						<tr>
 							<td class="intergeo_tlbr_marker_title_td">
 								<?php if ( empty( $overlay['title'] ) ) : ?>
@@ -65,6 +48,18 @@
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
+
+
+        <table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_marker_add" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="intergeo_tlbr_marker_title_td_add">
+                    <input type="button" id="intergeo_add_marker_bttn" class="button button-secondary button-small" value="<?php esc_html_e('Add Marker', INTERGEO_PLUGIN_NAME);?>">
+                </td>
+            </tr>
+        </table>
+
+        </div>
+
 	</li>
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<script id="intergeo_tlbr_polyline_tmpl" type="text/html">

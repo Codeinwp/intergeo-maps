@@ -145,7 +145,7 @@ if (!window.intergeo.maps) {
                 j.find(".intergeo_ppp_frm").attr("data-position", d);
                 j.find(".intergeo_tlbr_marker_title").val(g.find(".intergeo_tlbr_marker_title").val());
                 j.find(".intergeo_tlbr_marker_icon").val(g.find(".intergeo_tlbr_marker_icon").val());
-                j.find(".intergeo_tlbr_marker_info").val(g.find(".intergeo_tlbr_marker_info").val());
+                j.find("iframe").contents().find(".intergeo-marker-editor").html(g.find(".intergeo_tlbr_marker_info").val());
                 j.fadeIn(150)
             });
             b.event.addListener(f, "dragend", function(j) {
@@ -168,7 +168,7 @@ if (!window.intergeo.maps) {
                 e = {},
                 i = c.trim(g.find(".intergeo_tlbr_marker_title").val()),
                 f = c.trim(g.find(".intergeo_tlbr_marker_icon").val()),
-                h = c.trim(g.find(".intergeo_tlbr_marker_info").val()),
+                h = c.trim(g.find("iframe").contents().find(".intergeo-marker-editor").html()),
                 j = d.html.find(".intergeo_tlbr_marker_title_td");
             e.title = i;
             if (/^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(f)) {
@@ -390,7 +390,7 @@ if (!window.intergeo.maps) {
         var f = this;
         f.map = new c.Map(document.getElementById(e), g);
         f.drawing = new c.drawing.DrawingManager({
-            drawingControl: false,
+            drawingControl: true,
             map: f.map,
             circleOptions: {
                 editable: true
@@ -1071,12 +1071,6 @@ if (!window.intergeo.maps) {
                 status: d(this).is(":checked") ? 1 : 0
             })
         });
-        d("#intergeo_tlbr_drawing_tools").change(function() {
-            f.drawing.setDrawingMode(null);
-            f.drawing.setOptions({
-                drawingControl: d(this).is(":checked")
-            })
-        });
         d(".intergeo_ppp_cls").click(function() {
             d(this).parents(".intergeo_ppp").fadeOut(150);
             return false
@@ -1118,6 +1112,25 @@ if (!window.intergeo.maps) {
         d("#intergeo_tlbr_new_drctn").click(function() {
             f.createDirection();
             return false
-        })
+        });
+
+        d("#intergeo_add_marker_bttn").on("click", function(ee){
+            var marker = new c.Marker({
+                position: f.map.getCenter(),
+                map: f.map,
+                draggable: true
+            });
+            marker.setAnimation(c.Animation.BOUNCE);
+            var e = f.markers.length;
+            var h = d(d("#intergeo_tlbr_marker_tmpl").html().replaceByHash({
+                "%pos%": e,
+                "%num%": e + 1
+            }));
+            var m = new intergeo.maps.Marker(f, marker, h, e);
+            h.find(".intergeo_tlbr_marker_location").val(marker.getPosition().toUrlValue());
+            d("#intergeo_tlbr_markers").append(h);
+            f.markers.push(m);
+            d("table.intergeo_tlbr_cntrl_tbl.intergeo_tlbr_overlay.intergeo_tlbr_marker[data-table-num=" + (e + 1) + "]").find(".intergeo_tlbr_actn_edit").trigger("click");
+        });
     })
 })(jQuery, google.maps, intergeo.maps);
