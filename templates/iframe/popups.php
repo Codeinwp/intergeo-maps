@@ -35,6 +35,15 @@
 			<tr>
 				<td>
 					<input type="text" 
+						   class="intergeo_tlbr_marker_address intergeo_tlbr_cntrl_txt" 
+						   placeholder="<?php esc_attr_e( 'Enter address or lat, long', INTERGEO_PLUGIN_NAME ) ?>"
+						   title="<?php esc_attr_e( 'Enter address or lat, long', INTERGEO_PLUGIN_NAME ) ?>">
+                    <input type="hidden" name="intergeo_tlbr_marker_address_hidden" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" 
 						   class="intergeo_tlbr_marker_icon intergeo_tlbr_cntrl_txt" 
 						   placeholder="<?php esc_attr_e( 'Enter icon URL', INTERGEO_PLUGIN_NAME ) ?>" 
 						   title="<?php esc_attr_e( 'Enter icon URL', INTERGEO_PLUGIN_NAME ) ?>">

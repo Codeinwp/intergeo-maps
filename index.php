@@ -251,7 +251,7 @@ function intergeo_map_popup_init() {
 		}
 	}
 
-	intergeo_enqueue_google_maps_script( 'adsense,panoramio,weather,drawing' );
+	intergeo_enqueue_google_maps_script( 'adsense,panoramio,weather,drawing,places' );
 
 	wp_enqueue_script( 'intergeo-editor', INTERGEO_ABSURL . 'js/editor.js', array( 'wp-color-picker', 'google-maps-v3', 'jquery' ), INTERGEO_VERSION );
 	wp_localize_script( 'intergeo-editor', 'intergeo_options', array(
