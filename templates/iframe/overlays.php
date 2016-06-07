@@ -12,6 +12,7 @@
 						<input type="hidden" class="intergeo_tlbr_marker_title" name="overlays_marker[%pos%][title]">
 						<input type="hidden" class="intergeo_tlbr_marker_icon" name="overlays_marker[%pos%][icon]">
 						<input type="hidden" class="intergeo_tlbr_marker_info" name="overlays_marker[%pos%][info]">
+						<input type="hidden" class="intergeo_tlbr_marker_loc" name="overlays_marker[%pos%][loc]">
 
 						<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete marker', INTERGEO_PLUGIN_NAME ) ?>"></a>
 						<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit marker', INTERGEO_PLUGIN_NAME ) ?>"></a>
@@ -39,6 +40,7 @@
 								<input type="hidden" class="intergeo_tlbr_marker_title" name="overlays_marker[<?php echo $i ?>][title]" value="<?php echo esc_attr( $overlay['title'] ) ?>">
 								<input type="hidden" class="intergeo_tlbr_marker_icon" name="overlays_marker[<?php echo $i ?>][icon]" value="<?php echo esc_attr( $overlay['icon'] ) ?>">
 								<input type="hidden" class="intergeo_tlbr_marker_info" name="overlays_marker[<?php echo $i ?>][info]" value="<?php echo esc_attr( $overlay['info'] ) ?>">
+								<input type="hidden" class="intergeo_tlbr_marker_loc" name="overlays_marker[<?php echo $i ?>][loc]" value="<?php echo esc_attr( isset($overlay['loc']) ? $overlay['loc'] : '' ) ?>">
 
 								<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete marker', INTERGEO_PLUGIN_NAME ) ?>"></a>
 								<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit marker', INTERGEO_PLUGIN_NAME ) ?>"></a>

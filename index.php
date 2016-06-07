@@ -389,6 +389,7 @@ function intergeo_filter_overlays_marker( $marker ) {
 		'icon'     => isset( $marker['icon'] ) ? filter_var( $marker['icon'], FILTER_VALIDATE_URL ) : '',
 		'info'     => isset( $marker['info'] ) ? trim( preg_replace( '/\<\/?script.*?\>/is', '', $marker['info'] ) ) : '',
 		'title'    => isset( $marker['title'] ) ? strip_tags( trim( $marker['title'] ) ) : '',
+		'loc'      => isset( $marker['loc'] ) ? strip_tags( trim( $marker['loc'] ) ) : '',
 	);
 }
 
