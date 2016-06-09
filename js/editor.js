@@ -148,6 +148,7 @@ if (!window.intergeo.maps) {
                 ig_editMarker = f;
                 ig_latlng   = null;
                 var j = c("#intergeo_marker_ppp");
+                j.find("input[name='intergeo_tlbr_marker_address_hidden']").val(g.find(".intergeo_tlbr_marker_location").val());
 
                 var autocomplete = new b.places.Autocomplete(j.find(".intergeo_tlbr_marker_address").get(0));
                 autocomplete.bindTo('bounds', i.map);
@@ -162,7 +163,32 @@ if (!window.intergeo.maps) {
 
                 j.find(".intergeo_ppp_frm").attr("data-position", d);
                 j.find(".intergeo_tlbr_marker_title").val(g.find(".intergeo_tlbr_marker_title").val());
-                j.find(".intergeo_tlbr_marker_icon").val(g.find(".intergeo_tlbr_marker_icon").val());
+
+                var igMarkerSet = false;
+                var igMarker    = g.find(".intergeo_tlbr_marker_icon").val();
+                var indx        = 0;
+                j.find('.intergeo_tlbr_marker_icon').val("");
+                j.find('ul.dd-options .dd-option-value').each(function(){
+                    if(j.find(this).val() == igMarker){
+                        j.find('#intergeo_tlbr_marker_icon_select').ddslick('select', { index: indx });
+                        igMarkerSet = true;
+                        return;
+                    }
+                    indx++;
+                });
+                if(!igMarkerSet && igMarker != ""){
+                    indx        = 0;
+                    igMarker    = "custom";
+                    j.find('ul.dd-options .dd-option-value').each(function(){
+                        if(j.find(this).val() == igMarker){
+                            j.find('#intergeo_tlbr_marker_icon_select').ddslick('select', { index: indx });
+                            j.find('.intergeo_tlbr_marker_icon').val(g.find(".intergeo_tlbr_marker_icon").val());
+                            return;
+                        }
+                        indx++;
+                    });
+                }
+
                 j.find(".intergeo_tlbr_marker_address").val(g.find(".intergeo_tlbr_marker_loc").val());
                 j.find("iframe").contents().find(".intergeo-marker-editor").html(g.find(".intergeo_tlbr_marker_info").val());
                 j.fadeIn(150);
@@ -193,13 +219,17 @@ if (!window.intergeo.maps) {
                 loc = c.trim(g.find("input[name='intergeo_tlbr_marker_address_hidden']").val());
 
                 var str = new RegExp("^[0-9\., \-]*$");
-                if(str.test(loc1)){
+                if(str.length > 0 && str.test(loc1)){
                     var pos     = c.trim(g.find(".intergeo_tlbr_marker_address").val()).split(",");
-                    ig_latlng   = new b.LatLng(c.trim(pos[0]), c.trim(pos[1]))
+                    ig_latlng   = new b.LatLng(c.trim(pos[0]), c.trim(pos[1]));
                     loc         = ig_latlng.toUrlValue();
                 }
 
                 if(ig_latlng != null) ig_editMarker.setPosition(ig_latlng);
+
+                if(f.length == 0){
+                    f   = g.find('#intergeo_tlbr_marker_icon_select').data("ddslick").selectedData.value;
+                }
 
             e.title = i;
             if (/^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(f)) {
@@ -1165,5 +1195,18 @@ if (!window.intergeo.maps) {
             f.markers.push(m);
             d("table.intergeo_tlbr_cntrl_tbl.intergeo_tlbr_overlay.intergeo_tlbr_marker[data-table-num=" + (e + 1) + "]").find(".intergeo_tlbr_actn_edit").trigger("click");
         });
-    })
+
+        d("#intergeo_tlbr_marker_icon_select").ddslick({
+            width: "100%",
+            background: "#ffffff",
+            onSelected: function(data){
+                if(data.selectedData.value == 'custom'){
+                    d('#intergeo_marker_ppp .intergeo_tlbr_marker_icon').val("").show();
+                }else{
+                    d('#intergeo_marker_ppp .intergeo_tlbr_marker_icon').val(data.selectedData.value).hide();
+                }
+            }
+        });
+    });
+
 })(jQuery, google.maps, intergeo.maps);

@@ -1,5 +1,5 @@
 <h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Overlays', INTERGEO_PLUGIN_NAME ) ?></h3>
-<ul class="intergeo_tlbr_ul_li_ul"  style="display:block">
+<ul class="intergeo_tlbr_ul_li_ul">
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<script id="intergeo_tlbr_marker_tmpl" type="text/html">
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0" data-table-num="%num%">

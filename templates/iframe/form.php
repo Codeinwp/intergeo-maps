@@ -6,7 +6,7 @@
 	<div id="intergeo_tlbr">
 		<div id="intergeo_tlbr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php esc_html_e( 'Maps', INTERGEO_PLUGIN_NAME ) ?></div>
 		<ul id="intergeo_tlbr_ul">
-			<li class="intergeo_tlbr_ul_li">
+			<li class="intergeo_tlbr_ul_li open">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/overlays.php' ?>
 			</li>
 			<li class="intergeo_tlbr_ul_li">

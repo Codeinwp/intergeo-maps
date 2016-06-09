@@ -253,7 +253,7 @@ function intergeo_map_popup_init() {
 
 	intergeo_enqueue_google_maps_script( 'adsense,panoramio,weather,drawing,places' );
 
-	wp_enqueue_script( 'intergeo-editor', INTERGEO_ABSURL . 'js/editor.js', array( 'wp-color-picker', 'google-maps-v3', 'jquery' ), INTERGEO_VERSION );
+    wp_enqueue_script('jquery-ddslick', INTERGEO_ABSURL . 'js/jquery.ddslick.min.js', array('jquery'));
 	wp_localize_script( 'intergeo-editor', 'intergeo_options', array(
 		'send_to_editor' => $send_to_editor,
 		'adsense'        => array( 'publisher_id' => get_option( 'intergeo_adsense_publisher_id' ) ),
