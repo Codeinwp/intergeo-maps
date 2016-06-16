@@ -129,9 +129,13 @@ if (!window.intergeo.maps) {
 
     var ig_editMarker   = null;
     var ig_latlng       = null;
+    var ig_mapInstance  = null;
+    var ig_mapMarkers   = [];
 
     a.Marker = a.Overlay.extend({
         initialize: function(i, f, g, d) {
+            ig_mapMarkers.push(f);
+            ig_mapInstance  = i.map;
             var e = this,
                 h = new b.InfoWindow();
             e.supr(i, f, g, d, "markers");
@@ -225,7 +229,15 @@ if (!window.intergeo.maps) {
                     loc         = ig_latlng.toUrlValue();
                 }
 
-                if(ig_latlng != null) ig_editMarker.setPosition(ig_latlng);
+                if(ig_latlng != null) {
+                    console.log(ig_mapInstance.getBounds());
+                    ig_editMarker.setPosition(ig_latlng);
+                    var bounds = new b.LatLngBounds();
+                    for(var x = 0; x < ig_mapMarkers.length; x++) {
+                        bounds.extend(ig_mapMarkers[x].getPosition());
+                    }
+                    ig_mapInstance.fitBounds(bounds);
+                }
 
                 if(f.length == 0){
                     f   = g.find('#intergeo_tlbr_marker_icon_select').data("ddslick").selectedData.value;
