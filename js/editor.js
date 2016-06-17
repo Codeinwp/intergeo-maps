@@ -230,13 +230,17 @@ if (!window.intergeo.maps) {
                 }
 
                 if(ig_latlng != null) {
-                    console.log(ig_mapInstance.getBounds());
                     ig_editMarker.setPosition(ig_latlng);
                     var bounds = new b.LatLngBounds();
+                    bounds.extend(ig_latlng);
                     for(var x = 0; x < ig_mapMarkers.length; x++) {
                         bounds.extend(ig_mapMarkers[x].getPosition());
                     }
                     ig_mapInstance.fitBounds(bounds);
+                    if(ig_mapMarkers.length == 1){
+                        ig_mapInstance.setZoom(ig_mapInstance.getZoom() - 8);
+                    }
+                    g.find("#intergeo_map_zoom").val(ig_mapInstance.getZoom())
                 }
 
                 if(f.length == 0){
