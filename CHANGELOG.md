@@ -1,4 +1,9 @@
 
+### 1.0.6 - 21/06/2016
+**Changes:** 
+- Improved the usability of the builder
+- Removed contact link
+
 ### 1.0.5 - 27/05/2016
 **Changes:** 
 - Fixed min/max zoom setting
