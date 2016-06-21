@@ -140,6 +140,10 @@ function filter_intergeo_map_settings( $options ) {
 * Fix issue for non-admins in freemius
 
 
+= 1.0.6 =
+
+* improved the usability of the builder, markers are added now in a more intuitive way.
+
 = 1.0.4 =
 
 * Added uninstall feedback
