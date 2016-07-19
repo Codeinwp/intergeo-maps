@@ -101,30 +101,34 @@ function intergeo_i18n(){
 
 // <editor-fold defaultstate="collapsed" desc="settings">
 
-add_filter( 'whitelist_options', 'intergeo_whitelist_options' );
-function intergeo_whitelist_options( $whitelist ) {
-	$whitelist['media'][] = 'intergeo_map_api_key';
-	$whitelist['media'][] = 'intergeo_adsense_publisher_id';
-	return $whitelist;
-}
-
-add_action( 'admin_init', 'intergeo_settings_init' );
 function intergeo_settings_init() {
-	register_setting( 'media', 'intergeo-settings-map-api-key', 'trim' );
-	add_settings_section( 'intergeo-settings-maps', 'Intergeo Google Maps', 'intergeo_settings_init_map', 'media' );
-	add_settings_field( 'intergeo_map_api_key', __('Maps API Key', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', 'media', 'intergeo-settings-maps', array(
+    if (isset($_POST["sb-intergeo"]) && wp_verify_nonce($_POST["intergeo-nonce"], "intergeo-settings")) {
+        update_option( 'intergeo_map_api_key', $_POST['intergeo_map_api_key'] );
+        update_option( 'intergeo_adsense_publisher_id', $_POST['intergeo_adsense_publisher_id'] );
+    }
+
+    echo "<form method='post' action=''>";
+	register_setting( 'intergeo', 'intergeo-settings-map-api-key', 'trim' );
+	add_settings_section( 'intergeo-settings-maps', 'Intergeo Google Maps', 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
+	add_settings_field( 'intergeo_map_api_key', __('Maps API Key', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-maps', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_map_api_key',
 		esc_attr( get_option( 'intergeo_map_api_key' ) ),
 	) );
 
-	register_setting( 'media', 'intergeo_adsense_publisher_id', 'trim' );
-	add_settings_section( 'intergeo-settings-adsense', __('Intergeo Google Maps AdSense Integration', INTERGEO_PLUGIN_NAME), 'intergeo_settings_init_adsense', 'media' );
-	add_settings_field( 'intergeo_adsense_publisher_id', __('AdSense Publisher Id', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', 'media', 'intergeo-settings-adsense', array(
+	register_setting( 'intergeo', 'intergeo_adsense_publisher_id', 'trim' );
+	add_settings_section( 'intergeo-settings-adsense', __('Intergeo Google Maps AdSense Integration', INTERGEO_PLUGIN_NAME), 'intergeo_settings_init_adsense', INTERGEO_PLUGIN_NAME );
+	add_settings_field( 'intergeo_adsense_publisher_id', __('AdSense Publisher Id', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-adsense', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_adsense_publisher_id',
 		esc_attr( get_option( 'intergeo_adsense_publisher_id' ) ),
 	) );
+
+    do_settings_sections(INTERGEO_PLUGIN_NAME);
+    submit_button(__("Save Changes", INTERGEO_PLUGIN_NAME), "primary", "sb-intergeo");
+    wp_nonce_field("intergeo-settings", "intergeo-nonce");
+    
+    echo "</form>";
 }
 
 function intergeo_settings_init_map() {
@@ -823,6 +827,7 @@ function intergeo_shortcode( $attrs, $address = '' ) {
 
 add_action( 'admin_menu', 'intergeo_admin_menu' );
 function intergeo_admin_menu() {
+    add_options_page( 'Intergeo Maps Library', 'Intergeo Maps', 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings_init' );
 	$page = add_submenu_page( 'upload.php', 'Intergeo Maps Library', 'Intergeo Maps', 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
 	if ( $page ) {
 		add_action( "load-{$page}", 'intergeo_library_init' );
