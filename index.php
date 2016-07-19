@@ -174,8 +174,6 @@ function intergeo_enqueue_google_maps_script( $libraries = false ) {
 
 		$lang = explode( '_', WPLANG ? WPLANG : 'en_US' );
 		$params = array(
-			'v'         => '3.10',
-			'sensor'    => 'false',
 			'region'    => isset( $lang[1] ) ? $lang[1] : 'US',
 			'language'  => $lang[0],
 		);
