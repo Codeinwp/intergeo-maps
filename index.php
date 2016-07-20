@@ -732,6 +732,11 @@ add_filter( 'term_description', 'do_shortcode' );
 
 add_shortcode( INTERGEO_PLUGIN_NAME, 'intergeo_shortcode' );
 function intergeo_shortcode( $attrs, $address = '' ) {
+    // set a flag if the map has been shown on the front end
+    if (!is_admin() && get_option("intergeo-frontend-used", 0) != 1) {
+        update_option("intergeo-frontend-used", 1);
+    }
+
 	$args = shortcode_atts( array(
 		'id'     => false,
 		'hook'   => false,
@@ -991,8 +996,10 @@ function intergeo_enqueue_scripts()
 	wp_enqueue_script( 'intergeo-misc', INTERGEO_ABSURL . 'js/misc.js', array( 'jquery' ), INTERGEO_VERSION );
 	wp_localize_script( 'intergeo-misc', 'intergeo_misc', array(
         "ajax"  => array(
-            "action"    => "intergeo_dismiss_nag",
-            "nonce"     => wp_create_nonce(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION),
+            "action"                        => "intergeo_dismiss_nag",
+            "themeisle_feedback_action"     => "themeisle_feedback_dismiss_nag",
+            "themeisle_feedback_slug"       => INTERGEO_PLUGIN_NAME,
+            "nonce"                         => wp_create_nonce(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION),
         )
     ));
 }
@@ -1016,3 +1023,208 @@ function intergeo_show_nag()
 // Added by Ash/Upwork
 
 // </editor-fold>
+
+// Added by Ash/Upwork
+register_activation_hook(__FILE__ , "intergeo_activate");
+function intergeo_activate()
+{
+    $date  = get_option("intergeo-activation-date", false);
+    if ($date === false) {
+        update_option("intergeo-activation-date", time());
+    }
+}
+
+add_action("admin_init", "intergeo_init_triggered_feedback");
+function intergeo_init_triggered_feedback()
+{
+    /*
+    array(
+        "name_of_trigger_filter_that_returns_true" => array(
+            "behaviour"     => array(
+                "show_when"     => strtotime compliant time,
+                "show_where"    => "name_of_filter"
+            ),  
+            "notifications" => array(
+                array(
+                    "description"       => mandatory, dont show the notification if this is empty,
+                    "button_ok_link"    => mandatory, dont show the notification if this is empty,
+                    "button_ok_text"    => mandatory, dont show the notification if thihs is empty,
+                    "button_hide_text"  => optional, default value is 'Hide',
+                    "button_done_text"  => optional, default value is "I've already done it"
+                ),
+            )
+        )
+    )
+    */
+    $feedback_config    = array(
+        "intergeo_created_3_maps"   => array(
+            "behaviour"     => array(
+                "show_when"     => "+6 hours",
+                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+            ),
+            "notifications" => array(
+                array(
+                    "description"   => "something desc1",
+                    "button_ok_link"    => "http://www.google.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
+                ),
+                array(
+                    "description"   => "something descccccccccccc1",
+                    "button_ok_link"    => "http://www.example.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
+                ),
+            )
+        ),
+        "intergeo_plugin_1week_old"   => array(
+            "behaviour"     => array(
+                "show_when"     => "+6 hours",
+                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+            ),
+            "notifications" => array(
+                array(
+                    "description"   => "something desc3",
+                    "button_ok_link"    => "http://www.yahoo.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
+                ),
+            )
+        ),
+        "intergeo_map_frontend_display"   => array(
+            "behaviour"     => array(
+                "show_when"     => "+6 hours",
+                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+            ),
+            "notifications" => array(
+                array(
+                    "description"   => "something desc2",
+                    "button_ok_link"    => "http://www.hotmail.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
+                ),
+            )
+        ),
+    );
+
+    // add the configuration with the slug and trigger the generic action
+    do_action("themeisle_triggered_feedback_add_config", $feedback_config, INTERGEO_PLUGIN_NAME);
+}
+
+add_action("themeisle_triggered_feedback_add_config", "themeisle_triggered_feedback_add_config", 10, 2);
+function themeisle_triggered_feedback_add_config($config, $slug)
+{
+    global $pagenow;
+
+    $trigger_time   = $slug . "-triggered-feedback-time";
+    $trigger_type   = $slug . "-triggered-feedback-type";
+    $fuse_lit       = get_option($trigger_time, false);
+
+    if ($fuse_lit !== false) {
+        if (ctype_digit($fuse_lit) && $fuse_lit != -1 && time() >= $fuse_lit) {
+            // it is time to explode
+            $trigger        = get_option($trigger_type);
+            $attributes     = $config[$trigger];
+            if (apply_filters($attributes["behaviour"]["show_where"], $pagenow) === true) {
+                $notification   = $attributes["notifications"][rand(0, count($attributes["notifications"]) - 1)];
+                do_action("themeisle_triggered_feedback_show_notification", $notification, $slug);
+            }
+        }
+    } else {
+        foreach ($config as $trigger=>$attributes) {
+            $pull_trigger   = apply_filters($trigger, false);
+            if ($pull_trigger === true) {
+                // light fuse
+                update_option($trigger_time, strtotime($attributes["behaviour"]["show_when"]));
+                update_option($trigger_type, $trigger);
+            }
+        }
+    }
+}
+
+global $themeisle_notification;
+
+add_action("themeisle_triggered_feedback_show_notification", "themeisle_triggered_feedback_show_notification", 10, 2);
+function themeisle_triggered_feedback_show_notification($notification, $slug)
+{
+	global $themeisle_notification;
+
+    if (
+        !isset($notification["description"]) || empty($notification["description"])
+        || !isset($notification["button_ok_link"]) || empty($notification["button_ok_link"])
+        || !isset($notification["button_ok_text"]) || empty($notification["button_ok_text"])
+    ) return;
+
+    if (!isset($notification["button_hide_text"]) || empty($notification["button_hide_text"])) {
+        $notification["button_hide_text"]   = __("Hide", INTERGEO_PLUGIN_NAME);
+    }
+    if (!isset($notification["button_done_text"]) || empty($notification["button_done_text"])) {
+        $notification["button_done_text"]   = __("I've already done it", INTERGEO_PLUGIN_NAME);
+    }
+
+    $themeisle_notification = '
+    <div class="updated activated notice is-dismissible themeisle_triggered_feedback_nag">'
+    . '<p>' . $notification["description"] . '</p>' 
+    . '<p><a href="' . $notification["button_ok_link"] . '" target="_new"><input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_ok_text"] . '"></a>' 
+    . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_hide_text"] . '">'
+    . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_done_text"] . '">'
+    . '</p></div>';
+
+    add_action("admin_notices", "themeisle_triggered_feedback_show_admin_notice");
+}
+
+function themeisle_triggered_feedback_show_admin_notice()
+{
+    global $themeisle_notification;
+
+    echo $themeisle_notification;
+}
+
+add_action( 'wp_ajax_themeisle_feedback_dismiss_nag', 'themeisle_feedback_dismiss_nag' );
+function themeisle_feedback_dismiss_nag() {
+    check_ajax_referer(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION, "security");
+
+    update_option($_REQUEST["slug"] . "-triggered-feedback-time", -1);
+    wp_die();
+}
+
+add_filter("intergeo_triggered_feedback_show_notification_filter", "intergeo_triggered_feedback_show_notification_filter");
+function intergeo_triggered_feedback_show_notification_filter($pagenow)
+{
+    return ($pagenow == 'upload.php' || $pagenow == 'options-general.php') && isset($_GET["page"]) && $_GET["page"] == INTERGEO_PLUGIN_NAME;
+}
+
+add_filter("intergeo_created_3_maps", "intergeo_created_3_maps");
+function intergeo_created_3_maps()
+{
+    $maps   = get_posts(array(
+        'post_type'      => INTERGEO_PLUGIN_NAME,
+        'posts_per_page' => -1,
+        'post_status'  => 'private',
+    ) );
+
+    return count($maps) > 3;
+
+}
+
+add_filter("intergeo_plugin_1week_old", "intergeo_plugin_1week_old");
+function intergeo_plugin_1week_old()
+{
+    $activation_date    = get_option("intergeo-activation-date", false);
+    if ($activation_date !== false) {
+        return ((time() - $activation_date) >= 7 * 24 * 60 * 60);
+    }
+    return false;
+}
+
+add_filter("intergeo_map_frontend_display", "intergeo_map_frontend_display");
+function intergeo_map_frontend_display()
+{
+    return get_option("intergeo-frontend-used", 0) > 0;
+}
+// Added by Ash/Upwork
+
