@@ -732,10 +732,7 @@ add_filter( 'term_description', 'do_shortcode' );
 
 add_shortcode( INTERGEO_PLUGIN_NAME, 'intergeo_shortcode' );
 function intergeo_shortcode( $attrs, $address = '' ) {
-    // set a flag if the map has been shown on the front end
-    if (!is_admin() && get_option("intergeo-frontend-used", 0) != 1) {
-        update_option("intergeo-frontend-used", 1);
-    }
+    do_action("intergeo_shortcode_render_before", $atts);
 
 	$args = shortcode_atts( array(
 		'id'     => false,
@@ -1028,10 +1025,7 @@ function intergeo_show_nag()
 register_activation_hook(__FILE__ , "intergeo_activate");
 function intergeo_activate()
 {
-    $date  = get_option("intergeo-activation-date", false);
-    if ($date === false) {
-        update_option("intergeo-activation-date", time());
-    }
+    update_option("intergeo-activation-date", time());
 }
 
 add_action("admin_init", "intergeo_init_triggered_feedback");
@@ -1188,7 +1182,7 @@ add_action( 'wp_ajax_themeisle_feedback_dismiss_nag', 'themeisle_feedback_dismis
 function themeisle_feedback_dismiss_nag() {
     check_ajax_referer(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION, "security");
 
-    update_option($_REQUEST["slug"] . "-triggered-feedback-time", -1);
+    update_option(sanitize_text_field($_REQUEST["slug"]) . "-triggered-feedback-time", -1);
     wp_die();
 }
 
@@ -1203,7 +1197,7 @@ function intergeo_created_3_maps()
 {
     $maps   = get_posts(array(
         'post_type'      => INTERGEO_PLUGIN_NAME,
-        'posts_per_page' => -1,
+        'posts_per_page' => 4,
         'post_status'  => 'private',
     ) );
 
@@ -1225,6 +1219,15 @@ add_filter("intergeo_map_frontend_display", "intergeo_map_frontend_display");
 function intergeo_map_frontend_display()
 {
     return get_option("intergeo-frontend-used", 0) > 0;
+}
+
+add_action("intergeo_shortcode_render_before", "intergeo_shortcode_render_before");
+function intergeo_shortcode_render_before($atts)
+{
+    // set a flag if the map has been shown on the front end
+    if (!is_admin() && get_option("intergeo-frontend-used", 0) != 1) {
+        update_option("intergeo-frontend-used", 1);
+    }
 }
 // Added by Ash/Upwork
 
