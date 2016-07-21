@@ -103,13 +103,13 @@ function intergeo_i18n(){
 
 function intergeo_settings_init() {
     if (isset($_POST["sb-intergeo"]) && wp_verify_nonce($_POST["intergeo-nonce"], "intergeo-settings")) {
-        update_option( 'intergeo_map_api_key', $_POST['intergeo_map_api_key'] );
-        update_option( 'intergeo_adsense_publisher_id', $_POST['intergeo_adsense_publisher_id'] );
+        update_option( 'intergeo_map_api_key', sanitize_text_field($_POST['intergeo_map_api_key']) );
+        update_option( 'intergeo_adsense_publisher_id', sanitize_text_field($_POST['intergeo_adsense_publisher_id']) );
     }
 
     echo "<form method='post' action=''>";
 	register_setting( 'intergeo', 'intergeo-settings-map-api-key', 'trim' );
-	add_settings_section( 'intergeo-settings-maps', 'Intergeo Google Maps', 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
+	add_settings_section( 'intergeo-settings-maps', __('Intergeo Google Maps', INTERGEO_PLUGIN_NAME), 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
 	add_settings_field( 'intergeo_map_api_key', __('Maps API Key', INTERGEO_PLUGIN_NAME), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-maps', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_map_api_key',
@@ -829,8 +829,8 @@ function intergeo_shortcode( $attrs, $address = '' ) {
 
 add_action( 'admin_menu', 'intergeo_admin_menu' );
 function intergeo_admin_menu() {
-    add_options_page( 'Intergeo Maps Library', 'Intergeo Maps', 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings_init' );
-	$page = add_submenu_page( 'upload.php', 'Intergeo Maps Library', 'Intergeo Maps', 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
+    add_options_page( __('Intergeo Maps Library', INTERGEO_PLUGIN_NAME), __('Intergeo Maps', INTERGEO_PLUGIN_NAME), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings_init' );
+	$page = add_submenu_page( 'upload.php', __('Intergeo Maps Library', INTERGEO_PLUGIN_NAME), __('Intergeo Maps', INTERGEO_PLUGIN_NAME), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
 	if ( $page ) {
 		add_action( "load-{$page}", 'intergeo_library_init' );
 	}
