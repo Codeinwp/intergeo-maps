@@ -1025,7 +1025,9 @@ function intergeo_show_nag()
 register_activation_hook(__FILE__ , "intergeo_activate");
 function intergeo_activate()
 {
-    update_option("intergeo-activation-date", time());
+    if (get_option("intergeo-activation-date", false) === false) {
+        update_option("intergeo-activation-date", time());
+    }
 }
 
 add_action("admin_init", "intergeo_init_triggered_feedback");
