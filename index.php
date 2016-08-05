@@ -191,8 +191,8 @@ function intergeo_enqueue_google_maps_script( $libraries = false ) {
 			$params['key'] = $api_key;
 		}
 
-		wp_enqueue_script( 'google-maps-v3', '//maps.googleapis.com/maps/api/js?' . http_build_query( $params ), array(), null );
-
+        if (wp_script_is("google-maps")) wp_dequeue_script("google-maps");
+        wp_enqueue_script( 'google-maps-v3', '//maps.googleapis.com/maps/api/js?' . http_build_query( $params ), array(), null );
 	}
 }
 
@@ -732,7 +732,7 @@ add_filter( 'term_description', 'do_shortcode' );
 
 add_shortcode( INTERGEO_PLUGIN_NAME, 'intergeo_shortcode' );
 function intergeo_shortcode( $attrs, $address = '' ) {
-    do_action("intergeo_shortcode_render_before", $atts);
+    do_action("intergeo_shortcode_render_before", $attrs);
 
 	$args = shortcode_atts( array(
 		'id'     => false,
