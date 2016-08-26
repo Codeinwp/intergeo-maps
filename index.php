@@ -133,16 +133,11 @@ function intergeo_settings_init() {
 
 function intergeo_settings_init_map() {
 	?><p><?php
-	printf( esc_html__( "All Maps API applications should load the Maps API using an API key (however it is still possible to use maps without API key). Using an API key enables you to monitor your application's Maps API usage, and ensures that Google can contact you about your application if necessary. If your application's Maps API usage exceeds the %sUsage Limits%s, you must load the Maps API using an API key in order to purchase additional quota. To create your API key:", INTERGEO_PLUGIN_NAME ), '<a href="https://developers.google.com/maps/documentation/javascript/usage#usage_limits" target="_blank">', '</a>' );
+	printf( esc_html__(' Below shows how to find your API Key, after retrieving your key add it to the "Maps API Key" input box.', INTERGEO_PLUGIN_NAME )      );
 	?></p>
-	<ol>
-		<li><?php printf( esc_html__( "Visit the APIs Console at %shttps://code.google.com/apis/console%s and log in with your Google Account.", INTERGEO_PLUGIN_NAME ), '<a href="https://code.google.com/apis/console" target="_blank">', '</a>' ) ?></li>
-		<li><?php printf( esc_html__( 'Click the %sServices%s link from the left-hand menu.', INTERGEO_PLUGIN_NAME ), '<b>', '</b>' ) ?></li>
-		<li><?php printf( esc_html__( 'Activate the %sGoogle Maps API v3%s service.', INTERGEO_PLUGIN_NAME ), '<b>', '</b>' ) ?></li>
-		<li><?php printf( esc_html__( 'Click the %1$sAPI Access%2$s link from the left-hand menu. Your API key is available from the %1$sAPI Access%2$s page, in the %1$Simple API Access%2$s section. Maps API applications use the %1$sKey for browser apps%2$s.', INTERGEO_PLUGIN_NAME ), '<b>', '</b>' ) ?></li>
-	</ol>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/gbFDMBGPCcs" frameborder="0" allowfullscreen></iframe>
 	<?php
-echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/gbFDMBGPCcs" frameborder="0" allowfullscreen></iframe>';
 }
 
 function intergeo_settings_init_adsense() {
@@ -1053,62 +1048,63 @@ function intergeo_init_triggered_feedback()
         )
     )
     */
-    $feedback_config    = array(
-        "intergeo_created_3_maps"   => array(
-            "behaviour"     => array(
-                "show_when"     => "+6 hours",
-                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
-            ),
-            "notifications" => array(
-                array(
-                    "description"   => "something desc1",
-                    "button_ok_link"    => "http://www.google.com",
-                    "button_ok_text"    => "google",
-                    "button_hide_text"    => "hide",
-                    "button_done_text"    => "done",
-                ),
-                array(
-                    "description"   => "something descccccccccccc1",
-                    "button_ok_link"    => "http://www.example.com",
-                    "button_ok_text"    => "google",
-                    "button_hide_text"    => "hide",
-                    "button_done_text"    => "done",
-                ),
-            )
-        ),
-        "intergeo_plugin_1week_old"   => array(
-            "behaviour"     => array(
-                "show_when"     => "+6 hours",
-                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
-            ),
-            "notifications" => array(
-                array(
-                    "description"   => "something desc3",
-                    "button_ok_link"    => "http://www.yahoo.com",
-                    "button_ok_text"    => "google",
-                    "button_hide_text"    => "hide",
-                    "button_done_text"    => "done",
-                ),
-            )
-        ),
-        "intergeo_map_frontend_display"   => array(
-            "behaviour"     => array(
-                "show_when"     => "+6 hours",
-                "show_where"    => "intergeo_triggered_feedback_show_notification_filter"
-            ),
-            "notifications" => array(
-                array(
-                    "description"   => "something desc2",
-                    "button_ok_link"    => "http://www.hotmail.com",
-                    "button_ok_text"    => "google",
-                    "button_hide_text"    => "hide",
-                    "button_done_text"    => "done",
-                ),
-            )
-        ),
-    );
+	$feedback_config    = array(
+		"intergeo_created_3_maps"   => array(
+			"behaviour"     => array(
+				"show_when"     => "+6 hours",
+				"show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+			),
+			"notifications" => array(
+				array(
+					"description"   => "Hey, it seems you are doing great creating maps using the Intergeo plugin. Would you like to share you experience with other users who are using it ?",
+					"button_ok_link"    => "http://bit.ly/2btLtsk",
+					"button_ok_text"    => "I'd love to do it :D ",
+					"button_hide_text"    => "Not now :(",
+					"button_done_text"    => "Already done it :) ",
+				),
+				array(
+					"description"   => "Hey, <br/> It seems you created a bunch of maps using the Intergeo plugin. Would you like to share you experience with other users who are using the plugin ? ",
+					"button_ok_link"    => "http://bit.ly/2c11uJ0",
+					"button_ok_text"    => "Sure ",
+					"button_hide_text"    => "Not really",
+					"button_done_text"    => "Done that ",
+				),
+			)
+		),
+		"intergeo_plugin_1week_old"   => array(
+			"behaviour"     => array(
+				"show_when"     => "+6 hours",
+				"show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+			),
+			"notifications" => array(
+				array(
+					"description"   => "Hey, you are using Intergeo for a great amount of time and we would love to get your review about the experience using it in order to improve the future versions. Would you like to share your feedback with us ? ",
+					"button_ok_link"    => "http://bit.ly/2bkAJuE",
+					"button_ok_text"    => "Sure, i would like to help ",
+					"button_hide_text"    => "Not now",
+					"button_done_text"    => "Already sent it",
+				),
+			)
+		),
+		"intergeo_map_frontend_display"   => array(
+			"behaviour"     => array(
+				"show_when"     => "+6 hours",
+				"show_where"    => "intergeo_triggered_feedback_show_notification_filter"
+			),
+			"notifications" => array(
+				array(
+					"description"   => "Hey, it seems you are already using the Intergeo maps shortcode in your site and your users are enjoying it. What do you think of sharing your experience with us ? ",
+					"button_ok_link"    => "http://bit.ly/2bSh5HC",
+					"button_ok_text"    => "Sure ",
+					"button_hide_text"    => "Not now",
+					"button_done_text"    => "I've already done it",
+				),
+			)
+		),
+	);
 
-    // add the configuration with the slug and trigger the generic action
+
+	// add the configuration with the slug and trigger the generic action
     do_action("themeisle_triggered_feedback_add_config", $feedback_config, INTERGEO_PLUGIN_NAME);
 }
 
@@ -1164,9 +1160,9 @@ function themeisle_triggered_feedback_show_notification($notification, $slug)
     }
 
     $themeisle_notification = '
-    <div class="updated activated notice is-dismissible themeisle_triggered_feedback_nag">'
+    <style type="text/css">.ti-feedback-notice .themeisle-feedback-click { margin-left:5px; }</style><div class="updated activated notice is-dismissible themeisle_triggered_feedback_nag">'
     . '<p>' . $notification["description"] . '</p>' 
-    . '<p><a href="' . $notification["button_ok_link"] . '" target="_new"><input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_ok_text"] . '"></a>' 
+    . '<p class="ti-feedback-notice"><a href="' . $notification["button_ok_link"] . '" target="_new"><input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_ok_text"] . '"></a>'
     . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_hide_text"] . '">'
     . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_done_text"] . '">'
     . '</p></div>';
