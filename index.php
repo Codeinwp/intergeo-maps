@@ -142,6 +142,7 @@ function intergeo_settings_init_map() {
 		<li><?php printf( esc_html__( 'Click the %1$sAPI Access%2$s link from the left-hand menu. Your API key is available from the %1$sAPI Access%2$s page, in the %1$Simple API Access%2$s section. Maps API applications use the %1$sKey for browser apps%2$s.', INTERGEO_PLUGIN_NAME ), '<b>', '</b>' ) ?></li>
 	</ol>
 	<?php
+echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/gbFDMBGPCcs" frameborder="0" allowfullscreen></iframe>';
 }
 
 function intergeo_settings_init_adsense() {
@@ -1013,7 +1014,7 @@ function intergeo_show_nag()
 {
 	global $pagenow;
 
-    if ( $pagenow == 'plugins.php' && ! get_option("intergeo_nag_dismissed", false)) {
+    if ( $pagenow == 'plugins.php' && !get_option("intergeo_nag_dismissed", false)) {
         include_once INTERGEO_ABSPATH . '/templates/nag.php';
     }
 }
@@ -1060,18 +1061,18 @@ function intergeo_init_triggered_feedback()
             ),
             "notifications" => array(
                 array(
-                    "description"   => "Hey, it seems you are doing great creating maps using the Intergeo plugin. Would you like to share you experience with other users who are using it ?",
-                    "button_ok_link"    => "http://bit.ly/2btLtsk",
-                    "button_ok_text"    => "I'd love to do it :D ",
-                    "button_hide_text"    => "Not now :(",
-                    "button_done_text"    => "Already done it :) ",
+                    "description"   => "something desc1",
+                    "button_ok_link"    => "http://www.google.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
                 ),
                 array(
-                    "description"   => "Hey, <br/> It seems you created a bunch of maps using the Intergeo plugin. Would you like to share you experience with other users who are using the plugin ? ",
-                    "button_ok_link"    => "http://bit.ly/2c11uJ0",
-                    "button_ok_text"    => "Sure ",
-                    "button_hide_text"    => "Not really",
-                    "button_done_text"    => "Done that ",
+                    "description"   => "something descccccccccccc1",
+                    "button_ok_link"    => "http://www.example.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
                 ),
             )
         ),
@@ -1082,11 +1083,11 @@ function intergeo_init_triggered_feedback()
             ),
             "notifications" => array(
                 array(
-                    "description"   => "Hey, you are using Intergeo for a great amount of time and we would love to get your review about the experience using it in order to improve the future versions. Would you like to share your feedback with us ? ",
-                    "button_ok_link"    => "http://bit.ly/2bkAJuE",
-                    "button_ok_text"    => "Sure, i would like to help ",
-                    "button_hide_text"    => "Not now",
-                    "button_done_text"    => "Already sent it",
+                    "description"   => "something desc3",
+                    "button_ok_link"    => "http://www.yahoo.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
                 ),
             )
         ),
@@ -1097,11 +1098,11 @@ function intergeo_init_triggered_feedback()
             ),
             "notifications" => array(
                 array(
-                    "description"   => "Hey, it seems you are already using the Intergeo maps shortcode in your site and your users are enjoying it. What do you think of sharing your experience with us ? ",
-                    "button_ok_link"    => "http://bit.ly/2bSh5HC",
-                    "button_ok_text"    => "Sure ",
-                    "button_hide_text"    => "Not now",
-                    "button_done_text"    => "I've already done it",
+                    "description"   => "something desc2",
+                    "button_ok_link"    => "http://www.hotmail.com",
+                    "button_ok_text"    => "google",
+                    "button_hide_text"    => "hide",
+                    "button_done_text"    => "done",
                 ),
             )
         ),
@@ -1162,10 +1163,10 @@ function themeisle_triggered_feedback_show_notification($notification, $slug)
         $notification["button_done_text"]   = __("I've already done it", INTERGEO_PLUGIN_NAME);
     }
 
-    $themeisle_notification = '<style type="text/css">.ti-feedback-notice .themeisle-feedback-click { margin-left:5px; }</style>
+    $themeisle_notification = '
     <div class="updated activated notice is-dismissible themeisle_triggered_feedback_nag">'
     . '<p>' . $notification["description"] . '</p>' 
-    . '<p class="ti-feedback-notice"><a href="' . $notification["button_ok_link"] . '" target="_new"><input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_ok_text"] . '"></a>'
+    . '<p><a href="' . $notification["button_ok_link"] . '" target="_new"><input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_ok_text"] . '"></a>' 
     . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_hide_text"] . '">'
     . '<input type="button" class="button button-secondary themeisle-feedback-click" value="' . $notification["button_done_text"] . '">'
     . '</p></div>';
