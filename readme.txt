@@ -134,6 +134,15 @@ function filter_intergeo_map_settings( $options ) {
 
 == Changelog ==
 
+= 1.1.0 =
+
+* Updated instructions for adding Google Maps Api key
+* Added feedback mechanism
+* Fixed conflict with Uber Menu
+* Improved settings page
+* Fixed issue with long and lat addresses
+
+
 = 1.0.5 =
 
 * Added information for map new installs
