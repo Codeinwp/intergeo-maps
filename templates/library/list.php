@@ -1,7 +1,15 @@
 <div class="wrap">
+    <?php
+        if (empty(get_option("intergeo_map_api_key"))) {
+    ?>
+        <div class="notice notice-warning"><p><?php echo sprintf(__("You have not added an API Key. Your maps may not display properly. Please add an API Key %shere%s", INTERGEO_PLUGIN_NAME), "<a href='" . admin_url("options-general.php?page=" . INTERGEO_PLUGIN_NAME) . "'>", "</a>");?></p></div>
+    <?php
+        }
+    ?>
     <h2>
 		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php _e( 'Maps', INTERGEO_PLUGIN_NAME ) ?></div> 
 		<a id="intergeo_lbrr_add_new" href="javascript:;" class="add-new-h2"><?php _e( 'Add New', INTERGEO_PLUGIN_NAME ) ?></a>
+		<a id="intergeo_lbrr_settings" href="<?php echo admin_url("options-general.php?page=" . INTERGEO_PLUGIN_NAME);?>" class="add-new-h2"><?php _e( 'Maps Settings', INTERGEO_PLUGIN_NAME ) ?></a>
 	</h2>
 	
 	<script type="text/javascript">

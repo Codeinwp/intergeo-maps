@@ -223,7 +223,7 @@ if (!window.intergeo.maps) {
                 loc = c.trim(g.find("input[name='intergeo_tlbr_marker_address_hidden']").val());
 
                 var str = new RegExp("^[0-9\., \-]*$");
-                if(str.length > 0 && str.test(loc1)){
+                if(loc1.length > 0 && str.test(loc1)){
                     var pos     = c.trim(g.find(".intergeo_tlbr_marker_address").val()).split(",");
                     ig_latlng   = new b.LatLng(c.trim(pos[0]), c.trim(pos[1]));
                     loc         = ig_latlng.toUrlValue();
