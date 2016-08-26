@@ -13,7 +13,8 @@
         themeisle_dismiss_feedback_nag();
     });
 
-    $('.themeisle-feedback-click').on('click', function(e){
+    $(document).on('click','.themeisle-feedback-click', function(e){
+
         themeisle_dismiss_feedback_nag();
         $('.themeisle_triggered_feedback_nag').remove();
     });
