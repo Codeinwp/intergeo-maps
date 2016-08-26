@@ -1,4 +1,12 @@
 
+### 1.1.0 - 26/08/2016
+**Changes:** 
+- Updated instructions for adding Google Maps Api key
+- Added feedback mechanism
+- Fixed conflict with Uber Menu
+- Improved settings page
+- Fixed issue with long and lat addresses
+
 ### 1.0.6 - 21/06/2016
 **Changes:** 
 - Improved the usability of the builder
