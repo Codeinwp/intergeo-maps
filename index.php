@@ -166,7 +166,8 @@ function intergeo_enqueue_google_maps_script( $libraries = false ) {
 	if ( wp_script_is( 'google-maps-v3' ) ) {
 
 		$params = array();
-		parse_str( end( explode( '?', $wp_scripts->registered['google-maps-v3']->src ) ), $params );
+        $arr    = explode( '?', $wp_scripts->registered['google-maps-v3']->src );
+		parse_str( end( $arr ), $params );
 		$params['libraries'] = implode( ',', array_unique( array_merge( isset( $params['libraries'] ) ? explode( ',', $params['libraries'] ) : array(), explode( ',', $libraries ) ) ) );
 		$wp_scripts->registered['google-maps-v3']->src = '//maps.googleapis.com/maps/api/js?' . http_build_query( $params );
 
