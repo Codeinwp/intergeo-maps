@@ -1,6 +1,6 @@
 <div class="wrap">
     <?php
-        if (empty(get_option("intergeo_map_api_key"))) {
+        if (!get_option("intergeo_map_api_key")) {
     ?>
         <div class="notice notice-warning"><p><?php echo sprintf(__("You have not added an API Key. Your maps may not display properly. Please add an API Key %shere%s", INTERGEO_PLUGIN_NAME), "<a href='" . admin_url("options-general.php?page=" . INTERGEO_PLUGIN_NAME) . "'>", "</a>");?></p></div>
     <?php
