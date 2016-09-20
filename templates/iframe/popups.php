@@ -58,7 +58,7 @@
 			</tr>
 			<tr>
 				<td>
-                    <?php wp_editor("", "intergeo-marker-editor", array("media_buttons" => false, "textarea_rows" => 5, "teeny"=> true, "editor_class" => "intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt"));?>
+                    <?php wp_editor("", "intergeo-marker-editor", array("media_buttons" => false, "textarea_rows" => 5, "teeny"=> true, "editor_class" => "intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt", "quicktags" => false));?>
 				</td>
 			</tr>
 			<tr>
