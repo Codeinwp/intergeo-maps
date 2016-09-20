@@ -44,21 +44,21 @@
 			<tr>
 				<td>
                     <select name="intergeo_tlbr_marker_icon_select" id="intergeo_tlbr_marker_icon_select" class="intergeo_tlbr_marker_icon_select intergeo_tlbr_cntrl_txt">
-                        <option value="http://maps.google.com/mapfiles/ms/icons/red-dot.png" data-imagesrc="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><?php _e("Default", INTERGEO_PLUGIN_NAME);?></option>
-                        <option value="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" data-imagesrc="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><?php _e("Blue", INTERGEO_PLUGIN_NAME);?></option>
+                        <option value="//maps.google.com/mapfiles/ms/icons/red-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/red-dot.png"><?php _e("Default", INTERGEO_PLUGIN_NAME);?></option>
+                        <option value="//maps.google.com/mapfiles/ms/icons/blue-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/blue-dot.png"><?php _e("Blue", INTERGEO_PLUGIN_NAME);?></option>
                         <option value="custom"><?php _e("Custom", INTERGEO_PLUGIN_NAME);?></option>
                     </select>
 					<input type="text" style="display: none"
 						   class="intergeo_tlbr_marker_icon intergeo_tlbr_cntrl_txt" 
 						   placeholder="<?php esc_attr_e( 'Enter icon URL', INTERGEO_PLUGIN_NAME ) ?>" 
 						   title="<?php esc_attr_e( 'Enter icon URL', INTERGEO_PLUGIN_NAME ) ?>"
-                           value="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                           value="//maps.google.com/mapfiles/ms/icons/red-dot.png"
                     >
 				</td>
 			</tr>
 			<tr>
 				<td>
-                    <?php wp_editor("", "intergeo-marker-editor", array("media_buttons" => false, "textarea_rows" => 5, "teeny"=> true, "editor_class" => "intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt"));?>
+                    <?php wp_editor("", "intergeo-marker-editor", array("media_buttons" => false, "textarea_rows" => 5, "teeny"=> true, "editor_class" => "intergeo_tlbr_marker_info intergeo_tlbr_cntrl_txt", "quicktags" => false));?>
 				</td>
 			</tr>
 			<tr>
