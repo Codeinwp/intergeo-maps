@@ -134,6 +134,10 @@ function filter_intergeo_map_settings( $options ) {
 
 == Changelog ==
 
+= 1.1.6 =
+
+* Removed freemius support
+
 = 1.1.5 =
 
 * Fixed compatibility with old version of PHP ( < 5.2 )
