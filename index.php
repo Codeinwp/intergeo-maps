@@ -62,11 +62,22 @@ function intergeo_i18n() {
 
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="settings">
-function intergeo_settings_init() {
+function intergeo_settings() {
 	if ( isset( $_POST["sb-intergeo"] ) && wp_verify_nonce( $_POST["intergeo-nonce"], "intergeo-settings" ) ) {
 		update_option( 'intergeo_map_api_key', sanitize_text_field( $_POST['intergeo_map_api_key'] ) );
 		update_option( 'intergeo_adsense_publisher_id', sanitize_text_field( $_POST['intergeo_adsense_publisher_id'] ) );
 	}
+    echo '<div class="wrap">
+    <h2>
+		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span>' . __( 'Maps Settings', INTERGEO_PLUGIN_NAME ) . '</div> 
+		<a id="intergeo_lbrr_settings" href="' . admin_url("upload.php?page=" . INTERGEO_PLUGIN_NAME) . '" class="add-new-h2">' . __( 'Create New Map', INTERGEO_PLUGIN_NAME ) . '</a>
+		<a id="intergeo_lbrr_settings" href="' . admin_url("upload.php?page=" . INTERGEO_PLUGIN_NAME) . '" class="add-new-h2">' . __( 'View Existing Maps', INTERGEO_PLUGIN_NAME ) . '</a>
+	</h2>';
+	echo '<div class="intergeo_settings">';
+    echo '<div id="intergeo_sidebar" class="intergeo_sidebar_right">';
+    include_once INTERGEO_DIR . "/templates/sidebar.php";
+    echo '</div>';
+	echo '<div class="intergeo_sidebar_left">';
 	echo "<form method='post' action=''>";
 	register_setting( 'intergeo', 'intergeo-settings-map-api-key', 'trim' );
 	add_settings_section( 'intergeo-settings-maps', __( 'Intergeo Google Maps', INTERGEO_PLUGIN_NAME ), 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
@@ -86,6 +97,9 @@ function intergeo_settings_init() {
 	submit_button( __( "Save Changes", INTERGEO_PLUGIN_NAME ), "primary", "sb-intergeo" );
 	wp_nonce_field( "intergeo-settings", "intergeo-nonce" );
 	echo "</form>";
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
 }
 
 function intergeo_settings_init_map() {
@@ -842,15 +856,27 @@ function intergeo_shortcode( $attrs, $address = '' ) {
 // <editor-fold defaultstate="collapsed" desc="library">
 add_action( 'admin_menu', 'intergeo_admin_menu' );
 function intergeo_admin_menu() {
-	add_options_page( __( 'Intergeo Maps Library', INTERGEO_PLUGIN_NAME ), __( 'Intergeo Maps', INTERGEO_PLUGIN_NAME ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings_init' );
-	$page = add_submenu_page( 'upload.php', __( 'Intergeo Maps Library', INTERGEO_PLUGIN_NAME ), __( 'Intergeo Maps', INTERGEO_PLUGIN_NAME ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
-	if ( $page ) {
-		add_action( "load-{$page}", 'intergeo_library_init' );
+	$settings   = add_options_page( __( 'Intergeo Maps Library', INTERGEO_PLUGIN_NAME ), __( 'Intergeo Maps', INTERGEO_PLUGIN_NAME ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings' );
+	if ( $settings ) {
+		add_action( "load-{$settings}", 'intergeo_settings_init' );
 	}
+	$library    = add_submenu_page( 'upload.php', __( 'Intergeo Maps Library', INTERGEO_PLUGIN_NAME ), __( 'Intergeo Maps', INTERGEO_PLUGIN_NAME ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
+	if ( $library ) {
+		add_action( "load-{$library}", 'intergeo_library_init' );
+	}
+}
+
+function intergeo_settings_init()
+{
+	wp_enqueue_style( 'intergeo_library', INTERGEO_ABSURL . 'css/library.css', array(), INTERGEO_VERSION );
+	wp_enqueue_script( 'themeisle-subscribe', INTERGEO_ABSURL . 'subscribe/subscribe.js', array('jquery'));
+	wp_localize_script( 'themeisle-subscribe', 'ti', array() );
 }
 
 function intergeo_library_init() {
 	wp_enqueue_style( 'intergeo_library', INTERGEO_ABSURL . 'css/library.css', array(), INTERGEO_VERSION );
+	wp_enqueue_script( 'themeisle-subscribe', INTERGEO_ABSURL . 'subscribe/subscribe.js', array('jquery'));
+	wp_localize_script( 'themeisle-subscribe', 'ti', array() );
 	wp_enqueue_media();
 	$screen = get_current_screen();
 	$screen->add_help_tab( array(
@@ -1261,3 +1287,4 @@ function intergeo_shortcode_render_before( $atts ) {
 
 // Include the advanced/pro features
 require dirname(__FILE__) . '/pro/addon.php'; 
+require dirname(__FILE__) . '/subscribe/subscribe.php'; 
