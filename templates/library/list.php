@@ -19,6 +19,8 @@
 		/* ]]> */
 	</script>
 	
+    <div id="intergeo_library">
+
 	<?php if ( $query->have_posts() ) : ?>
 	
 		<div id="intergeo_lbrr_items"><?php 
@@ -72,6 +74,7 @@
 			endwhile;
 
 			?><div style="clear:both"></div>
+            </div>
 		</div>
 
 		<?php if ( !empty( $pagination ) ) : ?>

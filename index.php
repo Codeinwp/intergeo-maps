@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Intergeo Lite - Google Maps Plugin
+Plugin Name: Intergeo - Google Maps Plugin
 Plugin URI: http://themeisle.com/plugins/intergeo-maps-lite/
 Description: A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages. The plugin allows you to deeply customize look and feel of a map, add overlays like markers, rectangles, circles, polylines and polygons to your map. It could even be integraded with your Google Adsense account and show ad on your maps.
 Version: 1.1.6
@@ -21,9 +21,9 @@ define( 'INTERGEO_PRO_URL', "http://themeisle.com/plugins/intergeo-maps-pro/" );
 defined( 'WPLANG' ) || define( 'WPLANG', '' );
 // Added by Ash/Upwork
 // Added by Ash/Upwork
-if ( class_exists( 'IntergeoMaps_Pro', false ) ) {
-	define( 'IntergeoMaps_Pro', true );
-}
+define( 'INTERGEO_DIR', trailingslashit(plugin_dir_path(__FILE__)) );
+define( 'INTERGEO_DIRNAME', dirname(plugin_basename(__FILE__)) );
+define( 'INTERGEO_DEBUG', false );
 // Added by Ash/Upwork
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="plugin init">
@@ -219,10 +219,8 @@ function intergeo_map_popup_init() {
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_style( 'intergeo-editor', INTERGEO_ABSURL . 'css/editor.css', array(), INTERGEO_VERSION );
 	// Added by Ash/Upwork
-	if ( defined( 'IntergeoMaps_Pro' ) ) {
-		global $IntergeoMaps_Pro;
-		$IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-editor' ), array( "mapID" => $map_id ) );
-	}
+    global $IntergeoMaps_Pro;
+	$IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-editor' ), array( "mapID" => $map_id ) );
 	// Added by Ash/Upwork
 	wp_iframe( 'intergeo_iframe', $post_id, $map_id );
 }
@@ -644,10 +642,8 @@ function intergeo_filter_input() {
 		'directions'                            => array(),
 	);
 	// Added by Ash/Upwork
-	if ( defined( 'IntergeoMaps_Pro' ) ) {
-		global $IntergeoMaps_Pro;
-		$IntergeoMaps_Pro->addValidations( $validationArray, $defaults );
-	}
+    global $IntergeoMaps_Pro;
+	$IntergeoMaps_Pro->addValidations( $validationArray, $defaults );
 	// Added by Ash/Upwork
 	$options = filter_input_array( INPUT_POST, $validationArray );
 	$results = array();
@@ -678,10 +674,8 @@ function intergeo_filter_input() {
 		}
 	}
 	// Added by Ash/Upwork
-	if ( defined( 'IntergeoMaps_Pro' ) ) {
-		global $IntergeoMaps_Pro;
-		$IntergeoMaps_Pro->processResults( $results );
-	}
+    global $IntergeoMaps_Pro;
+	$IntergeoMaps_Pro->processResults( $results );
 
 	// Added by Ash/Upwork
 	return $results;
@@ -919,10 +913,8 @@ function intergeo_library() {
 		'adsense' => array( 'publisher_id' => get_option( 'intergeo_adsense_publisher_id' ) )
 	) );
 	// Added by Ash/Upwork
-	if ( defined( 'IntergeoMaps_Pro' ) ) {
-		global $IntergeoMaps_Pro;
-		$IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-rendering' ) );
-	}
+    global $IntergeoMaps_Pro;
+    $IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-rendering' ) );
 	// Added by Ash/Upwork
 }
 
@@ -1015,6 +1007,10 @@ function intergeo_show_nag() {
 	if ( $pagenow == 'plugins.php' && ! get_option( "intergeo_nag_dismissed", false ) ) {
 		include_once INTERGEO_ABSPATH . '/templates/nag.php';
 	}
+
+    if ($pagenow == 'plugins.php' && defined('IntergeoMaps_Pro_Domain')) {
+        echo '<div class="error notice"><p>' , __( 'Please disable and delete the Intergeo - Google Maps Plugin Pro Add-on.', INTERGEO_PLUGIN_NAME ), '</p></div>';
+    }
 }
 
 add_action( "admin_init", "intergeo_init_triggered_feedback" );
@@ -1263,3 +1259,5 @@ function intergeo_shortcode_render_before( $atts ) {
 	}
 }
 
+// Include the advanced/pro features
+require dirname(__FILE__) . '/pro/addon.php'; 
