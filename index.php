@@ -1033,10 +1033,6 @@ function intergeo_show_nag() {
 	if ( $pagenow == 'plugins.php' && ! get_option( "intergeo_nag_dismissed", false ) ) {
 		include_once INTERGEO_ABSPATH . '/templates/nag.php';
 	}
-
-    if ($pagenow == 'plugins.php' && defined('IntergeoMaps_Pro_Domain')) {
-        echo '<div class="error notice"><p>' , __( 'Please disable and delete the Intergeo - Google Maps Plugin Pro Add-on.', INTERGEO_PLUGIN_NAME ), '</p></div>';
-    }
 }
 
 add_action( "admin_init", "intergeo_init_triggered_feedback" );
