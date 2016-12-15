@@ -8,7 +8,7 @@
     ?>
     <h2>
 		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php _e( 'Maps', INTERGEO_PLUGIN_NAME ) ?></div> 
-		<a id="intergeo_lbrr_add_new" href="javascript:;" class="add-new-h2"><?php _e( 'Add New', INTERGEO_PLUGIN_NAME ) ?></a>
+		<a id="intergeo_lbrr_add_new" href="javascript:;" class="intergeo_lbrr_add_new add-new-h2"><?php _e( 'Add New', INTERGEO_PLUGIN_NAME ) ?></a>
 		<a id="intergeo_lbrr_settings" href="<?php echo admin_url("options-general.php?page=" . INTERGEO_PLUGIN_NAME);?>" class="add-new-h2"><?php _e( 'Maps Settings', INTERGEO_PLUGIN_NAME ) ?></a>
 	</h2>
 	
@@ -19,9 +19,12 @@
 		/* ]]> */
 	</script>
 	
+    <div id="intergeo_library" class="intergeo_library">
+        <div id="intergeo_sidebar" class="intergeo_sidebar_right"><?php include_once INTERGEO_DIR . "/templates/sidebar.php";?></div>
+
 	<?php if ( $query->have_posts() ) : ?>
 	
-		<div id="intergeo_lbrr_items"><?php 
+		<div id="intergeo_lbrr_items" class="intergeo_sidebar_left"><?php 
 			$index = 0;
 			while ( $query->have_posts() ) : 
 				$post = $query->next_post();
@@ -72,6 +75,7 @@
 			endwhile;
 
 			?><div style="clear:both"></div>
+            </div>
 		</div>
 
 		<?php if ( !empty( $pagination ) ) : ?>
