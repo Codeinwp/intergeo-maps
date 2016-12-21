@@ -129,8 +129,8 @@
     -->
 <?php
     // Added by Ash/Upwork
-    global $IntergeoMaps_Pro;
-    $IntergeoMaps_Pro->addForm("layers", $json);
+    global $IntergeoMaps_Adv;
+    $IntergeoMaps_Adv->addForm("layers", $json);
     // Added by Ash/Upwork
 ?>
 </ul>

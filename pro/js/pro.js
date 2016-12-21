@@ -181,6 +181,9 @@
         var enctype = "";
         if($(file).val().length > 0){
             enctype = "multipart/form-data";
+            $("#layer_importcsv").val(1);
+        } else {
+            $("#layer_importcsv").val(0);
         }
         $("#intergeo_frm").attr("enctype", enctype);
     }

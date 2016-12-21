@@ -1,7 +1,7 @@
 <?php
-if (!class_exists( 'IntergeoMaps_Pro' )) {
+if (!class_exists( 'IntergeoMaps_Adv' )) {
 
-    class IntergeoMaps_Pro{
+    class IntergeoMaps_Adv{
 
 		function __construct(){
 			$this->loadHooks();
@@ -9,7 +9,7 @@ if (!class_exists( 'IntergeoMaps_Pro' )) {
 
         private function loadHooks(){
             add_action( 'plugins_loaded', array( $this, 'i18n' ) );
-            add_action( 'wp_ajax_export_data', array( $this, 'ajax' ) );
+            add_action( 'wp_ajax_export_data_pro', array( $this, 'ajax' ) );
         }
 
         function i18n(){
@@ -58,7 +58,7 @@ if (!class_exists( 'IntergeoMaps_Pro' )) {
             wp_localize_script( 'intergeo-maps-pro', 'igmp', array(
                 "custom"    => $data,
                 "ajax"      => array(
-                    "export"    => "export_data",
+                    "export"    => "export_data_pro",
                     "nonce"     => wp_create_nonce(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION),
                 ),
                 "messages"  => array(
@@ -72,7 +72,7 @@ if (!class_exists( 'IntergeoMaps_Pro' )) {
             check_ajax_referer(INTERGEO_PLUGIN_NAME . INTERGEO_VERSION, "security");
 
             switch ($_POST["action"]) {
-                case "export_data":
+                case "export_data_pro":
                     $this->exportData();
                     break;
             }
@@ -182,6 +182,6 @@ if (!class_exists( 'IntergeoMaps_Pro' )) {
     }
 }
 
-if( class_exists( 'IntergeoMaps_Pro' ) ) {
-	$IntergeoMaps_Pro = new IntergeoMaps_Pro();
+if( class_exists( 'IntergeoMaps_Adv' ) ) {
+	$IntergeoMaps_Adv = new IntergeoMaps_Adv();
 }
