@@ -233,8 +233,8 @@ function intergeo_map_popup_init() {
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_style( 'intergeo-editor', INTERGEO_ABSURL . 'css/editor.css', array(), INTERGEO_VERSION );
 	// Added by Ash/Upwork
-    global $IntergeoMaps_Pro;
-	$IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-editor' ), array( "mapID" => $map_id ) );
+    global $IntergeoMaps_Adv;
+	$IntergeoMaps_Adv->enqueueScriptsAndStyles( array( 'intergeo-editor' ), array( "mapID" => $map_id ) );
 	// Added by Ash/Upwork
 	wp_iframe( 'intergeo_iframe', $post_id, $map_id );
 }
@@ -656,8 +656,8 @@ function intergeo_filter_input() {
 		'directions'                            => array(),
 	);
 	// Added by Ash/Upwork
-    global $IntergeoMaps_Pro;
-	$IntergeoMaps_Pro->addValidations( $validationArray, $defaults );
+    global $IntergeoMaps_Adv;
+	$IntergeoMaps_Adv->addValidations( $validationArray, $defaults );
 	// Added by Ash/Upwork
 	$options = filter_input_array( INPUT_POST, $validationArray );
 	$results = array();
@@ -688,8 +688,8 @@ function intergeo_filter_input() {
 		}
 	}
 	// Added by Ash/Upwork
-    global $IntergeoMaps_Pro;
-	$IntergeoMaps_Pro->processResults( $results );
+    global $IntergeoMaps_Adv;
+	$IntergeoMaps_Adv->processResults( $results );
 
 	// Added by Ash/Upwork
 	return $results;
@@ -939,8 +939,8 @@ function intergeo_library() {
 		'adsense' => array( 'publisher_id' => get_option( 'intergeo_adsense_publisher_id' ) )
 	) );
 	// Added by Ash/Upwork
-    global $IntergeoMaps_Pro;
-    $IntergeoMaps_Pro->enqueueScriptsAndStyles( array( 'intergeo-rendering' ) );
+    global $IntergeoMaps_Adv;
+    $IntergeoMaps_Adv->enqueueScriptsAndStyles( array( 'intergeo-rendering' ) );
 	// Added by Ash/Upwork
 }
 
