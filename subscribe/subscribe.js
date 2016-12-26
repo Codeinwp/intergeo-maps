@@ -1,26 +1,23 @@
 (function($, ti){
     $(document).ready(function(){
-        initAll();
-    });
-
-    function initAll(){
-        $("#ti_subscribe").on("click", function(e){
+        $('.themeisle-sdk-subscribe-btn').on('click', function(e){
+            var slug = $(this).data('product-slug');
+            var email = $('#'+slug+'-themeisle-sdk-email-field');
             $.ajax({
-                url: ajaxurl,
-                method: "post",
+                url: themeisle_sdk.ajax_url,
+                method: 'post',
                 data: {
-                    "action"        : "ti_subscribe",
-                    "nonce"         : $("#ti_subscribe_mail").attr("data-nonce"),
-                    "email"         : $("#ti_subscribe_mail").val()
+                    'action'        : 'themeisle_sdk_subscribe_'+slug,
+                    'nonce'         : email.data('nonce'),
+                    'email'         : email.val()
                 },
                 success: function( data, textStatus, jqXHR ){
-                    console.log(data);
                     if(data.data.success){
-                        $(".ti-fieldset").hide();
-                        $(".ti-subscribe-success").show();
+                        $('#'+slug+'-subscribe-box .themeisle-sdk-subscribe-fieldset').hide();
+                        $('#'+slug+'-subscribe-box .themeisle-sdk-subscrive-success').show();
                     }
                 }
             });
         });
-    }
+    });
 })(jQuery, ti);

@@ -1,0 +1,27 @@
+{
+  "name": "intergeo-maps",
+  "version": "2.0.0",
+  "description": "Intergeo Maps plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/intergeo-maps.git"
+  },
+  "keywords": [
+    "wordpress-plugin"
+  ],
+  "textdomain": "intergeo",
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/intergeo-maps/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/intergeo-maps/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-plugin-fleet": "codeinwp/grunt-plugin-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}

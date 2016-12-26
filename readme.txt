@@ -1,8 +1,8 @@
-=== WordPress Google Maps Plugin Lite ===
+=== WordPress Google Maps Plugin  ===
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.6.1
+Tested up to: 4.7
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -31,14 +31,6 @@ To create new WordPress maps you just can input simple shortcode into your post,
 
 This shortcode will be displayed as Google Maps centered at specific address. The shortcode could be extended with custom attributes like height, width, zoom, etc. These attributes will setup special settings for a map. 
 
-> **Time-saving features available in the Pro version:**
->
-> * Custom layers for maps
-> * Import markers in bulk
-> * Priority email support from the developer of the plugin
-> * Support and updates for 1 year
->
-> **[Learn more about Intergeo Maps Pro](http://themeisle.com/plugins/intergeo-maps-pro/)**
 
 The following table describes all possible attributes, which users can use with shortcodes:
 
@@ -133,6 +125,12 @@ function filter_intergeo_map_settings( $options ) {
 6. Markers settings
 
 == Changelog ==
+
+= 2.0.0 =
+
+* Added custom layers
+* Added import markers in bulk from CSV
+
 
 = 1.1.6 =
 
