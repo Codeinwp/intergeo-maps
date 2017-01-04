@@ -86,7 +86,7 @@
 		</div>
 
 		<?php if ( ! empty( $pagination ) ) : ?>
-		<div>
+		<div class="clear">
 			<ul id="intergeo_lbrr_pgntn">
 				<?php foreach ( $pagination as $page_item ) : ?>
 				<li><?php echo $page_item ?></li>

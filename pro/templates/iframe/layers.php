@@ -1,6 +1,13 @@
     <li class="intergeo_tlbr_ul_li_ul_li">
 		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Custom layer', 'intergeo' ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
+			<?php
+			if ( ! intergeo_is_agency() ) {
+				?>
+                <a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>"   class="intergeo-pro-btn button"><?php _e( 'Available in Agency plan', 'intergeo' ) ?></a>
+				<?php
+			} else { ?>
+
 			<div class="intergeo_tlbr_cntrl_item">
 				<a class="intergeo_tlbr_cntrl_more_info" href="javascript:;">[?]</a>
 				<label>
@@ -37,6 +44,7 @@
 			</div>
 			<p class="intergeo_tlbr_cntrl_dsc">
 				<?php esc_html_e( 'The latitude/longitude of the north-east (top-right) edge of the map to position the image.', 'intergeo' ) ?>
-			</p>
+
+            <?php } ?>
 		</div>
 	</li>

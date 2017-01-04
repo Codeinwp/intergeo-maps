@@ -1353,7 +1353,7 @@ function intergeo_is_developer() {
 			return true;
 		}
 	}
-
+    if(! intergeo_is_new() ) return true;
 	return false;
 }
 
