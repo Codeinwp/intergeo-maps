@@ -1,14 +1,14 @@
-# Copyright (C) 2016 Themeisle
+# Copyright (C) 2017 Themeisle
 # This file is distributed under the GPL v2.0 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Intergeo - Google Maps Plugin 2.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/intergeo-maps/issues\n"
-"POT-Creation-Date: 2016-12-21 11:41:22+00:00\n"
+"POT-Creation-Date: 2017-01-04 16:09:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Themeisle Translate Team <friends@themeisle.com>\n"
 "Language-Team: Themeisle Translate <friends@themeisle.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -24,53 +24,57 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: index.php:34 templates/iframe/form.php:7 templates/library/list.php:10
+#: index.php:38 templates/iframe/form.php:7 templates/library/list.php:10
 msgid "Maps"
 msgstr ""
 
-#: index.php:35
+#: index.php:39
 msgid "Settings"
 msgstr ""
 
-#: index.php:71 templates/library/list.php:12
+#: index.php:75 templates/library/list.php:17
 msgid "Maps Settings"
 msgstr ""
 
-#: index.php:72
+#: index.php:77
 msgid "Create New Map"
 msgstr ""
 
-#: index.php:73
+#: index.php:79 templates/iframe/form.php:45 templates/library/list.php:14
+msgid "Buy PRO version to add more maps"
+msgstr ""
+
+#: index.php:81
 msgid "View Existing Maps"
 msgstr ""
 
-#: index.php:82
+#: index.php:90
 msgid "Intergeo Google Maps"
 msgstr ""
 
-#: index.php:83
+#: index.php:91
 msgid "Maps API Key"
 msgstr ""
 
-#: index.php:89
+#: index.php:97
 msgid "Intergeo Google Maps AdSense Integration"
 msgstr ""
 
-#: index.php:90
+#: index.php:98
 msgid "AdSense Publisher Id"
 msgstr ""
 
-#: index.php:96
+#: index.php:104
 msgid "Save Changes"
 msgstr ""
 
-#: index.php:106
+#: index.php:114
 msgid ""
 " Below shows how to find your API Key, after retrieving your key add it to "
 "the \"Maps API Key\" input box."
 msgstr ""
 
-#: index.php:116
+#: index.php:124
 msgid ""
 "Adding display ads to your map requires that you have an AdSense account "
 "enabled for AdSense for Content. If you don't yet have an AdSense account, "
@@ -79,7 +83,7 @@ msgid ""
 "Content%3$s."
 msgstr ""
 
-#: index.php:118
+#: index.php:126
 msgid ""
 "Once you have an Adsense for Content account, you will have received an "
 "AdSense for Content (AFC) publisher ID. This publisher ID is used to link "
@@ -87,60 +91,60 @@ msgid ""
 "advertising revenue when a user clicks on one of the ads shown on your maps."
 msgstr ""
 
-#: index.php:189 index.php:858 index.php:862
+#: index.php:197 index.php:867 index.php:871
 msgid "Intergeo Maps"
 msgstr ""
 
-#: index.php:225 templates/iframe/overlays.php:8
-#: templates/iframe/overlays.php:33
+#: index.php:234 templates/iframe/overlays.php:8
+#: templates/iframe/overlays.php:34
 msgid "marker"
 msgstr ""
 
-#: index.php:227
+#: index.php:236
 msgid "Styles are broken. Please, fix it and try again."
 msgstr ""
 
-#: index.php:228
+#: index.php:237
 msgid "Direction was not found."
 msgstr ""
 
-#: index.php:244
+#: index.php:253
 msgid "Insert into post"
 msgstr ""
 
-#: index.php:246
+#: index.php:255
 msgid "Create the map"
 msgstr ""
 
-#: index.php:259
+#: index.php:268
 msgid "Update the map"
 msgstr ""
 
-#: index.php:737
+#: index.php:746
 msgid "The map has been updated successfully."
 msgstr ""
 
-#: index.php:738
+#: index.php:747
 msgid "The map has been created successfully."
 msgstr ""
 
-#: index.php:746
+#: index.php:755
 msgid "The map updating failed."
 msgstr ""
 
-#: index.php:747
+#: index.php:756
 msgid "The map creation failed."
 msgstr ""
 
-#: index.php:858 index.php:862
+#: index.php:867 index.php:871
 msgid "Intergeo Maps Library"
 msgstr ""
 
-#: index.php:881
+#: index.php:890
 msgid "Overview"
 msgstr ""
 
-#: index.php:884
+#: index.php:893
 msgid ""
 "The library is a list to view all maps you have created in your system. The "
 "library is showing you 3x3 grid of maps' previews. You will see the same "
@@ -149,7 +153,7 @@ msgid ""
 "under maps grid."
 msgstr ""
 
-#: index.php:885
+#: index.php:894
 msgid ""
 "To create a new map, click on \"Add New\" button next to the page title and "
 "map editor popup will appear. In case you want to edit a map, you can click "
@@ -157,7 +161,7 @@ msgid ""
 "window will appear."
 msgstr ""
 
-#: index.php:886
+#: index.php:895
 msgid ""
 "If you want to delete a map, click on the trash icon in the right bottom "
 "corner of a map and confirm your action. Pay attention that whole "
@@ -167,18 +171,18 @@ msgid ""
 "while the plugin is enabled."
 msgstr ""
 
-#: index.php:890
+#: index.php:899
 msgid "Shortcodes"
 msgstr ""
 
-#: index.php:893
+#: index.php:902
 msgid ""
 "You can easily embed a map into your posts, pages, categories or tags "
 "descriptions and text widgets by copying shortcode which you can find in "
 "the input field of a map preview box."
 msgstr ""
 
-#: index.php:894
+#: index.php:903
 msgid ""
 "To specify a certain address just type it inside a shortcode, and a map "
 "will be automatically centered at this place. Also each shortcode could be "
@@ -189,19 +193,19 @@ msgid ""
 "or theme to configure all options of a map."
 msgstr ""
 
-#: index.php:956
+#: index.php:965
 msgid "The map was deleted successfully."
 msgstr ""
 
-#: index.php:1203
+#: index.php:1212
 msgid "Hide"
 msgstr ""
 
-#: index.php:1206
+#: index.php:1215
 msgid "I've already done it"
 msgstr ""
 
-#: pro/addon.php:96
+#: pro/addon.php:87
 msgid "Please save the map before clicking on the export button"
 msgstr ""
 
@@ -213,7 +217,7 @@ msgstr ""
 #: templates/iframe/controls.php:86 templates/iframe/controls.php:148
 #: templates/iframe/controls.php:210 templates/iframe/controls.php:311
 #: templates/iframe/controls.php:373 templates/iframe/controls.php:435
-#: templates/iframe/layers.php:11 templates/iframe/layers.php:27
+#: templates/iframe/layers.php:19 templates/iframe/layers.php:36
 msgid "Enabled"
 msgstr ""
 
@@ -281,206 +285,210 @@ msgstr ""
 msgid "AdSense Integration"
 msgstr ""
 
-#: templates/iframe/adsense.php:6
+#: templates/iframe/adsense.php:5 templates/iframe/extra.php:6
+msgid "Available in Agency plan"
+msgstr ""
+
+#: templates/iframe/adsense.php:11
 msgid ""
 "To make AdSense working on your maps, you have to setup your publisher ID. "
 "You can do it at the %1$ssettings page%2$s."
 msgstr ""
 
-#: templates/iframe/adsense.php:24
+#: templates/iframe/adsense.php:29
 msgid "default format"
 msgstr ""
 
-#: templates/iframe/adsense.php:27
+#: templates/iframe/adsense.php:32
 msgid "Leaderboard"
 msgstr ""
 
-#: templates/iframe/adsense.php:30
+#: templates/iframe/adsense.php:35
 msgid "Banner"
 msgstr ""
 
-#: templates/iframe/adsense.php:33
+#: templates/iframe/adsense.php:38
 msgid "Half Banner"
 msgstr ""
 
-#: templates/iframe/adsense.php:36
+#: templates/iframe/adsense.php:41
 msgid "Skyscraper"
 msgstr ""
 
-#: templates/iframe/adsense.php:39
+#: templates/iframe/adsense.php:44
 msgid "Wide Skyscraper"
 msgstr ""
 
-#: templates/iframe/adsense.php:42
+#: templates/iframe/adsense.php:47
 msgid "Vertical Banner"
 msgstr ""
 
-#: templates/iframe/adsense.php:45
+#: templates/iframe/adsense.php:50
 msgid "Button"
 msgstr ""
 
-#: templates/iframe/adsense.php:48
+#: templates/iframe/adsense.php:53
 msgid "Small Square"
 msgstr ""
 
-#: templates/iframe/adsense.php:51
+#: templates/iframe/adsense.php:56
 msgid "Square"
 msgstr ""
 
-#: templates/iframe/adsense.php:54
+#: templates/iframe/adsense.php:59
 msgid "Small Rectangle"
 msgstr ""
 
-#: templates/iframe/adsense.php:57
+#: templates/iframe/adsense.php:62
 msgid "Medium Rectangle"
 msgstr ""
 
-#: templates/iframe/adsense.php:60
+#: templates/iframe/adsense.php:65
 msgid "Large Rectangle"
 msgstr ""
 
-#: templates/iframe/adsense.php:63
+#: templates/iframe/adsense.php:68
 msgid "Small Vertical Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:66
+#: templates/iframe/adsense.php:71
 msgid "Medium Vertical Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:69
+#: templates/iframe/adsense.php:74
 msgid "Large Vertical Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:72
+#: templates/iframe/adsense.php:77
 msgid "Extra Large Vertical Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:75
+#: templates/iframe/adsense.php:80
 msgid "Small Horizontal Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:78
+#: templates/iframe/adsense.php:83
 msgid "Large Horizontal Link Unit"
 msgstr ""
 
-#: templates/iframe/adsense.php:84 templates/iframe/controls.php:22
+#: templates/iframe/adsense.php:89 templates/iframe/controls.php:22
 #: templates/iframe/controls.php:96 templates/iframe/controls.php:158
 #: templates/iframe/controls.php:220 templates/iframe/controls.php:321
 #: templates/iframe/controls.php:383
 msgid "default position"
 msgstr ""
 
-#: templates/iframe/adsense.php:86 templates/iframe/controls.php:24
+#: templates/iframe/adsense.php:91 templates/iframe/controls.php:24
 #: templates/iframe/controls.php:98 templates/iframe/controls.php:160
 #: templates/iframe/controls.php:222 templates/iframe/controls.php:323
 #: templates/iframe/controls.php:385
 msgid "Top Left"
 msgstr ""
 
-#: templates/iframe/adsense.php:89 templates/iframe/controls.php:27
+#: templates/iframe/adsense.php:94 templates/iframe/controls.php:27
 #: templates/iframe/controls.php:101 templates/iframe/controls.php:163
 #: templates/iframe/controls.php:225 templates/iframe/controls.php:326
 #: templates/iframe/controls.php:388
 msgid "Top Center"
 msgstr ""
 
-#: templates/iframe/adsense.php:92 templates/iframe/controls.php:30
+#: templates/iframe/adsense.php:97 templates/iframe/controls.php:30
 #: templates/iframe/controls.php:104 templates/iframe/controls.php:166
 #: templates/iframe/controls.php:228 templates/iframe/controls.php:329
 #: templates/iframe/controls.php:391
 msgid "Top Right"
 msgstr ""
 
-#: templates/iframe/adsense.php:95 templates/iframe/controls.php:33
+#: templates/iframe/adsense.php:100 templates/iframe/controls.php:33
 #: templates/iframe/controls.php:107 templates/iframe/controls.php:169
 #: templates/iframe/controls.php:231 templates/iframe/controls.php:332
 #: templates/iframe/controls.php:394
 msgid "Right Top"
 msgstr ""
 
-#: templates/iframe/adsense.php:98 templates/iframe/controls.php:36
+#: templates/iframe/adsense.php:103 templates/iframe/controls.php:36
 #: templates/iframe/controls.php:110 templates/iframe/controls.php:172
 #: templates/iframe/controls.php:234 templates/iframe/controls.php:335
 #: templates/iframe/controls.php:397
 msgid "Right Center"
 msgstr ""
 
-#: templates/iframe/adsense.php:101 templates/iframe/controls.php:39
+#: templates/iframe/adsense.php:106 templates/iframe/controls.php:39
 #: templates/iframe/controls.php:113 templates/iframe/controls.php:175
 #: templates/iframe/controls.php:237 templates/iframe/controls.php:338
 #: templates/iframe/controls.php:400
 msgid "Right Bottom"
 msgstr ""
 
-#: templates/iframe/adsense.php:104 templates/iframe/controls.php:42
+#: templates/iframe/adsense.php:109 templates/iframe/controls.php:42
 #: templates/iframe/controls.php:116 templates/iframe/controls.php:178
 #: templates/iframe/controls.php:240 templates/iframe/controls.php:341
 #: templates/iframe/controls.php:403
 msgid "Bottom Right"
 msgstr ""
 
-#: templates/iframe/adsense.php:107 templates/iframe/controls.php:45
+#: templates/iframe/adsense.php:112 templates/iframe/controls.php:45
 #: templates/iframe/controls.php:119 templates/iframe/controls.php:181
 #: templates/iframe/controls.php:243 templates/iframe/controls.php:344
 #: templates/iframe/controls.php:406
 msgid "Bottom Center"
 msgstr ""
 
-#: templates/iframe/adsense.php:110 templates/iframe/controls.php:48
+#: templates/iframe/adsense.php:115 templates/iframe/controls.php:48
 #: templates/iframe/controls.php:122 templates/iframe/controls.php:184
 #: templates/iframe/controls.php:246 templates/iframe/controls.php:347
 #: templates/iframe/controls.php:409
 msgid "Bottom Left"
 msgstr ""
 
-#: templates/iframe/adsense.php:113 templates/iframe/controls.php:51
+#: templates/iframe/adsense.php:118 templates/iframe/controls.php:51
 #: templates/iframe/controls.php:125 templates/iframe/controls.php:187
 #: templates/iframe/controls.php:249 templates/iframe/controls.php:350
 #: templates/iframe/controls.php:412
 msgid "Left Bottom"
 msgstr ""
 
-#: templates/iframe/adsense.php:116 templates/iframe/controls.php:54
+#: templates/iframe/adsense.php:121 templates/iframe/controls.php:54
 #: templates/iframe/controls.php:128 templates/iframe/controls.php:190
 #: templates/iframe/controls.php:252 templates/iframe/controls.php:353
 #: templates/iframe/controls.php:415
 msgid "Left Center"
 msgstr ""
 
-#: templates/iframe/adsense.php:119 templates/iframe/controls.php:57
+#: templates/iframe/adsense.php:124 templates/iframe/controls.php:57
 #: templates/iframe/controls.php:131 templates/iframe/controls.php:193
 #: templates/iframe/controls.php:255 templates/iframe/controls.php:356
 #: templates/iframe/controls.php:418
 msgid "Left Top"
 msgstr ""
 
-#: templates/iframe/adsense.php:128 templates/iframe/styles.php:1
+#: templates/iframe/adsense.php:134 templates/iframe/styles.php:1
 msgid "Styles"
 msgstr ""
 
-#: templates/iframe/adsense.php:131
+#: templates/iframe/adsense.php:137
 msgid "Background color"
 msgstr ""
 
-#: templates/iframe/adsense.php:134 templates/iframe/adsense.php:140
-#: templates/iframe/adsense.php:146 templates/iframe/adsense.php:152
-#: templates/iframe/adsense.php:158
+#: templates/iframe/adsense.php:140 templates/iframe/adsense.php:146
+#: templates/iframe/adsense.php:152 templates/iframe/adsense.php:158
+#: templates/iframe/adsense.php:164
 msgid "Hex Value"
 msgstr ""
 
-#: templates/iframe/adsense.php:137
+#: templates/iframe/adsense.php:143
 msgid "Border color"
 msgstr ""
 
-#: templates/iframe/adsense.php:143
+#: templates/iframe/adsense.php:149
 msgid "Title color"
 msgstr ""
 
-#: templates/iframe/adsense.php:149
+#: templates/iframe/adsense.php:155
 msgid "Text color"
 msgstr ""
 
-#: templates/iframe/adsense.php:155
+#: templates/iframe/adsense.php:161
 msgid "URL color"
 msgstr ""
 
@@ -634,49 +642,53 @@ msgstr ""
 msgid "Directions"
 msgstr ""
 
-#: templates/iframe/directions.php:5
+#: templates/iframe/directions.php:6 templates/iframe/layers.php:6
+msgid "Available in Developer plan"
+msgstr ""
+
+#: templates/iframe/directions.php:12
 msgid "To add a new direction just click the button below"
 msgstr ""
 
-#: templates/iframe/directions.php:10
+#: templates/iframe/directions.php:17
 msgid "Add Direction"
 msgstr ""
 
-#: templates/iframe/directions.php:16 templates/iframe/directions.php:22
-#: templates/iframe/directions.php:43
+#: templates/iframe/directions.php:24 templates/iframe/directions.php:30
+#: templates/iframe/directions.php:51
 msgid "from"
 msgstr ""
 
-#: templates/iframe/directions.php:16 templates/iframe/directions.php:22
-#: templates/iframe/directions.php:45
+#: templates/iframe/directions.php:24 templates/iframe/directions.php:30
+#: templates/iframe/directions.php:53
 msgid "to"
 msgstr ""
 
-#: templates/iframe/directions.php:29 templates/iframe/directions.php:70
+#: templates/iframe/directions.php:37 templates/iframe/directions.php:78
 msgid "Delete direction"
 msgstr ""
 
-#: templates/iframe/directions.php:30 templates/iframe/directions.php:71
+#: templates/iframe/directions.php:38 templates/iframe/directions.php:79
 msgid "Edit direction"
 msgstr ""
 
-#: templates/iframe/directions.php:35
+#: templates/iframe/directions.php:43
 msgid "Created directions"
 msgstr ""
 
-#: templates/iframe/directions.php:50 templates/iframe/popups.php:203
+#: templates/iframe/directions.php:58 templates/iframe/popups.php:207
 msgid "via bicycle paths & preferred streets"
 msgstr ""
 
-#: templates/iframe/directions.php:53 templates/iframe/popups.php:204
+#: templates/iframe/directions.php:61 templates/iframe/popups.php:208
 msgid "via public transit routes"
 msgstr ""
 
-#: templates/iframe/directions.php:56 templates/iframe/popups.php:205
+#: templates/iframe/directions.php:64 templates/iframe/popups.php:209
 msgid "via pedestrian paths & sidewalks"
 msgstr ""
 
-#: templates/iframe/directions.php:60 templates/iframe/popups.php:202
+#: templates/iframe/directions.php:68 templates/iframe/popups.php:206
 msgid "via standard driving directions"
 msgstr ""
 
@@ -696,11 +708,11 @@ msgstr ""
 msgid "Layers"
 msgstr ""
 
-#: templates/iframe/layers.php:4
+#: templates/iframe/layers.php:11
 msgid "Traffic layer"
 msgstr ""
 
-#: templates/iframe/layers.php:15
+#: templates/iframe/layers.php:23
 msgid ""
 "Allows you to add real-time traffic information (where supported) to your "
 "map. Traffic information is provided for the time at which the request is "
@@ -708,11 +720,11 @@ msgid ""
 "support."
 msgstr ""
 
-#: templates/iframe/layers.php:20
+#: templates/iframe/layers.php:28
 msgid "Bicycling layer"
 msgstr ""
 
-#: templates/iframe/layers.php:31
+#: templates/iframe/layers.php:40
 msgid ""
 "Allows you to add bicycle information to your map. It renders a layer of "
 "bike paths, suggested bike routes and other overlays specific to bicycling "
@@ -725,11 +737,11 @@ msgstr ""
 msgid "Overlays"
 msgstr ""
 
-#: templates/iframe/overlays.php:17 templates/iframe/overlays.php:45
+#: templates/iframe/overlays.php:17 templates/iframe/overlays.php:46
 msgid "Delete marker"
 msgstr ""
 
-#: templates/iframe/overlays.php:18 templates/iframe/overlays.php:46
+#: templates/iframe/overlays.php:18 templates/iframe/overlays.php:47
 msgid "Edit marker"
 msgstr ""
 
@@ -737,74 +749,12 @@ msgstr ""
 msgid "Markers"
 msgstr ""
 
-#: templates/iframe/overlays.php:58
+#: templates/iframe/overlays.php:62
 msgid "Add Marker"
 msgstr ""
 
-#: templates/iframe/overlays.php:71 templates/iframe/overlays.php:99
-msgid "polyline"
-msgstr ""
-
-#: templates/iframe/overlays.php:79 templates/iframe/overlays.php:107
-msgid "Delete polyline"
-msgstr ""
-
-#: templates/iframe/overlays.php:80 templates/iframe/overlays.php:108
-msgid "Edit polyline"
-msgstr ""
-
-#: templates/iframe/overlays.php:87
-msgid "Polylines"
-msgstr ""
-
-#: templates/iframe/overlays.php:123 templates/iframe/overlays.php:168
-msgid "rectangle"
-msgstr ""
-
-#: templates/iframe/overlays.php:134 templates/iframe/overlays.php:179
-#: templates/iframe/overlays.php:207
-msgid "Delete rectangle"
-msgstr ""
-
-#: templates/iframe/overlays.php:135 templates/iframe/overlays.php:180
-#: templates/iframe/overlays.php:208
-msgid "Edit rectangle"
-msgstr ""
-
-#: templates/iframe/overlays.php:143
-msgid "Rectangles"
-msgstr ""
-
-#: templates/iframe/overlays.php:196 templates/iframe/overlays.php:241
-msgid "circle"
-msgstr ""
-
-#: templates/iframe/overlays.php:216
-msgid "Circles"
-msgstr ""
-
-#: templates/iframe/overlays.php:252
-msgid "Delete circle"
-msgstr ""
-
-#: templates/iframe/overlays.php:253
-msgid "Edit circle"
-msgstr ""
-
-#: templates/iframe/overlays.php:269 templates/iframe/overlays.php:314
-msgid "polygon"
-msgstr ""
-
-#: templates/iframe/overlays.php:280 templates/iframe/overlays.php:325
-msgid "Delete polygon"
-msgstr ""
-
-#: templates/iframe/overlays.php:281 templates/iframe/overlays.php:326
-msgid "Edit polygon"
-msgstr ""
-
-#: templates/iframe/overlays.php:289
-msgid "Polygons"
+#: templates/iframe/overlays.php:63 templates/iframe/overlays.php:66
+msgid "Buy PRO version to add more markers"
 msgstr ""
 
 #: templates/iframe/popups.php:5
@@ -839,78 +789,78 @@ msgstr ""
 msgid "Blue"
 msgstr ""
 
-#: templates/iframe/popups.php:49
+#: templates/iframe/popups.php:52
 msgid "Custom"
 msgstr ""
 
-#: templates/iframe/popups.php:53 templates/iframe/popups.php:54
+#: templates/iframe/popups.php:57 templates/iframe/popups.php:58
 msgid "Enter icon URL"
 msgstr ""
 
-#: templates/iframe/popups.php:66 templates/iframe/popups.php:101
-#: templates/iframe/popups.php:169
+#: templates/iframe/popups.php:70 templates/iframe/popups.php:105
+#: templates/iframe/popups.php:173
 msgid "Update"
 msgstr ""
 
-#: templates/iframe/popups.php:77
+#: templates/iframe/popups.php:81
 msgid "Polyline Options"
 msgstr ""
 
-#: templates/iframe/popups.php:84 templates/iframe/popups.php:85
-#: templates/iframe/popups.php:124 templates/iframe/popups.php:125
+#: templates/iframe/popups.php:88 templates/iframe/popups.php:89
+#: templates/iframe/popups.php:128 templates/iframe/popups.php:129
 msgid "Stroke weight in pixel"
 msgstr ""
 
-#: templates/iframe/popups.php:90 templates/iframe/popups.php:91
-#: templates/iframe/popups.php:130 templates/iframe/popups.php:131
+#: templates/iframe/popups.php:94 templates/iframe/popups.php:95
+#: templates/iframe/popups.php:134 templates/iframe/popups.php:135
 msgid "Stroke opacity from 0.0 to 1.0"
 msgstr ""
 
-#: templates/iframe/popups.php:112
+#: templates/iframe/popups.php:116
 msgid "Polygon Options"
 msgstr ""
 
-#: templates/iframe/popups.php:117
+#: templates/iframe/popups.php:121
 msgid "Stroke options"
 msgstr ""
 
-#: templates/iframe/popups.php:137
+#: templates/iframe/popups.php:141
 msgid "stroke position"
 msgstr ""
 
-#: templates/iframe/popups.php:138
+#: templates/iframe/popups.php:142
 msgid "center"
 msgstr ""
 
-#: templates/iframe/popups.php:139
+#: templates/iframe/popups.php:143
 msgid "inside the object"
 msgstr ""
 
-#: templates/iframe/popups.php:140
+#: templates/iframe/popups.php:144
 msgid "outside the object"
 msgstr ""
 
-#: templates/iframe/popups.php:151
+#: templates/iframe/popups.php:155
 msgid "Fill options"
 msgstr ""
 
-#: templates/iframe/popups.php:158 templates/iframe/popups.php:159
+#: templates/iframe/popups.php:162 templates/iframe/popups.php:163
 msgid "Fill opacity from 0.0 to 1.0"
 msgstr ""
 
-#: templates/iframe/popups.php:180
+#: templates/iframe/popups.php:184
 msgid "Direction Options"
 msgstr ""
 
-#: templates/iframe/popups.php:187 templates/iframe/popups.php:188
+#: templates/iframe/popups.php:191 templates/iframe/popups.php:192
 msgid "The start location from which to calculate directions"
 msgstr ""
 
-#: templates/iframe/popups.php:195 templates/iframe/popups.php:196
+#: templates/iframe/popups.php:199 templates/iframe/popups.php:200
 msgid "The end location to which to calculate directions"
 msgstr ""
 
-#: templates/iframe/popups.php:211
+#: templates/iframe/popups.php:215
 msgid "Save"
 msgstr ""
 
@@ -1030,23 +980,23 @@ msgid ""
 "add an API Key %1$s here %2$s"
 msgstr ""
 
-#: templates/library/list.php:11
+#: templates/library/list.php:12
 msgid "Add New"
 msgstr ""
 
-#: templates/library/list.php:57
+#: templates/library/list.php:64
 msgid "Edit"
 msgstr ""
 
-#: templates/library/list.php:58
+#: templates/library/list.php:65
 msgid "Copy"
 msgstr ""
 
-#: templates/library/list.php:59
+#: templates/library/list.php:66
 msgid "Delete"
 msgstr ""
 
-#: templates/library/list.php:94
+#: templates/library/list.php:101
 msgid ""
 "You do not have created maps. Start adding it by clicking \"Add New\" "
 "button."
@@ -1056,28 +1006,6 @@ msgstr ""
 msgid ""
 "You have just enabled the Intergeo - Google Maps Plugin. You can now go to "
 "<a href=\"%s\">Media > Intergeo Maps</a> and start building your own."
-msgstr ""
-
-#: templates/sidebar.php:2
-msgid "Some heading"
-msgstr ""
-
-#: templates/sidebar.php:7
-msgid ""
-"Thank you for subscribing! You have been added to the mailing list and will "
-"receive the next email information in the coming weeks. If you ever wish to "
-"unsubscribe, simply use the \"Unsubscribe\" link included in each "
-"newsletter."
-msgstr ""
-
-#: templates/sidebar.php:10
-msgid "Submit"
-msgstr ""
-
-#: templates/sidebar.php:10
-msgid ""
-"Ready to learn how to reduce your website loading times by half? Come and "
-"join the 1st lesson here!"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

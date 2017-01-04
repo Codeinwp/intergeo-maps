@@ -46,7 +46,11 @@
 					<select name="intergeo_tlbr_marker_icon_select" id="intergeo_tlbr_marker_icon_select" class="intergeo_tlbr_marker_icon_select intergeo_tlbr_cntrl_txt">
 						<option value="//maps.google.com/mapfiles/ms/icons/red-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/red-dot.png"><?php _e( 'Default', 'intergeo' );?></option>
 						<option value="//maps.google.com/mapfiles/ms/icons/blue-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/blue-dot.png"><?php _e( 'Blue', 'intergeo' );?></option>
+						<?php
+						if ( intergeo_is_personal() ) :
+						?>
 						<option value="custom"><?php _e( 'Custom', 'intergeo' );?></option>
+						<?php endif; ?>
 					</select>
 					<input type="text" style="display: none"
 						   class="intergeo_tlbr_marker_icon intergeo_tlbr_cntrl_txt" 

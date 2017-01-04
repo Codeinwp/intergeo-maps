@@ -113,6 +113,23 @@
 	text-shadow: 0 -1px 0 #333;
 }
 
+.button.intergeo-pro-btn:active,
+.button.intergeo-pro-btn:hover,
+.button.intergeo-pro-btn:focus,
+.button.intergeo-pro-btn:hover,
+.button.intergeo-pro-btn {
+	border-color: #d54e21;
+	color: #fff;
+	background: #d54e21;
+}
+
+.intergeo_tlbr_ul_li_ul .button.intergeo-pro-btn {
+	display: block;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
 .intergeo_tlbr_ul_li_h3::after {
 	position: absolute;
 	z-index: 1;

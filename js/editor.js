@@ -133,6 +133,7 @@ if (!window.intergeo.maps) {
                     d.overlay.setMap(null);
                     d.map[e][d.position] = null;
                     d.html.remove();
+                    im_check_markers();
                 }
             });
         }
@@ -480,22 +481,22 @@ if (!window.intergeo.maps) {
         var f = this;
         f.map = new c.Map(document.getElementById(e), g);
         f.drawing = new c.drawing.DrawingManager({
-            drawingControl: true,
+            drawingControl: intergeo_options.is_pro === 'yes',
             map: f.map,
             circleOptions: {
-                editable: true
+                editable: intergeo_options.is_pro === 'yes'
             },
             markerOptions: {
-                draggable: true
+                draggable: intergeo_options.is_pro === 'yes'
             },
             polygonOptions: {
-                editable: true
+                editable: intergeo_options.is_pro === 'yes'
             },
             polylineOptions: {
-                editable: true
+                editable: intergeo_options.is_pro === 'yes'
             },
             rectangleOptions: {
-                editable: true
+                editable: intergeo_options.is_pro === 'yes'
             }
         });
         f.directions = new c.DirectionsService();
@@ -890,19 +891,24 @@ if (!window.intergeo.maps) {
         },
         _traffic: function(f) {
             var e = this;
-            if (f.layer.traffic === 1) {
-                if (!e.traffic) {
-                    e.traffic = new c.TrafficLayer();
+                try{
+                if (f.layer.traffic === 1) {
+                    if (!e.traffic) {
+                        e.traffic = new c.TrafficLayer();
+                    }
+                    e.traffic.setMap(e.map);
+                } else {
+                    if (e.traffic) {
+                        e.traffic.setMap(null);
+                    }
                 }
-                e.traffic.setMap(e.map);
-            } else {
-                if (e.traffic) {
-                    e.traffic.setMap(null);
+                }catch(err){
+
                 }
-            }
         },
         _bicycling: function(f) {
             var e = this;
+            try{
             if (f.layer.bicycling === 1) {
                 if (!e.bicycling) {
                     e.bicycling = new c.BicyclingLayer();
@@ -913,9 +919,13 @@ if (!window.intergeo.maps) {
                     e.bicycling.setMap(null);
                 }
             }
+            }catch(err){
+
+            }
         },
         _weather: function(f) {
             var e = this;
+            try{
             if (f.layer.weather === 1) {
                 if (!e.weather) {
                     e.weather = new c.weather.WeatherLayer({});
@@ -930,8 +940,12 @@ if (!window.intergeo.maps) {
                     e.weather.setMap(null);
                 }
             }
+            }catch(err){
+
+            }
         },
         _cloud: function(f) {
+            try{
             var e = this;
             if (f.layer.cloud === 1) {
                 if (!e.cloud) {
@@ -943,9 +957,13 @@ if (!window.intergeo.maps) {
                     e.cloud.setMap(null);
                 }
             }
+            }catch(err){
+
+            }
         },
         _panoramio: function(f) {
             var e = this;
+            try{
             if (f.layer.panoramio === 1) {
                 if (!e.panoramio) {
                     e.panoramio = new c.panoramio.PanoramioLayer({});
@@ -958,8 +976,12 @@ if (!window.intergeo.maps) {
                     e.panoramio.setMap(null);
                 }
             }
+            }catch(err){
+
+            }
         },
         _adsense: function(f) {
+            try{
             var e = this;
             if (f.layer.adsense === 1 && intergeo_options.adsense.publisher_id && d.trim(intergeo_options.adsense.publisher_id) !== '') {
                 if (!e.adunit) {
@@ -984,6 +1006,9 @@ if (!window.intergeo.maps) {
                 if (e.adunit) {
                     e.adunit.setMap(null);
                 }
+            }
+            }catch(err){
+
             }
         },
         _pro: function(f){
@@ -1098,6 +1123,7 @@ if (!window.intergeo.maps) {
             f._pro(g);
         }
     };
+
     d(document).ready(function() {
         var g, f, e;
         f = new a('intergeo_canvas', {
@@ -1222,6 +1248,8 @@ if (!window.intergeo.maps) {
             d('#intergeo_tlbr_markers').append(h);
             f.markers.push(m);
             d('table.intergeo_tlbr_cntrl_tbl.intergeo_tlbr_overlay.intergeo_tlbr_marker[data-table-num=' + (e + 1) + ']').find('.intergeo_tlbr_actn_edit').trigger('click');
+            im_check_markers();
+
         });
 
         d('#intergeo_tlbr_marker_icon_select').ddslick({
@@ -1238,3 +1266,16 @@ if (!window.intergeo.maps) {
     });
 
 })(jQuery, google.maps, intergeo.maps);
+function im_check_markers(){
+    console.log(jQuery('#intergeo_tlbr_markers').size());
+    if(intergeo_options.is_pro === 'no' && jQuery('#intergeo_tlbr_markers .intergeo_tlbr_marker_title_td').size()  === 5){
+        jQuery('#intergeo_add_marker_bttn').hide();
+
+        jQuery('#intergeo_add_marker_bttn').parent().find('.intergeo-pro-btn').show();
+    }else{
+
+        jQuery('#intergeo_add_marker_bttn').show();
+
+        jQuery('#intergeo_add_marker_bttn').parent().find('.intergeo-pro-btn').hide();
+    }
+}

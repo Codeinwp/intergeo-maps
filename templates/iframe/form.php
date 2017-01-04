@@ -39,7 +39,11 @@
 	</div>
 	<div id="intergeo_footer">
 		<a id="intergeo_go_to_address" class="button button-large" href="javascript:;"><?php esc_html_e( 'Go to address', 'intergeo' ) ?></a>
+		<?php if ( intergeo_check_maps_number() ) : ?>
 		<input type="submit" class="button button-primary button-large" value="<?php echo $submit_text ?>">
+		<?php else : ?>
+			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn button"><?php _e( 'Buy PRO version to add more maps', 'intergeo' ) ?></a>
+		<?php endif; ?>
 	</div>
 </form>
 

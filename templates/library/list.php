@@ -8,7 +8,12 @@
 	?>
 	<h2>
 		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php _e( 'Maps', 'intergeo' ) ?></div>
-		<a id="intergeo_lbrr_add_new" href="javascript:;" class="intergeo_lbrr_add_new add-new-h2"><?php _e( 'Add New', 'intergeo' ) ?></a>
+		<?php if ( intergeo_check_maps_number() ) : ?>
+		    <a id="intergeo_lbrr_add_new" href="javascript:;" class="intergeo_lbrr_add_new add-new-h2"><?php _e( 'Add New', 'intergeo' ) ?></a>
+		<?php else : ?>
+			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn add-new-h2"><?php _e( 'Buy PRO version to add more maps', 'intergeo' ) ?></a>
+		<?php endif; ?>
+
 		<a id="intergeo_lbrr_settings" href="<?php echo admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );?>" class="add-new-h2"><?php _e( 'Maps Settings', 'intergeo' ) ?></a>
 	</h2>
 	
@@ -21,8 +26,8 @@
 	
 	<div id="intergeo_library" class="intergeo_library">
 		<div id="intergeo_sidebar" class="intergeo_sidebar_right"><?php
-                do_action(INTERGEO_PLUGIN_NAME.'_render_subscribe_box');
-            ?></div>
+				do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
+			?></div>
 
 	<?php if ( $query->have_posts() ) : ?>
 	

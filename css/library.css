@@ -57,6 +57,13 @@
 	width: 90px;
 }
 
+.add-new-h2.intergeo-pro-btn:hover,
+.add-new-h2.intergeo-pro-btn {
+	border-color: #d54e21;
+	color: #fff;
+	background: #d54e21;
+}
+
 .intergeo_lbrr_item_delete,
 .intergeo_lbrr_item_edit,
 .intergeo_lbrr_item_copy {
@@ -104,16 +111,16 @@
 .intergeo_sidebar_right {
 	float: right;
 	width: 13%;
-	padding:1%;
+	padding: 1%;
+	border: 1px solid #ccc;
 	background: #fff;
-	border:1px solid #ccc;
-
 }
-#intergeo-themeisle-sdk-email-field{
-	width:100%;
-}
-#intergeo-themeisle-sdk-email-do{
 
+#intergeo-themeisle-sdk-email-field {
+	width: 100%;
+}
+
+#intergeo-themeisle-sdk-email-do {
 	width: 100%;
 	margin-top: 3px;
 }
