@@ -8,7 +8,7 @@ Author: Themeisle
 Author URI: http://themeisle.com
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
-Text Domain: intergeo
+Text Domain: intergeo-maps
 Domain Path: /languages
 */
 // <editor-fold defaultstate="collapsed" desc="constants">
@@ -32,8 +32,8 @@ function intergeo_action_links( $links, $file ) {
 	if ( $file == plugin_basename( __FILE__ ) ) {
 		array_unshift(
 			$links,
-			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo' ) ),
-			sprintf( '<a href="%s">%s</a>', admin_url( 'options-media.php' ), __( 'Settings', 'intergeo' ) )
+			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo-maps' ) ),
+			sprintf( '<a href="%s">%s</a>', admin_url( 'options-media.php' ), __( 'Settings', 'intergeo-maps' ) )
 		);
 	}
 
@@ -65,17 +65,19 @@ function intergeo_i18n() {
 function intergeo_settings() {
 	if ( isset( $_POST['sb-intergeo'] ) && wp_verify_nonce( $_POST['intergeo-nonce'], 'intergeo-settings' ) ) {
 		update_option( 'intergeo_map_api_key', sanitize_text_field( $_POST['intergeo_map_api_key'] ) );
-		update_option( 'intergeo_adsense_publisher_id', sanitize_text_field( $_POST['intergeo_adsense_publisher_id'] ) );
+		if ( intergeo_is_developer() ) {
+			update_option( 'intergeo_adsense_publisher_id', sanitize_text_field( $_POST['intergeo_adsense_publisher_id'] ) );
+		}
 	}
 	echo '<div class="wrap">
     <h2>
-		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span>' . __( 'Maps Settings', 'intergeo' ) . '</div> ';
+		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span>' . __( 'Maps Settings', 'intergeo-maps' ) . '</div> ';
 	if ( intergeo_check_maps_number() ) {
-		echo '<a   href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'Create New Map', 'intergeo' ) . '</a>';
+		echo '<a   href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'Create New Map', 'intergeo-maps' ) . '</a>';
 	} else {
-		echo '<a  target="_blank" href="' . INTERGEO_PRO_URL . '" class="intergeo-pro-btn add-new-h2">' . __( 'Buy PRO version to add more maps', 'intergeo' ) . '</a>';
+		echo '<a  target="_blank" href="' . INTERGEO_PRO_URL . '" class="intergeo-pro-btn add-new-h2">' . __( 'Buy PRO version to add more maps', 'intergeo-maps' ) . '</a>';
 	}
-	echo '<a id="intergeo_lbrr_settings" href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'View Existing Maps', 'intergeo' ) . '</a>
+	echo '<a id="intergeo_lbrr_settings" href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'View Existing Maps', 'intergeo-maps' ) . '</a>
 	</h2>';
 	echo '<div class="intergeo_settings">';
 	echo '<div id="intergeo_sidebar" class="intergeo_sidebar_right">';
@@ -84,21 +86,24 @@ function intergeo_settings() {
 	echo '<div class="intergeo_sidebar_left">';
 	echo "<form method='post' action=''>";
 	register_setting( 'intergeo', 'intergeo-settings-map-api-key', 'trim' );
-	add_settings_section( 'intergeo-settings-maps', __( 'Intergeo Google Maps', 'intergeo' ), 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
-	add_settings_field( 'intergeo_map_api_key', __( 'Maps API Key', 'intergeo' ), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-maps', array(
+	add_settings_section( 'intergeo-settings-maps', __( 'Intergeo Google Maps', 'intergeo-maps' ), 'intergeo_settings_init_map', INTERGEO_PLUGIN_NAME );
+	add_settings_field( 'intergeo_map_api_key', __( 'Maps API Key', 'intergeo-maps' ), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-maps', array(
 		'<input type="text" name="%s" value="%s" class="regular-text">',
 		'intergeo_map_api_key',
 		esc_attr( get_option( 'intergeo_map_api_key' ) ),
 	) );
-	register_setting( 'intergeo', 'intergeo_adsense_publisher_id', 'trim' );
-	add_settings_section( 'intergeo-settings-adsense', __( 'Intergeo Google Maps AdSense Integration', 'intergeo' ), 'intergeo_settings_init_adsense', INTERGEO_PLUGIN_NAME );
-	add_settings_field( 'intergeo_adsense_publisher_id', __( 'AdSense Publisher Id', 'intergeo' ), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-adsense', array(
-		'<input type="text" name="%s" value="%s" class="regular-text">',
-		'intergeo_adsense_publisher_id',
-		esc_attr( get_option( 'intergeo_adsense_publisher_id' ) ),
-	) );
+
+	if (   intergeo_is_developer() ) {
+		register_setting( 'intergeo', 'intergeo_adsense_publisher_id', 'trim' );
+		add_settings_section( 'intergeo-settings-adsense', __( 'Intergeo Google Maps AdSense Integration', 'intergeo-maps' ), 'intergeo_settings_init_adsense', INTERGEO_PLUGIN_NAME );
+		add_settings_field( 'intergeo_adsense_publisher_id', __( 'AdSense Publisher Id', 'intergeo-maps' ), 'intergeo_settings_print_field', INTERGEO_PLUGIN_NAME, 'intergeo-settings-adsense', array(
+			'<input type="text" name="%s" value="%s" class="regular-text">',
+			'intergeo_adsense_publisher_id',
+			esc_attr( get_option( 'intergeo_adsense_publisher_id' ) ),
+		) );
+	}
 	do_settings_sections( INTERGEO_PLUGIN_NAME );
-	submit_button( __( 'Save Changes', 'intergeo' ), 'primary', 'sb-intergeo' );
+	submit_button( __( 'Save Changes', 'intergeo-maps' ), 'primary', 'sb-intergeo' );
 	wp_nonce_field( 'intergeo-settings', 'intergeo-nonce' );
 	echo '</form>';
 	echo '</div>';
@@ -108,7 +113,7 @@ function intergeo_settings() {
 
 function intergeo_settings_init_map() {
 	?><p><?php
-	printf( esc_html__( ' Below shows how to find your API Key, after retrieving your key add it to the "Maps API Key" input box.', 'intergeo' ) );
+	printf( esc_html__( ' Below shows how to find your API Key, after retrieving your key add it to the "Maps API Key" input box.', 'intergeo-maps' ) );
 	?></p>
 
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/gbFDMBGPCcs" frameborder="0"
@@ -117,11 +122,14 @@ function intergeo_settings_init_map() {
 }
 
 function intergeo_settings_init_adsense() {
-	?><p><?php
-	printf( esc_html__( "Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you don't yet have an AdSense account, %1\$ssign up%3\$s for one. Once you have done so (or if you already have an account) make sure you've also enabled the account with %2\$sAdSense for Content%3\$s.", 'intergeo' ), '<a href="https://www.google.com/adsense/support/bin/answer.py?answer=10162" target="_blank">', '<a href="https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470" target="_blank">', '</a>' )
-	?></p><p><?php
-	esc_html_e( 'Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your maps.', 'intergeo' )
-	?></p><?php
+
+	if (   intergeo_is_developer() ) {
+		?><p><?php
+		printf( esc_html__( "Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you don't yet have an AdSense account, %1\$ssign up%3\$s for one. Once you have done so (or if you already have an account) make sure you've also enabled the account with %2\$sAdSense for Content%3\$s.", 'intergeo-maps' ), '<a href="https://www.google.com/adsense/support/bin/answer.py?answer=10162" target="_blank">', '<a href="https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470" target="_blank">', '</a>' )
+		?></p><p><?php
+		esc_html_e( 'Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your maps.', 'intergeo-maps' )
+		?></p><?php
+	}
 }
 
 function intergeo_settings_print_field( array $args ) {
@@ -191,7 +199,7 @@ function intergeo_decode( $code ) {
 // <editor-fold defaultstate="collapsed" desc="rendering">
 add_filter( 'media_upload_tabs', 'intergeo_media_upload_tabs' );
 function intergeo_media_upload_tabs( $tabs ) {
-	$tabs['intergeo_map'] = __( 'Intergeo Maps', 'intergeo' );
+	$tabs['intergeo_map'] = __( 'Intergeo Maps', 'intergeo-maps' );
 
 	return $tabs;
 }
@@ -228,10 +236,10 @@ function intergeo_map_popup_init() {
 		'ajaxurl'        => admin_url( 'admin-ajax.php' ),
 		'nonce'          => wp_create_nonce( 'editor_popup' . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ),
 		'l10n'           => array(
-			'marker' => __( 'marker', 'intergeo' ),
+			'marker' => __( 'marker', 'intergeo-maps' ),
 			'error'  => array(
-				'style'      => __( 'Styles are broken. Please, fix it and try again.', 'intergeo' ),
-				'directions' => __( 'Direction was not found.', 'intergeo' ),
+				'style'      => __( 'Styles are broken. Please, fix it and try again.', 'intergeo-maps' ),
+				'directions' => __( 'Direction was not found.', 'intergeo-maps' ),
 			),
 		),
 	) );
@@ -247,9 +255,9 @@ function intergeo_map_popup_init() {
 function intergeo_iframe( $post_id = false, $map_id = false ) {
 	$publisher_id    = trim( get_option( 'intergeo_adsense_publisher_id' ) );
 	$show_map_center = get_option( 'intergeo_show_map_center', true );
-	$submit_text     = __( 'Insert into post', 'intergeo' );
+	$submit_text     = __( 'Insert into post', 'intergeo-maps' );
 	if ( ! $post_id ) {
-		$submit_text = __( 'Create the map', 'intergeo' );
+		$submit_text = __( 'Create the map', 'intergeo-maps' );
 	}
 	$copy = false;
 	if ( ! $map_id ) {
@@ -262,7 +270,7 @@ function intergeo_iframe( $post_id = false, $map_id = false ) {
 		if ( $map->post_type == INTERGEO_PLUGIN_NAME ) {
 			$json = json_decode( $map->post_content, true );
 			if ( ! $copy ) {
-				$submit_text = __( 'Update the map', 'intergeo' );
+				$submit_text = __( 'Update the map', 'intergeo-maps' );
 			}
 		}
 	}
@@ -740,8 +748,8 @@ function intergeo_save_map( $map_id = false, $post_id = false ) {
 	if ( ! empty( $id ) && ! is_wp_error( $id ) ) {
 		if ( ! $post_id ) {
 			intergeo_set_info( $update
-				? __( 'The map has been updated successfully.', 'intergeo' )
-				: __( 'The map has been created successfully.', 'intergeo' )
+				? __( 'The map has been updated successfully.', 'intergeo-maps' )
+				: __( 'The map has been created successfully.', 'intergeo-maps' )
 			);
 		}
 
@@ -749,8 +757,8 @@ function intergeo_save_map( $map_id = false, $post_id = false ) {
 	}
 	if ( ! $post_id ) {
 		intergeo_set_error( $update
-			? __( 'The map updating failed.', 'intergeo' )
-			: __( 'The map creation failed.', 'intergeo' )
+			? __( 'The map updating failed.', 'intergeo-maps' )
+			: __( 'The map creation failed.', 'intergeo-maps' )
 		);
 	}
 
@@ -861,11 +869,11 @@ function intergeo_shortcode( $attrs, $address = '' ) {
 // <editor-fold defaultstate="collapsed" desc="library">
 add_action( 'admin_menu', 'intergeo_admin_menu' );
 function intergeo_admin_menu() {
-	$settings = add_options_page( __( 'Intergeo Maps Library', 'intergeo' ), __( 'Intergeo Maps', 'intergeo' ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings' );
+	$settings = add_options_page( __( 'Intergeo Maps Library', 'intergeo-maps' ), __( 'Intergeo Maps', 'intergeo-maps' ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_settings' );
 	if ( $settings ) {
 		add_action( "load-{$settings}", 'intergeo_settings_init' );
 	}
-	$library = add_submenu_page( 'upload.php', __( 'Intergeo Maps Library', 'intergeo' ), __( 'Intergeo Maps', 'intergeo' ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
+	$library = add_submenu_page( 'upload.php', __( 'Intergeo Maps Library', 'intergeo-maps' ), __( 'Intergeo Maps', 'intergeo-maps' ), 'edit_posts', INTERGEO_PLUGIN_NAME, 'intergeo_library' );
 	if ( $library ) {
 		add_action( "load-{$library}", 'intergeo_library_init' );
 	}
@@ -884,20 +892,20 @@ function intergeo_library_init() {
 	wp_enqueue_media();
 	$screen = get_current_screen();
 	$screen->add_help_tab( array(
-		'title'   => esc_html__( 'Overview', 'intergeo' ),
+		'title'   => esc_html__( 'Overview', 'intergeo-maps' ),
 		'id'      => 'overview',
 		'content' => sprintf( '<p>%s</p>', implode( '</p><p>', array(
-			esc_html__( "The library is a list to view all maps you have created in your system. The library is showing you 3x3 grid of maps' previews. You will see the same maps embedded into your posts at front end, as you see here. The library is paginated and if you have more than 9 maps, you will see pagination links under maps grid.", 'intergeo' ),
-			esc_html__( 'To create a new map, click on "Add New" button next to the page title and map editor popup will appear. In case you want to edit a map, you can click on pencil icon in the right bottom corner of map preview box and edit popup window will appear.', 'intergeo' ),
-			esc_html__( "If you want to delete a map, click on the trash icon in the right bottom corner of a map and confirm your action. Pay attention that whole information about the map will be removed from the system, but all shortcodes will be left where you embed it. However these deprecated shortcodes won't be rendered anymore, so you don't have to worry about it while the plugin is enabled.", 'intergeo' ),
+			esc_html__( "The library is a list to view all maps you have created in your system. The library is showing you 3x3 grid of maps' previews. You will see the same maps embedded into your posts at front end, as you see here. The library is paginated and if you have more than 9 maps, you will see pagination links under maps grid.", 'intergeo-maps' ),
+			esc_html__( 'To create a new map, click on "Add New" button next to the page title and map editor popup will appear. In case you want to edit a map, you can click on pencil icon in the right bottom corner of map preview box and edit popup window will appear.', 'intergeo-maps' ),
+			esc_html__( "If you want to delete a map, click on the trash icon in the right bottom corner of a map and confirm your action. Pay attention that whole information about the map will be removed from the system, but all shortcodes will be left where you embed it. However these deprecated shortcodes won't be rendered anymore, so you don't have to worry about it while the plugin is enabled.", 'intergeo-maps' ),
 		) ) ),
 	) );
 	$screen->add_help_tab( array(
-		'title'   => esc_html__( 'Shortcodes', 'intergeo' ),
+		'title'   => esc_html__( 'Shortcodes', 'intergeo-maps' ),
 		'id'      => 'shortcodes',
 		'content' => sprintf( '<p>%s</p>', implode( '</p><p>', array(
-			esc_html__( 'You can easily embed a map into your posts, pages, categories or tags descriptions and text widgets by copying shortcode which you can find in the input field of a map preview box.', 'intergeo' ),
-			esc_html__( 'To specify a certain address just type it inside a shortcode, and a map will be automatically centered at this place. Also each shortcode could be extended with custom attributes like width, height, style, zoom and hook. Use standard CSS values for such attributes as width, height and style. Type an integer between 0 and 19 for zoom attribute. You can use hook attribute to set up a filter hook which you can use in your custom plugin or theme to configure all options of a map.', 'intergeo' ),
+			esc_html__( 'You can easily embed a map into your posts, pages, categories or tags descriptions and text widgets by copying shortcode which you can find in the input field of a map preview box.', 'intergeo-maps' ),
+			esc_html__( 'To specify a certain address just type it inside a shortcode, and a map will be automatically centered at this place. Also each shortcode could be extended with custom attributes like width, height, style, zoom and hook. Use standard CSS values for such attributes as width, height and style. Type an integer between 0 and 19 for zoom attribute. You can use hook attribute to set up a filter hook which you can use in your custom plugin or theme to configure all options of a map.', 'intergeo-maps' ),
 		) ) ),
 	) );
 }
@@ -959,7 +967,7 @@ function intergeo_library_delete() {
 	$post = get_post( $id );
 	if ( wp_verify_nonce( filter_input( INPUT_GET, 'nonce' ), $id . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ) && $post->post_type == INTERGEO_PLUGIN_NAME ) {
 		if ( wp_delete_post( $id, true ) ) {
-			intergeo_set_info( __( 'The map was deleted successfully.', 'intergeo' ) );
+			intergeo_set_info( __( 'The map was deleted successfully.', 'intergeo-maps' ) );
 		}
 	}
 	if ( filter_input( INPUT_GET, 'noheader', FILTER_VALIDATE_BOOLEAN ) ) {
@@ -1206,10 +1214,10 @@ function themeisle_triggered_feedback_show_notification( $notification, $slug ) 
 		return;
 	}
 	if ( ! isset( $notification['button_hide_text'] ) || empty( $notification['button_hide_text'] ) ) {
-		$notification['button_hide_text'] = __( 'Hide', 'intergeo' );
+		$notification['button_hide_text'] = __( 'Hide', 'intergeo-maps' );
 	}
 	if ( ! isset( $notification['button_done_text'] ) || empty( $notification['button_done_text'] ) ) {
-		$notification['button_done_text'] = __( "I've already done it", 'intergeo' );
+		$notification['button_done_text'] = __( "I've already done it", 'intergeo-maps' );
 	}
 	$themeisle_notification = '
     <style type="text/css">.ti-feedback-notice .themeisle-feedback-click { margin-left:5px; }</style><div class="updated activated notice is-dismissible themeisle_triggered_feedback_nag">'
@@ -1350,7 +1358,8 @@ function intergeo_is_developer() {
 			return true;
 		}
 	}
-    if(! intergeo_is_new() ) return true;
+	if ( ! intergeo_is_new() ) { return true;
+	}
 	return false;
 }
 

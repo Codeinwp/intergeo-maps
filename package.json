@@ -9,7 +9,7 @@
   "keywords": [
     "wordpress-plugin"
   ],
-  "textdomain": "intergeo",
+  "textdomain": "intergeo-maps",
   "author": "ThemeIsle <friends@themeisle.com>",
   "license": "GPL-2.0+",
   "bugs": {

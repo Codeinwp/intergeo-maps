@@ -128,8 +128,8 @@ function filter_intergeo_map_settings( $options ) {
 
 = 2.0.0 =
 
-* Added custom layers
-* Added import markers in bulk from CSV
+* Major code refactor
+* Improved
 
 
 = 1.1.6 =

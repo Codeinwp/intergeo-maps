@@ -84,7 +84,7 @@ if ( ! class_exists( 'IntergeoMaps_Adv' ) ) {
 					'nonce'  => wp_create_nonce( INTERGEO_PLUGIN_NAME . INTERGEO_VERSION ),
 				),
 				'messages' => array(
-					'save_map' => __( 'Please save the map before clicking on the export button', 'intergeo' ),
+					'save_map' => __( 'Please save the map before clicking on the export button', 'intergeo-maps' ),
 				),
 			) );
 		}

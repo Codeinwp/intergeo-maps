@@ -4,7 +4,7 @@
 	<input type="hidden" id="intergeo_map_zoom" name="zoom" value="<?php echo isset( $json['zoom'] ) ? esc_attr( $json['zoom'] ) : 5 ?>">
 	
 	<div id="intergeo_tlbr">
-		<div id="intergeo_tlbr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php esc_html_e( 'Maps', 'intergeo' ) ?></div>
+		<div id="intergeo_tlbr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php esc_html_e( 'Maps', 'intergeo-maps' ) ?></div>
 		<ul id="intergeo_tlbr_ul">
 			<li class="intergeo_tlbr_ul_li open">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/overlays.php' ?>
@@ -35,14 +35,14 @@
 	</div>
 	<div id="intergeo_canvas_wrapper">
 		<div id="intergeo_canvas"></div>
-		<div id="intergeo_canvas_center" title="<?php esc_attr_e( 'The center of the map', 'intergeo' ) ?>"<?php echo ! $show_map_center ? ' style="display:none;"' : ''; ?>></div>
+		<div id="intergeo_canvas_center" title="<?php esc_attr_e( 'The center of the map', 'intergeo-maps' ) ?>"<?php echo ! $show_map_center ? ' style="display:none;"' : ''; ?>></div>
 	</div>
 	<div id="intergeo_footer">
-		<a id="intergeo_go_to_address" class="button button-large" href="javascript:;"><?php esc_html_e( 'Go to address', 'intergeo' ) ?></a>
+		<a id="intergeo_go_to_address" class="button button-large" href="javascript:;"><?php esc_html_e( 'Go to address', 'intergeo-maps' ) ?></a>
 		<?php if ( intergeo_check_maps_number() ) : ?>
 		<input type="submit" class="button button-primary button-large" value="<?php echo $submit_text ?>">
 		<?php else : ?>
-			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn button"><?php _e( 'Buy PRO version to add more maps', 'intergeo' ) ?></a>
+			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn button"><?php _e( 'Buy PRO version to add more maps', 'intergeo-maps' ) ?></a>
 		<?php endif; ?>
 	</div>
 </form>
