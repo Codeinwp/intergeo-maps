@@ -26,25 +26,46 @@
 	
 	<div id="intergeo_library" class="intergeo_library">
 		<div id="intergeo_sidebar" class="intergeo_sidebar_right">
-            <div class="intergeo_sidebar_subscribe">
+			<?php
+			if ( ! intergeo_is_developer() ) :
+			?>
+			<div class="intergeo_sidebar_pro">
+			<span class="maps-available"><span class="dashicons dashicons-location"></span> <?php echo intergeo_get_maps(); ?>/<?php
+			if ( intergeo_is_personal() ) {
+				echo 10;
+			} else {
+				echo 3;
+			}
+				?> maps available</span>
+				<h3>Upgrade to <?php
+				if ( intergeo_is_personal() ) {
+					echo 'Devloper Plan';
+				} else {
+					echo 'PRO';
+				}
+				?></h3>
+				<ul>
+				<li>Unlimited maps</li>
+
+				<?php
+				if ( ! intergeo_is_personal() ) :
+					?>
+					<li>Unlimited markers</li>
+	                <?php endif; ?>
+					<li>Custom layers</li>
+					<li>Add directions</li>
+					<li>Adsense integrations</li>
+					<li>Import/export markers</li>
+				</ul>
+				<a href="<?php echo INTERGEO_PRO_URL?>" target="_blank" class="btn">Upgrade Now</a>
+			</div>
+			<?php endif; ?>
+			<div class="intergeo_sidebar_subscribe">
 	            <?php
 	            do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
 	            ?>
-            </div>
-            <div class="intergeo_sidebar_pro">
-                <span class="maps-available"><span class="dashicons dashicons-location"></span> 1/3 maps available</span>
-                <h3>Upgrade to PRO</h3>
-                <ul>
-                    <li>Unlimited maps</li>
-                    <li>Unlimited markers</li>
-                    <li>Add directions</li>
-                    <li>Custom layers</li>
-                    <li>Adsense integrations</li>
-                    <li>Import/export markers</li>
-                </ul>
-                <a href="#" class="btn">Upgrade Now</a>
-            </div>
-        </div>
+			</div>
+		</div>
 
 	<?php if ( $query->have_posts() ) : ?>
 	

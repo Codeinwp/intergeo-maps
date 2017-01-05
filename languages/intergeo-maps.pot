@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Intergeo - Google Maps Plugin 2.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/intergeo-maps/issues\n"
-"POT-Creation-Date: 2017-01-05 14:30:52+00:00\n"
+"POT-Creation-Date: 2017-01-05 15:34:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -985,19 +985,19 @@ msgstr ""
 msgid "Add New"
 msgstr ""
 
-#: templates/library/list.php:64
+#: templates/library/list.php:102
 msgid "Edit"
 msgstr ""
 
-#: templates/library/list.php:65
+#: templates/library/list.php:103
 msgid "Copy"
 msgstr ""
 
-#: templates/library/list.php:66
+#: templates/library/list.php:104
 msgid "Delete"
 msgstr ""
 
-#: templates/library/list.php:101
+#: templates/library/list.php:139
 msgid ""
 "You do not have created maps. Start adding it by clicking \"Add New\" "
 "button."
