@@ -19,9 +19,21 @@ The powerful UI builder allows users to:
 * Setup initial position and zooming level of a map;
 * Adjust controls settings and positioning; 
 * Setup map color styles by using predefined color schemes or by using custom color settings;
-* Add overlays like markers, rectangles, circles, polylines and polygons;
-* Create directions routes from A address to B address;
-* Integrate AdSense service into your maps and earn money by displaying ads on maps.
+* Add markers;
+
+> **Time-saving features available in the FULL version:**
+>
+> * Unlimited maps
+> * Unlimited markers
+> * Add overlays like  rectangles, circles, polylines and polygons using the build or the drawing tools;
+> * Create directions routes from A address to B address;
+> * Integrate AdSense service into your maps and earn money by displaying ads on maps.
+> * Import/Export Markers
+> * Custom Layers
+> * Support and updates for 12 months
+>
+> **[Learn more about Feedzy Full version]( https://themeisle.com/plugins/intergeo-maps/ )**
+
 
 ### Create Google maps with shortcode ###
 
@@ -115,21 +127,12 @@ function filter_intergeo_map_settings( $options ) {
     return $options;
 }`
 
-== Screenshots ==
-
-1. Directions Google Maps layer
-2. Wather and cloud Google Maps layers
-3. Panaramio layer and styles settings
-4. Bicycling layer and gray styles
-5. Overlay settings
-6. Markers settings
-
 == Changelog ==
 
 = 2.0.0 =
 
 * Major code refactor
-* Improved
+* Improved compatibility with the pro version
 
 
 = 1.1.6 =
