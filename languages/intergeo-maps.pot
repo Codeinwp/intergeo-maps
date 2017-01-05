@@ -1,0 +1,1036 @@
+# Copyright (C) 2017 Themeisle
+# This file is distributed under the GPL v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Intergeo - Google Maps Plugin 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Codeinwp/intergeo-maps/issues\n"
+"POT-Creation-Date: 2017-01-05 15:34:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Themeisle Translate Team <friends@themeisle.com>\n"
+"Language-Team: Themeisle Translate <friends@themeisle.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: index.php:35 templates/iframe/form.php:7 templates/library/list.php:10
+msgid "Maps"
+msgstr ""
+
+#: index.php:36
+msgid "Settings"
+msgstr ""
+
+#: index.php:74 templates/library/list.php:17
+msgid "Maps Settings"
+msgstr ""
+
+#: index.php:76
+msgid "Create New Map"
+msgstr ""
+
+#: index.php:78 templates/iframe/form.php:45 templates/library/list.php:14
+msgid "Buy PRO version to add more maps"
+msgstr ""
+
+#: index.php:80
+msgid "View Existing Maps"
+msgstr ""
+
+#: index.php:89
+msgid "Intergeo Google Maps"
+msgstr ""
+
+#: index.php:90
+msgid "Maps API Key"
+msgstr ""
+
+#: index.php:98
+msgid "Intergeo Google Maps AdSense Integration"
+msgstr ""
+
+#: index.php:99
+msgid "AdSense Publisher Id"
+msgstr ""
+
+#: index.php:106
+msgid "Save Changes"
+msgstr ""
+
+#: index.php:116
+msgid ""
+" Below shows how to find your API Key, after retrieving your key add it to "
+"the \"Maps API Key\" input box."
+msgstr ""
+
+#: index.php:128
+msgid ""
+"Adding display ads to your map requires that you have an AdSense account "
+"enabled for AdSense for Content. If you don't yet have an AdSense account, "
+"%1$ssign up%3$s for one. Once you have done so (or if you already have an "
+"account) make sure you've also enabled the account with %2$sAdSense for "
+"Content%3$s."
+msgstr ""
+
+#: index.php:130
+msgid ""
+"Once you have an Adsense for Content account, you will have received an "
+"AdSense for Content (AFC) publisher ID. This publisher ID is used to link "
+"any advertising shown to your AdSense account, allowing you to share in "
+"advertising revenue when a user clicks on one of the ads shown on your maps."
+msgstr ""
+
+#: index.php:202 index.php:872 index.php:876
+msgid "Intergeo Maps"
+msgstr ""
+
+#: index.php:239 templates/iframe/overlays.php:8
+#: templates/iframe/overlays.php:34
+msgid "marker"
+msgstr ""
+
+#: index.php:241
+msgid "Styles are broken. Please, fix it and try again."
+msgstr ""
+
+#: index.php:242
+msgid "Direction was not found."
+msgstr ""
+
+#: index.php:258
+msgid "Insert into post"
+msgstr ""
+
+#: index.php:260
+msgid "Create the map"
+msgstr ""
+
+#: index.php:273
+msgid "Update the map"
+msgstr ""
+
+#: index.php:751
+msgid "The map has been updated successfully."
+msgstr ""
+
+#: index.php:752
+msgid "The map has been created successfully."
+msgstr ""
+
+#: index.php:760
+msgid "The map updating failed."
+msgstr ""
+
+#: index.php:761
+msgid "The map creation failed."
+msgstr ""
+
+#: index.php:872 index.php:876
+msgid "Intergeo Maps Library"
+msgstr ""
+
+#: index.php:895
+msgid "Overview"
+msgstr ""
+
+#: index.php:898
+msgid ""
+"The library is a list to view all maps you have created in your system. The "
+"library is showing you 3x3 grid of maps' previews. You will see the same "
+"maps embedded into your posts at front end, as you see here. The library is "
+"paginated and if you have more than 9 maps, you will see pagination links "
+"under maps grid."
+msgstr ""
+
+#: index.php:899
+msgid ""
+"To create a new map, click on \"Add New\" button next to the page title and "
+"map editor popup will appear. In case you want to edit a map, you can click "
+"on pencil icon in the right bottom corner of map preview box and edit popup "
+"window will appear."
+msgstr ""
+
+#: index.php:900
+msgid ""
+"If you want to delete a map, click on the trash icon in the right bottom "
+"corner of a map and confirm your action. Pay attention that whole "
+"information about the map will be removed from the system, but all "
+"shortcodes will be left where you embed it. However these deprecated "
+"shortcodes won't be rendered anymore, so you don't have to worry about it "
+"while the plugin is enabled."
+msgstr ""
+
+#: index.php:904
+msgid "Shortcodes"
+msgstr ""
+
+#: index.php:907
+msgid ""
+"You can easily embed a map into your posts, pages, categories or tags "
+"descriptions and text widgets by copying shortcode which you can find in "
+"the input field of a map preview box."
+msgstr ""
+
+#: index.php:908
+msgid ""
+"To specify a certain address just type it inside a shortcode, and a map "
+"will be automatically centered at this place. Also each shortcode could be "
+"extended with custom attributes like width, height, style, zoom and hook. "
+"Use standard CSS values for such attributes as width, height and style. "
+"Type an integer between 0 and 19 for zoom attribute. You can use hook "
+"attribute to set up a filter hook which you can use in your custom plugin "
+"or theme to configure all options of a map."
+msgstr ""
+
+#: index.php:970
+msgid "The map was deleted successfully."
+msgstr ""
+
+#: index.php:1217
+msgid "Hide"
+msgstr ""
+
+#: index.php:1220
+msgid "I've already done it"
+msgstr ""
+
+#: pro/addon.php:87
+msgid "Please save the map before clicking on the export button"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:2
+msgid "Custom layer"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:7 templates/iframe/adsense.php:5
+#: templates/iframe/extra.php:6
+msgid "Available in Agency plan"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:16 templates/iframe/controls.php:12
+#: templates/iframe/controls.php:86 templates/iframe/controls.php:148
+#: templates/iframe/controls.php:210 templates/iframe/controls.php:311
+#: templates/iframe/controls.php:373 templates/iframe/controls.php:435
+#: templates/iframe/layers.php:19 templates/iframe/layers.php:36
+msgid "Enabled"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:20
+msgid "Allows you to add custom images to your map."
+msgstr ""
+
+#: pro/templates/iframe/layers.php:24
+msgid "Image URL"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:28
+msgid "The URL of the image that will be used for the custom layer."
+msgstr ""
+
+#: pro/templates/iframe/layers.php:32
+msgid "South-west Latitude/Longitude"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:33 pro/templates/iframe/layers.php:42
+msgid "Latitude"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:34 pro/templates/iframe/layers.php:43
+msgid "Longitude"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:37
+msgid ""
+"The latitude/longitude of the south-west (bottom-left) edge of the map to "
+"position the image."
+msgstr ""
+
+#: pro/templates/iframe/layers.php:41
+msgid "North-east Latitude/Longitude"
+msgstr ""
+
+#: pro/templates/iframe/layers.php:46
+msgid ""
+"The latitude/longitude of the north-east (top-right) edge of the map to "
+"position the image."
+msgstr ""
+
+#: pro/templates/iframe/upload.php:3
+msgid "To import data, please import a CSV file. Here is a sample"
+msgstr ""
+
+#: pro/templates/iframe/upload.php:4
+msgid "Click here"
+msgstr ""
+
+#: pro/templates/iframe/upload.php:15
+msgid "From Computer"
+msgstr ""
+
+#: pro/templates/iframe/upload.php:23
+msgid "To export data, click on the button below"
+msgstr ""
+
+#: pro/templates/iframe/upload.php:32
+msgid "Export markers as CSV"
+msgstr ""
+
+#: templates/iframe/adsense.php:1
+msgid "AdSense Integration"
+msgstr ""
+
+#: templates/iframe/adsense.php:11
+msgid ""
+"To make AdSense working on your maps, you have to setup your publisher ID. "
+"You can do it at the %1$ssettings page%2$s."
+msgstr ""
+
+#: templates/iframe/adsense.php:29
+msgid "default format"
+msgstr ""
+
+#: templates/iframe/adsense.php:32
+msgid "Leaderboard"
+msgstr ""
+
+#: templates/iframe/adsense.php:35
+msgid "Banner"
+msgstr ""
+
+#: templates/iframe/adsense.php:38
+msgid "Half Banner"
+msgstr ""
+
+#: templates/iframe/adsense.php:41
+msgid "Skyscraper"
+msgstr ""
+
+#: templates/iframe/adsense.php:44
+msgid "Wide Skyscraper"
+msgstr ""
+
+#: templates/iframe/adsense.php:47
+msgid "Vertical Banner"
+msgstr ""
+
+#: templates/iframe/adsense.php:50
+msgid "Button"
+msgstr ""
+
+#: templates/iframe/adsense.php:53
+msgid "Small Square"
+msgstr ""
+
+#: templates/iframe/adsense.php:56
+msgid "Square"
+msgstr ""
+
+#: templates/iframe/adsense.php:59
+msgid "Small Rectangle"
+msgstr ""
+
+#: templates/iframe/adsense.php:62
+msgid "Medium Rectangle"
+msgstr ""
+
+#: templates/iframe/adsense.php:65
+msgid "Large Rectangle"
+msgstr ""
+
+#: templates/iframe/adsense.php:68
+msgid "Small Vertical Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:71
+msgid "Medium Vertical Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:74
+msgid "Large Vertical Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:77
+msgid "Extra Large Vertical Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:80
+msgid "Small Horizontal Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:83
+msgid "Large Horizontal Link Unit"
+msgstr ""
+
+#: templates/iframe/adsense.php:89 templates/iframe/controls.php:22
+#: templates/iframe/controls.php:96 templates/iframe/controls.php:158
+#: templates/iframe/controls.php:220 templates/iframe/controls.php:321
+#: templates/iframe/controls.php:383
+msgid "default position"
+msgstr ""
+
+#: templates/iframe/adsense.php:91 templates/iframe/controls.php:24
+#: templates/iframe/controls.php:98 templates/iframe/controls.php:160
+#: templates/iframe/controls.php:222 templates/iframe/controls.php:323
+#: templates/iframe/controls.php:385
+msgid "Top Left"
+msgstr ""
+
+#: templates/iframe/adsense.php:94 templates/iframe/controls.php:27
+#: templates/iframe/controls.php:101 templates/iframe/controls.php:163
+#: templates/iframe/controls.php:225 templates/iframe/controls.php:326
+#: templates/iframe/controls.php:388
+msgid "Top Center"
+msgstr ""
+
+#: templates/iframe/adsense.php:97 templates/iframe/controls.php:30
+#: templates/iframe/controls.php:104 templates/iframe/controls.php:166
+#: templates/iframe/controls.php:228 templates/iframe/controls.php:329
+#: templates/iframe/controls.php:391
+msgid "Top Right"
+msgstr ""
+
+#: templates/iframe/adsense.php:100 templates/iframe/controls.php:33
+#: templates/iframe/controls.php:107 templates/iframe/controls.php:169
+#: templates/iframe/controls.php:231 templates/iframe/controls.php:332
+#: templates/iframe/controls.php:394
+msgid "Right Top"
+msgstr ""
+
+#: templates/iframe/adsense.php:103 templates/iframe/controls.php:36
+#: templates/iframe/controls.php:110 templates/iframe/controls.php:172
+#: templates/iframe/controls.php:234 templates/iframe/controls.php:335
+#: templates/iframe/controls.php:397
+msgid "Right Center"
+msgstr ""
+
+#: templates/iframe/adsense.php:106 templates/iframe/controls.php:39
+#: templates/iframe/controls.php:113 templates/iframe/controls.php:175
+#: templates/iframe/controls.php:237 templates/iframe/controls.php:338
+#: templates/iframe/controls.php:400
+msgid "Right Bottom"
+msgstr ""
+
+#: templates/iframe/adsense.php:109 templates/iframe/controls.php:42
+#: templates/iframe/controls.php:116 templates/iframe/controls.php:178
+#: templates/iframe/controls.php:240 templates/iframe/controls.php:341
+#: templates/iframe/controls.php:403
+msgid "Bottom Right"
+msgstr ""
+
+#: templates/iframe/adsense.php:112 templates/iframe/controls.php:45
+#: templates/iframe/controls.php:119 templates/iframe/controls.php:181
+#: templates/iframe/controls.php:243 templates/iframe/controls.php:344
+#: templates/iframe/controls.php:406
+msgid "Bottom Center"
+msgstr ""
+
+#: templates/iframe/adsense.php:115 templates/iframe/controls.php:48
+#: templates/iframe/controls.php:122 templates/iframe/controls.php:184
+#: templates/iframe/controls.php:246 templates/iframe/controls.php:347
+#: templates/iframe/controls.php:409
+msgid "Bottom Left"
+msgstr ""
+
+#: templates/iframe/adsense.php:118 templates/iframe/controls.php:51
+#: templates/iframe/controls.php:125 templates/iframe/controls.php:187
+#: templates/iframe/controls.php:249 templates/iframe/controls.php:350
+#: templates/iframe/controls.php:412
+msgid "Left Bottom"
+msgstr ""
+
+#: templates/iframe/adsense.php:121 templates/iframe/controls.php:54
+#: templates/iframe/controls.php:128 templates/iframe/controls.php:190
+#: templates/iframe/controls.php:252 templates/iframe/controls.php:353
+#: templates/iframe/controls.php:415
+msgid "Left Center"
+msgstr ""
+
+#: templates/iframe/adsense.php:124 templates/iframe/controls.php:57
+#: templates/iframe/controls.php:131 templates/iframe/controls.php:193
+#: templates/iframe/controls.php:255 templates/iframe/controls.php:356
+#: templates/iframe/controls.php:418
+msgid "Left Top"
+msgstr ""
+
+#: templates/iframe/adsense.php:134 templates/iframe/styles.php:1
+msgid "Styles"
+msgstr ""
+
+#: templates/iframe/adsense.php:137
+msgid "Background color"
+msgstr ""
+
+#: templates/iframe/adsense.php:140 templates/iframe/adsense.php:146
+#: templates/iframe/adsense.php:152 templates/iframe/adsense.php:158
+#: templates/iframe/adsense.php:164
+msgid "Hex Value"
+msgstr ""
+
+#: templates/iframe/adsense.php:143
+msgid "Border color"
+msgstr ""
+
+#: templates/iframe/adsense.php:149
+msgid "Title color"
+msgstr ""
+
+#: templates/iframe/adsense.php:155
+msgid "Text color"
+msgstr ""
+
+#: templates/iframe/adsense.php:161
+msgid "URL color"
+msgstr ""
+
+#: templates/iframe/controls.php:2
+msgid "Controls"
+msgstr ""
+
+#: templates/iframe/controls.php:5
+msgid "Zoom control"
+msgstr ""
+
+#: templates/iframe/controls.php:16
+msgid ""
+"The Zoom control displays a slider (for large maps) or small \"+/-\" "
+"buttons (for small maps) to control the zoom level of the map. This control "
+"appears by default in the top left corner of the map on non-touch devices "
+"or in the bottom left corner on touch devices."
+msgstr ""
+
+#: templates/iframe/controls.php:64 templates/iframe/controls.php:262
+msgid "default style"
+msgstr ""
+
+#: templates/iframe/controls.php:67
+msgid "small"
+msgstr ""
+
+#: templates/iframe/controls.php:70
+msgid "large"
+msgstr ""
+
+#: templates/iframe/controls.php:79
+msgid "Pan control"
+msgstr ""
+
+#: templates/iframe/controls.php:90
+msgid ""
+"The Pan control displays buttons for panning the map. This control appears "
+"by default in the top left corner of the map on non-touch devices. The Pan "
+"control also allows you to rotate 45° imagery, if available."
+msgstr ""
+
+#: templates/iframe/controls.php:141
+msgid "Scale control"
+msgstr ""
+
+#: templates/iframe/controls.php:152
+msgid ""
+"The Scale control displays a map scale element. This control is not enabled "
+"by default."
+msgstr ""
+
+#: templates/iframe/controls.php:203
+msgid "MapType control"
+msgstr ""
+
+#: templates/iframe/controls.php:214
+msgid ""
+"The MapType control lets the user toggle between map types (such as roadmap "
+"and satellite). This control appears by default in the top right corner of "
+"the map."
+msgstr ""
+
+#: templates/iframe/controls.php:265
+msgid "dropdown menu"
+msgstr ""
+
+#: templates/iframe/controls.php:268
+msgid "horizontal bar"
+msgstr ""
+
+#: templates/iframe/controls.php:275
+msgid "Map types:"
+msgstr ""
+
+#: templates/iframe/controls.php:278
+msgid "This map type displays a normal street map."
+msgstr ""
+
+#: templates/iframe/controls.php:280 templates/iframe/positioning.php:15
+msgid "Road map"
+msgstr ""
+
+#: templates/iframe/controls.php:284
+msgid ""
+"This map type displays maps with physical features such as terrain and "
+"vegetation."
+msgstr ""
+
+#: templates/iframe/controls.php:286 templates/iframe/positioning.php:18
+msgid "Terrain"
+msgstr ""
+
+#: templates/iframe/controls.php:290
+msgid "This map type displays satellite images."
+msgstr ""
+
+#: templates/iframe/controls.php:292 templates/iframe/positioning.php:21
+msgid "Satellite"
+msgstr ""
+
+#: templates/iframe/controls.php:296
+msgid ""
+"This map type displays a transparent layer of major streets on satellite "
+"images."
+msgstr ""
+
+#: templates/iframe/controls.php:298 templates/iframe/positioning.php:24
+msgid "Hybrid"
+msgstr ""
+
+#: templates/iframe/controls.php:304
+msgid "Street View control"
+msgstr ""
+
+#: templates/iframe/controls.php:315
+msgid ""
+"The Street View control contains a Pegman icon which can be dragged onto "
+"the map to enable Street View. This control appears by default in the top "
+"left corner of the map."
+msgstr ""
+
+#: templates/iframe/controls.php:366
+msgid "Rotate control"
+msgstr ""
+
+#: templates/iframe/controls.php:377
+msgid ""
+"The Rotate control contains a small circular icon which allows you to "
+"rotate maps containing oblique imagery. This control appears by default in "
+"the top left corner of the map."
+msgstr ""
+
+#: templates/iframe/controls.php:428
+msgid "Overview Map control"
+msgstr ""
+
+#: templates/iframe/controls.php:439
+msgid ""
+"The Overview Map control displays a thumbnail overview map reflecting the "
+"current map viewport within a wider area. This control appears by default "
+"in the bottom right corner of the map, and is by default shown in its "
+"collapsed state."
+msgstr ""
+
+#: templates/iframe/controls.php:445
+msgid "Opened"
+msgstr ""
+
+#: templates/iframe/directions.php:1
+msgid "Directions"
+msgstr ""
+
+#: templates/iframe/directions.php:6 templates/iframe/layers.php:6
+msgid "Available in Developer plan"
+msgstr ""
+
+#: templates/iframe/directions.php:12
+msgid "To add a new direction just click the button below"
+msgstr ""
+
+#: templates/iframe/directions.php:17
+msgid "Add Direction"
+msgstr ""
+
+#: templates/iframe/directions.php:24 templates/iframe/directions.php:30
+#: templates/iframe/directions.php:51
+msgid "from"
+msgstr ""
+
+#: templates/iframe/directions.php:24 templates/iframe/directions.php:30
+#: templates/iframe/directions.php:53
+msgid "to"
+msgstr ""
+
+#: templates/iframe/directions.php:37 templates/iframe/directions.php:78
+msgid "Delete direction"
+msgstr ""
+
+#: templates/iframe/directions.php:38 templates/iframe/directions.php:79
+msgid "Edit direction"
+msgstr ""
+
+#: templates/iframe/directions.php:43
+msgid "Created directions"
+msgstr ""
+
+#: templates/iframe/directions.php:58 templates/iframe/popups.php:207
+msgid "via bicycle paths & preferred streets"
+msgstr ""
+
+#: templates/iframe/directions.php:61 templates/iframe/popups.php:208
+msgid "via public transit routes"
+msgstr ""
+
+#: templates/iframe/directions.php:64 templates/iframe/popups.php:209
+msgid "via pedestrian paths & sidewalks"
+msgstr ""
+
+#: templates/iframe/directions.php:68 templates/iframe/popups.php:206
+msgid "via standard driving directions"
+msgstr ""
+
+#: templates/iframe/extra.php:2
+msgid "Import/Export Markers"
+msgstr ""
+
+#: templates/iframe/form.php:38
+msgid "The center of the map"
+msgstr ""
+
+#: templates/iframe/form.php:41
+msgid "Go to address"
+msgstr ""
+
+#: templates/iframe/layers.php:1
+msgid "Layers"
+msgstr ""
+
+#: templates/iframe/layers.php:11
+msgid "Traffic layer"
+msgstr ""
+
+#: templates/iframe/layers.php:23
+msgid ""
+"Allows you to add real-time traffic information (where supported) to your "
+"map. Traffic information is provided for the time at which the request is "
+"made. Consult %1$s this spreadsheet %2$s to determine traffic coverage "
+"support."
+msgstr ""
+
+#: templates/iframe/layers.php:28
+msgid "Bicycling layer"
+msgstr ""
+
+#: templates/iframe/layers.php:40
+msgid ""
+"Allows you to add bicycle information to your map. It renders a layer of "
+"bike paths, suggested bike routes and other overlays specific to bicycling "
+"usage on top of the given map. Additionally, the layer alters the style of "
+"the base map itself to emphasize streets supporting bicycle routes and "
+"de-emphasize streets inappropriate for bicycles."
+msgstr ""
+
+#: templates/iframe/overlays.php:1
+msgid "Overlays"
+msgstr ""
+
+#: templates/iframe/overlays.php:17 templates/iframe/overlays.php:46
+msgid "Delete marker"
+msgstr ""
+
+#: templates/iframe/overlays.php:18 templates/iframe/overlays.php:47
+msgid "Edit marker"
+msgstr ""
+
+#: templates/iframe/overlays.php:24
+msgid "Markers"
+msgstr ""
+
+#: templates/iframe/overlays.php:62
+msgid "Add Marker"
+msgstr ""
+
+#: templates/iframe/overlays.php:63 templates/iframe/overlays.php:66
+msgid "Buy PRO version to add more markers"
+msgstr ""
+
+#: templates/iframe/popups.php:5
+msgid "Go To Address"
+msgstr ""
+
+#: templates/iframe/popups.php:10
+msgid "Type an address you want to go to"
+msgstr ""
+
+#: templates/iframe/popups.php:13
+msgid "Go"
+msgstr ""
+
+#: templates/iframe/popups.php:24
+msgid "Marker Options"
+msgstr ""
+
+#: templates/iframe/popups.php:31 templates/iframe/popups.php:32
+msgid "Enter title"
+msgstr ""
+
+#: templates/iframe/popups.php:39 templates/iframe/popups.php:40
+msgid "Enter address or lat, long"
+msgstr ""
+
+#: templates/iframe/popups.php:47
+msgid "Default"
+msgstr ""
+
+#: templates/iframe/popups.php:48
+msgid "Blue"
+msgstr ""
+
+#: templates/iframe/popups.php:52
+msgid "Custom"
+msgstr ""
+
+#: templates/iframe/popups.php:57 templates/iframe/popups.php:58
+msgid "Enter icon URL"
+msgstr ""
+
+#: templates/iframe/popups.php:70 templates/iframe/popups.php:105
+#: templates/iframe/popups.php:173
+msgid "Update"
+msgstr ""
+
+#: templates/iframe/popups.php:81
+msgid "Polyline Options"
+msgstr ""
+
+#: templates/iframe/popups.php:88 templates/iframe/popups.php:89
+#: templates/iframe/popups.php:128 templates/iframe/popups.php:129
+msgid "Stroke weight in pixel"
+msgstr ""
+
+#: templates/iframe/popups.php:94 templates/iframe/popups.php:95
+#: templates/iframe/popups.php:134 templates/iframe/popups.php:135
+msgid "Stroke opacity from 0.0 to 1.0"
+msgstr ""
+
+#: templates/iframe/popups.php:116
+msgid "Polygon Options"
+msgstr ""
+
+#: templates/iframe/popups.php:121
+msgid "Stroke options"
+msgstr ""
+
+#: templates/iframe/popups.php:141
+msgid "stroke position"
+msgstr ""
+
+#: templates/iframe/popups.php:142
+msgid "center"
+msgstr ""
+
+#: templates/iframe/popups.php:143
+msgid "inside the object"
+msgstr ""
+
+#: templates/iframe/popups.php:144
+msgid "outside the object"
+msgstr ""
+
+#: templates/iframe/popups.php:155
+msgid "Fill options"
+msgstr ""
+
+#: templates/iframe/popups.php:162 templates/iframe/popups.php:163
+msgid "Fill opacity from 0.0 to 1.0"
+msgstr ""
+
+#: templates/iframe/popups.php:184
+msgid "Direction Options"
+msgstr ""
+
+#: templates/iframe/popups.php:191 templates/iframe/popups.php:192
+msgid "The start location from which to calculate directions"
+msgstr ""
+
+#: templates/iframe/popups.php:199 templates/iframe/popups.php:200
+msgid "The end location to which to calculate directions"
+msgstr ""
+
+#: templates/iframe/popups.php:215
+msgid "Save"
+msgstr ""
+
+#: templates/iframe/positioning.php:1
+msgid "Positioning & Zooming"
+msgstr ""
+
+#: templates/iframe/positioning.php:5
+msgid ""
+"If you want to set specific map position and certain level of zooming, just "
+"set it up on preview map and these settings will be remembered at published "
+"map."
+msgstr ""
+
+#: templates/iframe/positioning.php:9
+msgid "Positioning"
+msgstr ""
+
+#: templates/iframe/positioning.php:12
+msgid "The initial map type"
+msgstr ""
+
+#: templates/iframe/positioning.php:33
+msgid "Draggable map"
+msgstr ""
+
+#: templates/iframe/positioning.php:37
+msgid ""
+"If unchecked prevents the map from being dragged. Dragging is enabled by "
+"default."
+msgstr ""
+
+#: templates/iframe/positioning.php:42
+msgid "Zooming"
+msgstr ""
+
+#: templates/iframe/positioning.php:46
+msgid "Zoom range values"
+msgstr ""
+
+#: templates/iframe/positioning.php:59
+msgid ""
+"The maximum (19) and minimum (0) zoom levels which could be displayed on "
+"the map."
+msgstr ""
+
+#: templates/iframe/positioning.php:66
+msgid "Scrollwheel zooming"
+msgstr ""
+
+#: templates/iframe/positioning.php:70
+msgid "Determines if scrollwheel zooming is enabled on the map."
+msgstr ""
+
+#: templates/iframe/positioning.php:75
+msgid "Preview settings"
+msgstr ""
+
+#: templates/iframe/positioning.php:81
+msgid "Lock preview"
+msgstr ""
+
+#: templates/iframe/positioning.php:85
+msgid ""
+"Lock preview map to preserve changing of the viewport bounds and zoom "
+"level. Locking affects only on preview map and won't lock embedded map."
+msgstr ""
+
+#: templates/iframe/positioning.php:91
+msgid "Show map center"
+msgstr ""
+
+#: templates/iframe/positioning.php:95
+msgid ""
+"Show small red circle at the center of the map. It helps you to centralize "
+"the map bounds. Note that this option won't be displayed at frontend."
+msgstr ""
+
+#: templates/iframe/styles.php:4
+msgid "Container's Styles"
+msgstr ""
+
+#: templates/iframe/styles.php:7
+msgid "Width"
+msgstr ""
+
+#: templates/iframe/styles.php:11
+msgid "Height"
+msgstr ""
+
+#: templates/iframe/styles.php:15
+msgid "Extra Styles"
+msgstr ""
+
+#: templates/iframe/styles.php:21
+msgid "Predefined Map Styles"
+msgstr ""
+
+#: templates/iframe/styles.php:66
+msgid "Custom Map Styles"
+msgstr ""
+
+#: templates/iframe/styles.php:72
+msgid "Use custom styles"
+msgstr ""
+
+#: templates/iframe/styles.php:79
+msgid ""
+"Creating styles by hand and testing your code to see how they look is "
+"potentially time-consuming. Instead, you can use the %1$s Styled Map Wizard "
+" %2$s to set up the JSON for your maps styles."
+msgstr ""
+
+#: templates/library/list.php:5
+msgid ""
+"You have not added an API Key. Your maps may not display properly. Please "
+"add an API Key %1$s here %2$s"
+msgstr ""
+
+#: templates/library/list.php:12
+msgid "Add New"
+msgstr ""
+
+#: templates/library/list.php:102
+msgid "Edit"
+msgstr ""
+
+#: templates/library/list.php:103
+msgid "Copy"
+msgstr ""
+
+#: templates/library/list.php:104
+msgid "Delete"
+msgstr ""
+
+#: templates/library/list.php:139
+msgid ""
+"You do not have created maps. Start adding it by clicking \"Add New\" "
+"button."
+msgstr ""
+
+#: templates/nag.php:1
+msgid ""
+"You have just enabled the Intergeo - Google Maps Plugin. You can now go to "
+"<a href=\"%s\">Media > Intergeo Maps</a> and start building your own."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Intergeo - Google Maps Plugin"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://themeisle.com/plugins/intergeo-maps-lite/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A simple, easy and quite powerful Google Map tool to create, manage and "
+"embed custom Google Maps into your WordPress posts and pages. The plugin "
+"allows you to deeply customize look and feel of a map, add overlays like "
+"markers, rectangles, circles, polylines and polygons to your map. It could "
+"even be integraded with your Google Adsense account and show ad on your "
+"maps."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Themeisle"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeisle.com"
+msgstr ""

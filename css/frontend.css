@@ -1,5 +1,11 @@
 /*
-*  Version: 1.1.5
+*  Version: 2.0.0
 */
 
-.intergeo_map_canvas img{max-width:none!important;-webkit-box-shadow:none!important;box-shadow:none!important;border-radius:0!important;border:none!important}
+.intergeo_map_canvas img {
+	max-width: none!important;
+	border: none!important;
+	border-radius: 0!important;
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+}
