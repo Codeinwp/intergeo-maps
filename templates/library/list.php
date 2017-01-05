@@ -2,19 +2,19 @@
     <?php
 	if ( ! get_option( 'intergeo_map_api_key' ) ) {
 	?>
-	<div class="notice notice-warning"><p><?php echo sprintf( __( 'You have not added an API Key. Your maps may not display properly. Please add an API Key %1$s here %2$s', 'intergeo' ), "<a href='" . admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME ) . "'>", '</a>' );?></p></div>
+	<div class="notice notice-warning"><p><?php echo sprintf( __( 'You have not added an API Key. Your maps may not display properly. Please add an API Key %1$s here %2$s', 'intergeo-maps' ), "<a href='" . admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME ) . "'>", '</a>' );?></p></div>
 	<?php
 	}
 	?>
 	<h2>
-		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php _e( 'Maps', 'intergeo' ) ?></div>
+		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span> <?php _e( 'Maps', 'intergeo-maps' ) ?></div>
 		<?php if ( intergeo_check_maps_number() ) : ?>
-		    <a id="intergeo_lbrr_add_new" href="javascript:;" class="intergeo_lbrr_add_new add-new-h2"><?php _e( 'Add New', 'intergeo' ) ?></a>
+		    <a id="intergeo_lbrr_add_new" href="javascript:;" class="intergeo_lbrr_add_new add-new-h2"><?php _e( 'Add New', 'intergeo-maps' ) ?></a>
 		<?php else : ?>
-			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn add-new-h2"><?php _e( 'Buy PRO version to add more maps', 'intergeo' ) ?></a>
+			<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>" class="intergeo-pro-btn add-new-h2"><?php _e( 'Buy PRO version to add more maps', 'intergeo-maps' ) ?></a>
 		<?php endif; ?>
 
-		<a id="intergeo_lbrr_settings" href="<?php echo admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );?>" class="add-new-h2"><?php _e( 'Maps Settings', 'intergeo' ) ?></a>
+		<a id="intergeo_lbrr_settings" href="<?php echo admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );?>" class="add-new-h2"><?php _e( 'Maps Settings', 'intergeo-maps' ) ?></a>
 	</h2>
 	
 	<script type="text/javascript">
@@ -61,9 +61,9 @@
 							<input type="text" class="intergeo_lbrr_code" value="[intergeo id=&quot;<?php echo $id ?>&quot;]<?php echo ! empty( $json['address'] ) ? esc_attr( $json['address'] ) : '' ?>[/intergeo]">
 						</td>
 						<td class="intergeo_lbrr_item_actions">
-							<a class="intergeo_lbrr_item_edit" href="javascript:;" title="<?php _e( 'Edit', 'intergeo' ) ?>" data-map="<?php echo $id  ?>"></a>
-							<a class="intergeo_lbrr_item_copy" href="javascript:;" title="<?php _e( 'Copy', 'intergeo' ) ?>" data-map="<?php echo $id  ?>"></a>
-							<a class="intergeo_lbrr_item_delete" href="<?php echo esc_attr( $delete_url ) ?>" title="<?php _e( 'Delete', 'intergeo' ) ?>" onclick="return showNotice.warn();"></a>
+							<a class="intergeo_lbrr_item_edit" href="javascript:;" title="<?php _e( 'Edit', 'intergeo-maps' ) ?>" data-map="<?php echo $id  ?>"></a>
+							<a class="intergeo_lbrr_item_copy" href="javascript:;" title="<?php _e( 'Copy', 'intergeo-maps' ) ?>" data-map="<?php echo $id  ?>"></a>
+							<a class="intergeo_lbrr_item_delete" href="<?php echo esc_attr( $delete_url ) ?>" title="<?php _e( 'Delete', 'intergeo-maps' ) ?>" onclick="return showNotice.warn();"></a>
 						</td>
 					</tr>
 				</table>
@@ -98,7 +98,7 @@
 	
 	<?php else : ?>
 		<p>
-			<?php esc_html_e( 'You do not have created maps. Start adding it by clicking "Add New" button.', 'intergeo' ) ?>
+			<?php esc_html_e( 'You do not have created maps. Start adding it by clicking "Add New" button.', 'intergeo-maps' ) ?>
 		</p>
 	<?php endif; ?>
 </div>

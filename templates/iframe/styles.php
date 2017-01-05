@@ -1,24 +1,24 @@
-<h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Styles', 'intergeo' ) ?></h3>
+<h3 class="intergeo_tlbr_ul_li_h3"><?php esc_html_e( 'Styles', 'intergeo-maps' ) ?></h3>
 <ul class="intergeo_tlbr_ul_li_ul">
 	<li class="intergeo_tlbr_ul_li_ul_li">
-		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( "Container's Styles", 'intergeo' ) ?></span>
+		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( "Container's Styles", 'intergeo-maps' ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
-				<?php esc_html_e( 'Width', 'intergeo' ) ?>
+				<?php esc_html_e( 'Width', 'intergeo-maps' ) ?>
 				<input type="text" class="intergeo_tlbr_cntrl_txt" name="container_width" placeholder="100%" value="<?php echo isset( $json['container']['width'] ) ? esc_attr( $json['container']['width'] ) : '' ?>">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<?php esc_html_e( 'Height', 'intergeo' ) ?>
+				<?php esc_html_e( 'Height', 'intergeo-maps' ) ?>
 				<input type="text" class="intergeo_tlbr_cntrl_txt" name="container_height" placeholder="300px" value="<?php echo isset( $json['container']['height'] ) ? esc_attr( $json['container']['height'] ) : '' ?>">
 			</div>
 			<div class="intergeo_tlbr_cntrl_item">
-				<?php esc_html_e( 'Extra Styles', 'intergeo' ) ?>
+				<?php esc_html_e( 'Extra Styles', 'intergeo-maps' ) ?>
 				<input type="text" class="intergeo_tlbr_cntrl_txt" name="container_styles" placeholder="border: 1px solid gray;" value="<?php echo isset( $json['container']['styles'] ) ? esc_attr( $json['container']['styles'] ) : '' ?>">
 			</div>
 		</div>
 	</li>
 	<li class="intergeo_tlbr_ul_li_ul_li">
-		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Predefined Map Styles', 'intergeo' ) ?></span>
+		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Predefined Map Styles', 'intergeo-maps' ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
 				<label class="intergeo_tlbr_style_preview" title="Default">
@@ -63,20 +63,20 @@
 		</div>
 	</li>
 	<li class="intergeo_tlbr_ul_li_ul_li">
-		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Custom Map Styles', 'intergeo' ) ?></span>
+		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Custom Map Styles', 'intergeo-maps' ) ?></span>
 		<div class="intergeo_tlbr_cntrl_items">
 			<div class="intergeo_tlbr_cntrl_item">
 				<a class="intergeo_tlbr_cntrl_more_info" href="javascript:;">[?]</a>
 				<label>
 					<input type="radio" name="styles_type" value="-1" <?php checked( isset( $json['styles']['type'] ) ? $json['styles']['type'] == '-1' : false ) ?>> 
-					<?php esc_html_e( 'Use custom styles', 'intergeo' ) ?>
+					<?php esc_html_e( 'Use custom styles', 'intergeo-maps' ) ?>
 				</label>
 				<textarea class="intergeo_tlbr_cntrl_txt" name="styles_custom" cols="30" rows="5"><?php
 					echo isset( $json['styles']['custom'] ) ? esc_textarea( json_encode( $json['styles']['custom'] ) ) : ''
 				?></textarea>
 			</div>
 			<p class="intergeo_tlbr_cntrl_dsc">
-				<?php printf( esc_html__( 'Creating styles by hand and testing your code to see how they look is potentially time-consuming. Instead, you can use the %1$s Styled Map Wizard  %2$s to set up the JSON for your maps styles.', 'intergeo' ), '<a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html" target="_blank">', '</a>' ) ?>
+				<?php printf( esc_html__( 'Creating styles by hand and testing your code to see how they look is potentially time-consuming. Instead, you can use the %1$s Styled Map Wizard  %2$s to set up the JSON for your maps styles.', 'intergeo-maps' ), '<a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html" target="_blank">', '</a>' ) ?>
 			</p>
 		</div>
 	</li>
