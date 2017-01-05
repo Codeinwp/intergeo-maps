@@ -25,9 +25,26 @@
 	</script>
 	
 	<div id="intergeo_library" class="intergeo_library">
-		<div id="intergeo_sidebar" class="intergeo_sidebar_right"><?php
-				do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
-			?></div>
+		<div id="intergeo_sidebar" class="intergeo_sidebar_right">
+            <div class="intergeo_sidebar_subscribe">
+	            <?php
+	            do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
+	            ?>
+            </div>
+            <div class="intergeo_sidebar_pro">
+                <span class="maps-available"><span class="dashicons dashicons-location"></span> 1/3 maps available</span>
+                <h3>Upgrade to PRO</h3>
+                <ul>
+                    <li>Unlimited maps</li>
+                    <li>Unlimited markers</li>
+                    <li>Add directions</li>
+                    <li>Custom layers</li>
+                    <li>Adsense integrations</li>
+                    <li>Import/export markers</li>
+                </ul>
+                <a href="#" class="btn">Upgrade Now</a>
+            </div>
+        </div>
 
 	<?php if ( $query->have_posts() ) : ?>
 	
