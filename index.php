@@ -1401,3 +1401,4 @@ function intergeo_change_subscribe_list() {
 
 require dirname( __FILE__ ) . '/subscribe/subscribe.php';
 $intergeo_subscribe = new THEMEISLE_SUBSCRIBE( INTERGEO_PLUGIN_NAME );
+require dirname( __FILE__ ) . '/dashboard/dashboard.php';
