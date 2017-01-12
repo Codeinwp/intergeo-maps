@@ -74,10 +74,9 @@ if ( ! class_exists( 'THEMEISLE_DASHBOARD' ) ) {
 		 * Setup class variables
 		 */
 		public function setup_vars() {
-			$this->dashboard_name = apply_filters( 'themeisle_sdk_dashboard_widget_name', 'Latest Pirate News' );
+			$this->dashboard_name = apply_filters( 'themeisle_sdk_dashboard_widget_name', 'WordPress Guides/Tutorials' );
 			$this->feeds          = apply_filters( 'themeisle_sdk_dashboard_widget_feeds', array(
-				'https://themeisle.com/blog/feed',
-				'https://codeinwp.com/blog/feed',
+				'https://themeisle.com/blog/feed'
 			) );
 			$abs                  = untrailingslashit( ( dirname( __FILE__ ) ) );
 			$parts                = str_replace( untrailingslashit( ABSPATH ), '', $abs );
@@ -156,7 +155,7 @@ if ( ! class_exists( 'THEMEISLE_DASHBOARD' ) ) {
 					background-image: url(<?php echo $this->script_url; ?>/logo.png);
 					background-repeat: no-repeat;
 					background-position: 90% 50%;
-					background-size: 100px;
+					background-size: 29px;
 				}
 
 				.ti-dw-feed-item {
