@@ -60,11 +60,9 @@
 				<a href="<?php echo INTERGEO_PRO_URL?>" target="_blank" class="btn">Upgrade Now</a>
 			</div>
 			<?php endif; ?>
-			<div class="intergeo_sidebar_subscribe">
 	            <?php
 	            do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
 	            ?>
-			</div>
 		</div>
 
 	<?php if ( $query->have_posts() ) : ?>

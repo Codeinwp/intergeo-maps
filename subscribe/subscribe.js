@@ -1,4 +1,4 @@
-(function($, ti){
+(function($){
     $(document).ready(function(){
         $('.themeisle-sdk-subscribe-btn').on('click', function(e){
             var slug = $(this).data('product-slug');
@@ -20,4 +20,4 @@
             });
         });
     });
-})(jQuery, ti);
+})(jQuery);

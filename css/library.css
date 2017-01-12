@@ -113,14 +113,14 @@
 	width: 16%;
 }
 
-.intergeo_sidebar_subscribe {
+#intergeo-subscribe-box {
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 1px solid #ccc;
 	background: #fff;
 }
 
-.intergeo_sidebar_subscribe h3 {
+#intergeo-subscribe-box h3 {
 	margin: 0;
 }
 
