@@ -220,13 +220,15 @@ if ( ! class_exists( 'THEMEISLE_DASHBOARD' ) ) {
 	}
 
 }
-/**
- * The helper method to run the class
- *
- * @return THEMEISLE_DASHBOARD
- */
-function themeisle_dashboard_widget() {
-	return THEMEISLE_DASHBOARD::instance();
+if ( ! function_exists( 'themeisle_dashboard_widget' ) ) {
+	/**
+	 * The helper method to run the class
+	 *
+	 * @return THEMEISLE_DASHBOARD
+	 */
+	function themeisle_dashboard_widget() {
+		return THEMEISLE_DASHBOARD::instance();
+	}
 }
 
 themeisle_dashboard_widget();
