@@ -1,4 +1,8 @@
 
+### 2.1.1 - 19/01/2017
+**Changes:** 
+- Fixed compat with other plugins who are using dashboard widget
+
 ### 2.1.0 - 12/01/2017
 **Changes:** 
 - Release 2.1
