@@ -129,6 +129,11 @@ function filter_intergeo_map_settings( $options ) {
 
 == Changelog ==
 
+
+= 2.1.2 =
+
+* Fixed issue when editing maps and reached the limit.
+
 = 2.0.0 =
 
 * Major code refactor
