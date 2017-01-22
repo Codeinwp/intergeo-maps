@@ -1,4 +1,8 @@
 
+### 2.1.2 - 22/01/2017
+**Changes:** 
+- Fixed issue when editing map.
+
 ### 2.1.1 - 19/01/2017
 **Changes:** 
 - Fixed compat with other plugins who are using dashboard widget
