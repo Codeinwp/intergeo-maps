@@ -1,4 +1,8 @@
 
+### 2.1.3 - 31/01/2017
+**Changes:** 
+- Fixed pro slug of plan option
+
 ### 2.1.2 - 22/01/2017
 **Changes:** 
 - Fixed issue when editing map.
