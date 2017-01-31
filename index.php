@@ -1352,7 +1352,7 @@ function intergeo_is_personal() {
 
 function intergeo_is_developer() {
 	if ( intergeo_is_personal() ) {
-		$plan = get_option( 'intergeo_maps_license_plan', 0 );
+		$plan = get_option( 'intergeo_maps_pro_license_plan', 0 );
 		$plan = intval( $plan );
 		if ( $plan > 0 ) {
 			return true;
@@ -1365,7 +1365,7 @@ function intergeo_is_developer() {
 
 function intergeo_is_agency() {
 	if ( intergeo_is_developer() ) {
-		$plan = get_option( 'intergeo_maps_license_plan', 0 );
+		$plan = get_option( 'intergeo_maps_pro_license_plan', 0 );
 		$plan = intval( $plan );
 		if ( $plan > 2 ) {
 			return true;
