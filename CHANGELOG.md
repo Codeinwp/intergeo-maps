@@ -1,4 +1,8 @@
 
+### 2.1.3 - 06/04/2017
+**Changes:** 
+- Update readme.txt
+
 ### 2.1.3 - 31/01/2017
 **Changes:** 
 - Fixed pro slug of plan option
