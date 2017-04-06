@@ -1,23 +1,25 @@
-=== WordPress Google Maps Plugin  ===
-Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
+=== Google Maps Plugin by Intergeo ===
+Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.7
+Tested up to: 4.7.3
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
-A simple, easy and quite powerful Google Maps tool to create, manage and embed custom Google Maps into your WordPress posts and pages.
+A simple, easy and quite powerful Google Maps tool to create, manage and embed custom Google Maps & markers into your WordPress posts and pages.
 
 == Description ==
 
-The Intergeo Google Maps WordPress plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. This simple WordPress map plugin allow users to create new maps by using powerful UI builder. Created maps could be easily edited and saved with new settings. To increase the speed of creation process the plugin has ability to clone a map with all it's settings. Finally the plugin has attractive library which allows users to browse all maps in the system and delete unnecessary maps.
+The Intergeo Google Maps WordPress plugin is the best tool for handling Google Maps in your website. This simple WordPress map plugin allow users to create new custom maps by using powerful UI map builder. Created maps could be easily edited and saved with new settings. To increase the speed of creation process the plugin has ability to clone a map with all it's settings. Finally the plugin has attractive library which allows users to browse all maps in the system and delete unnecessary maps.
 We've also built some fantastic <a href="http://themeisle.com/wordpress-themes/business/" rel="nofollow" target="_blank">business themes</a> that integrate with Intergeo Google Maps perfectly, check them out.
 
 The powerful UI builder allows users to:
 
 * Setup initial position and zooming level of a map;
 * Adjust controls settings and positioning; 
+* Add multiple locations
+* WordPress location custom map 
 * Setup map color styles by using predefined color schemes or by using custom color settings;
 * Add markers;
 
