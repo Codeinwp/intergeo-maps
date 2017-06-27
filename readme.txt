@@ -34,7 +34,7 @@ The powerful UI builder allows users to:
 > * Custom Layers
 > * Support and updates for 12 months
 >
-> **[Learn more about Feedzy Full version]( https://themeisle.com/plugins/intergeo-maps/ )**
+> **[Learn more about Intergeo Maps Pro version]( https://themeisle.com/plugins/intergeo-maps/ )**
 
 
 ### Create Google maps with shortcode ###
