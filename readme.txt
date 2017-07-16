@@ -1,5 +1,5 @@
 === Google Maps Plugin by Intergeo ===
-Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle
+Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle,uriahs-victor
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
 Tested up to: 4.7.3
@@ -65,7 +65,7 @@ This attribute allows users to setup their own filter, which will be used to fil
 
 So your shortcode could looks like this one:
 
-`[intergeo zoom=”12” width=”50%” heigth=”400px” style=”border: 3px solid red; margin: 0 auto;”]Central Park, NY[/intergeo]`
+`[intergeo zoom="12" width="50%" height="400px" style="border: 3px solid red; margin: 0 auto;"]Central Park, NY[/intergeo]`
 
 Check-out the <a href="http://themeisle.com/plugins/intergeo-maps-lite/" rel="nofollow">#1 free Google Maps plugin</a>
 
