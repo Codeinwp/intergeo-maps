@@ -116,7 +116,7 @@ function intergeo_settings_init_map() {
 	printf( esc_html__( ' Below shows how to find your API Key, after retrieving your key add it to the "Maps API Key" input box.', 'intergeo-maps' ) );
 	?></p>
 
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/gbFDMBGPCcs" frameborder="0"
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/rqucit5YHNk?start=030" frameborder="0"
 			allowfullscreen></iframe>
 	<?php
 }
