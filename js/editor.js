@@ -1267,7 +1267,6 @@ if (!window.intergeo.maps) {
 
 })(jQuery, google.maps, intergeo.maps);
 function im_check_markers(){
-    console.log(jQuery('#intergeo_tlbr_markers').size());
     if(intergeo_options.is_pro === 'no' && jQuery('#intergeo_tlbr_markers .intergeo_tlbr_marker_title_td').size()  === 5){
         jQuery('#intergeo_add_marker_bttn').hide();
 
