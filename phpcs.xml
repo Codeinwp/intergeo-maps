@@ -6,10 +6,14 @@
 
     <exclude-pattern>node_modules/*</exclude-pattern>
     <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>subscribe/*</exclude-pattern>
     <exclude-pattern>lib/*</exclude-pattern>
     <rule ref="WordPress-Core">
-        <exclude name="Squiz.Commenting" />
         <exclude name="WordPress.NamingConvention.ValidVariableName.StringNotSnakeCase" />
+        <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+        <exclude name="WordPress.Files.FileName" />
+        <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
+        <exclude name="Squiz.Commenting.FileComment" />
         <exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCase" />
         <exclude name="WordPress.NamingConventions.ValidFunctionName" />
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />

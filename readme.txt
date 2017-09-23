@@ -25,8 +25,6 @@ The powerful UI builder allows users to:
 
 > **Time-saving features available in the FULL version:**
 >
-> * Unlimited maps
-> * Unlimited markers
 > * Add overlays like  rectangles, circles, polylines and polygons using the build or the drawing tools;
 > * Create directions routes from A address to B address;
 > * Integrate AdSense service into your maps and earn money by displaying ads on maps.
