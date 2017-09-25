@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Intergeo - Google Maps Plugin - Lite 2.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/intergeo-maps/issues\n"
-"POT-Creation-Date: 2017-09-25 13:21:01+00:00\n"
+"POT-Creation-Date: 2017-09-25 13:44:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +91,7 @@ msgid ""
 "advertising revenue when a user clicks on one of the ads shown on your maps."
 msgstr ""
 
-#: index.php:285 index.php:1157 index.php:1161
+#: index.php:285 index.php:1158 index.php:1162
 msgid "Intergeo Maps"
 msgstr ""
 
@@ -120,31 +120,31 @@ msgstr ""
 msgid "Update the map"
 msgstr ""
 
-#: index.php:1015
+#: index.php:1016
 msgid "The map has been updated successfully."
 msgstr ""
 
-#: index.php:1016
+#: index.php:1017
 msgid "The map has been created successfully."
 msgstr ""
 
-#: index.php:1025
+#: index.php:1026
 msgid "The map updating failed."
 msgstr ""
 
-#: index.php:1026
+#: index.php:1027
 msgid "The map creation failed."
 msgstr ""
 
-#: index.php:1157 index.php:1161
+#: index.php:1158 index.php:1162
 msgid "Intergeo Maps Library"
 msgstr ""
 
-#: index.php:1187
+#: index.php:1188
 msgid "Overview"
 msgstr ""
 
-#: index.php:1192
+#: index.php:1193
 msgid ""
 "The library is a list to view all maps you have created in your system. The "
 "library is showing you 3x3 grid of maps' previews. You will see the same "
@@ -153,7 +153,7 @@ msgid ""
 "under maps grid."
 msgstr ""
 
-#: index.php:1193
+#: index.php:1194
 msgid ""
 "To create a new map, click on \"Add New\" button next to the page title and "
 "map editor popup will appear. In case you want to edit a map, you can click "
@@ -161,7 +161,7 @@ msgid ""
 "window will appear."
 msgstr ""
 
-#: index.php:1194
+#: index.php:1195
 msgid ""
 "If you want to delete a map, click on the trash icon in the right bottom "
 "corner of a map and confirm your action. Pay attention that whole "
@@ -171,18 +171,18 @@ msgid ""
 "while the plugin is enabled."
 msgstr ""
 
-#: index.php:1202
+#: index.php:1203
 msgid "Shortcodes"
 msgstr ""
 
-#: index.php:1207
+#: index.php:1208
 msgid ""
 "You can easily embed a map into your posts, pages, categories or tags "
 "descriptions and text widgets by copying shortcode which you can find in "
 "the input field of a map preview box."
 msgstr ""
 
-#: index.php:1208
+#: index.php:1209
 msgid ""
 "To specify a certain address just type it inside a shortcode, and a map "
 "will be automatically centered at this place. Also each shortcode could be "
@@ -193,7 +193,7 @@ msgid ""
 "or theme to configure all options of a map."
 msgstr ""
 
-#: index.php:1292
+#: index.php:1293
 msgid "The map was deleted successfully."
 msgstr ""
 
