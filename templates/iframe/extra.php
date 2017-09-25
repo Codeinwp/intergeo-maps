@@ -7,9 +7,7 @@
 		<li><a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>"   class="intergeo-pro-btn button"><?php _e( 'Available in Agency plan', 'intergeo-maps' ); ?></a></li>
 		<?php
 		} else {
-
-			global $IntergeoMaps_Adv;
-			$IntergeoMaps_Adv->addUploadElements( $json );
+			do_action( 'intergeo_add_upload_elements',$json );
 		}
 	?>
 	</ul>

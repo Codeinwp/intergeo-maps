@@ -343,6 +343,12 @@ function intergeo_map_popup_init() {
 	);
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_style( 'intergeo-editor', INTERGEO_ABSURL . 'css/editor.css', array(), INTERGEO_VERSION );
+	do_action(
+		'intergeo_enqueue_assets',array( 'intergeo-editor' ), array(
+			'mapID' => $map_id,
+		)
+	);
+
 	wp_iframe( 'intergeo_iframe', $post_id, $map_id );
 }
 
@@ -955,7 +961,7 @@ function intergeo_filter_input() {
 			$results[ $overlay ] = array_filter( array_map( 'intergeo_filter_overlays_polyoverlay', $results[ $overlay ] ) );
 		}
 	}
-
+	$results = apply_filters( 'intergeo_process_results',$results );
 	return $results;
 }
 
@@ -1266,6 +1272,7 @@ function intergeo_library() {
 			),
 		)
 	);
+	do_action( 'intergeo_enqueue_assets',array( 'intergeo-rendering' ) );
 }
 
 /**
