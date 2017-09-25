@@ -91,7 +91,11 @@ if ( ! class_exists( 'THEMEISLE_SUBSCRIBE' ) ) {
 				return '';
 			}
 			wp_enqueue_script( 'themeisle-sdk-subscribe', $this->script_url . '/subscribe.js', array( 'jquery' ), $this->script_version, true );
-			wp_localize_script( 'themeisle-sdk-subscribe', 'themeisle_sdk', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+			wp_localize_script(
+				'themeisle-sdk-subscribe', 'themeisle_sdk', array(
+					'ajax_url' => admin_url( 'admin-ajax.php' ),
+				)
+			);
 			?>
 			<div id='<?php echo $this->product_slug; ?>-subscribe-box' class=" themeisle-sdk-subscribe-box">
 				<h3 class="themeisle-sdk-title"><?php echo esc_html( apply_filters( $this->product_slug . '_themeisle_subscribe_heading', $this->default_title ) ); ?></h3>
@@ -120,7 +124,10 @@ if ( ! class_exists( 'THEMEISLE_SUBSCRIBE' ) ) {
 				$mailin    = new Mailin( 'https://api.sendinblue.com/v2.0', 'cHW5sxZnzE7mhaYb' );
 				$data      = array(
 					'email'           => $email,
-					'attributes'      => array( 'NAME' => $user_info->first_name, 'SURNAME' => $user_info->last_name ),
+					'attributes'      => array(
+						'NAME' => $user_info->first_name,
+						'SURNAME' => $user_info->last_name,
+					),
 					'blacklisted'     => 0,
 					'listid'          => array( apply_filters( $this->product_slug . '_themeisle_sdk_subscribe_list', 0 ) ),
 					'blacklisted_sms' => 0,
@@ -128,7 +135,11 @@ if ( ! class_exists( 'THEMEISLE_SUBSCRIBE' ) ) {
 				$status    = $mailin->create_update_user( $data );
 				if ( $status['code'] == 'success' ) {
 					update_option( $this->product_slug . '_themeisle_sdk_subscribed', 'yes' );
-					wp_send_json_success( array( 'success' => true ) );
+					wp_send_json_success(
+						array(
+							'success' => true,
+						)
+					);
 				}
 			}
 			wp_die();

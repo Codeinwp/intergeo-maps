@@ -133,7 +133,6 @@ if (!window.intergeo.maps) {
                     d.overlay.setMap(null);
                     d.map[e][d.position] = null;
                     d.html.remove();
-                    im_check_markers();
                 }
             });
         }
@@ -1248,7 +1247,7 @@ if (!window.intergeo.maps) {
             d('#intergeo_tlbr_markers').append(h);
             f.markers.push(m);
             d('table.intergeo_tlbr_cntrl_tbl.intergeo_tlbr_overlay.intergeo_tlbr_marker[data-table-num=' + (e + 1) + ']').find('.intergeo_tlbr_actn_edit').trigger('click');
-            im_check_markers();
+
 
         });
 
@@ -1266,15 +1265,3 @@ if (!window.intergeo.maps) {
     });
 
 })(jQuery, google.maps, intergeo.maps);
-function im_check_markers(){
-    if(intergeo_options.is_pro === 'no' && jQuery('#intergeo_tlbr_markers .intergeo_tlbr_marker_title_td').size()  === 5){
-        jQuery('#intergeo_add_marker_bttn').hide();
-
-        jQuery('#intergeo_add_marker_bttn').parent().find('.intergeo-pro-btn').show();
-    }else{
-
-        jQuery('#intergeo_add_marker_bttn').show();
-
-        jQuery('#intergeo_add_marker_bttn').parent().find('.intergeo-pro-btn').hide();
-    }
-}
