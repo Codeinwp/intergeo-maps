@@ -13,55 +13,57 @@ jobs:
     dist: precise
 branches:
   except:
-  - "/^*-v[0-9]/"
+  - /^*-v[0-9]/
 env:
   matrix:
   - WP_VERSION=latest WP_MULTISITE=0
   global:
   - MASTER_BRANCH=master UPSTREAM_REPO=Codeinwp/intergeo-maps STORE_URL=https://themeisle.com
-   DEPLOY_BUILD=7.0
+    DEPLOY_BUILD=7.0
 before_install:
+- openssl aes-256-cbc -K $encrypted_90f80cca920c_key -iv $encrypted_90f80cca920c_iv
+  -in key.enc -out key -d
 - mkdir -p bin && cd bin
 - wget "$PIRATE_FLEET"load.sh
 - cd .. && chmod +x bin/load.sh
-- ". ./bin/load.sh"
+- . ./bin/load.sh
 install:
 - chmod +x bin/install-dependencies.sh
-- ". ./bin/install-dependencies.sh"
+- . ./bin/install-dependencies.sh
 script:
 - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then  grunt travis; fi;
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_794a7a2c76e1_key -iv $encrypted_794a7a2c76e1_iv
   -in key.enc -out /tmp/key -d
 - chmod +x bin/prepare-deploy.sh
-- ". ./bin/prepare-deploy.sh"
+- . ./bin/prepare-deploy.sh
 deploy:
 - provider: s3
-  access_key_id: "$AWS_ACCESS_KEY"
-  secret_access_key: "$AWS_SECRET_KEY"
-  bucket: "$AWS_BUCKET"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: $AWS_BUCKET
   skip_cleanup: true
   acl: public_read
   overwrite: true
   local-dir: artifact/
-  upload-dir: "$AWS_PRODUCTS_FOLDER/$THEMEISLE_REPO/latest"
+  upload-dir: $AWS_PRODUCTS_FOLDER/$THEMEISLE_REPO/latest
   on:
-    branch: "$MASTER_BRANCH"
-    repo: "$UPSTREAM_REPO"
-    condition: "$TRAVIS_PHP_VERSION = $DEPLOY_BUILD"
+    branch: $MASTER_BRANCH
+    repo: $UPSTREAM_REPO
+    condition: $TRAVIS_PHP_VERSION = $DEPLOY_BUILD
 - provider: s3
-  access_key_id: "$AWS_ACCESS_KEY"
-  secret_access_key: "$AWS_SECRET_KEY"
-  bucket: "$AWS_BUCKET"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: $AWS_BUCKET
   skip_cleanup: true
   acl: public_read
   overwrite: true
   local-dir: artifact/
-  upload-dir: "$AWS_PRODUCTS_FOLDER/$THEMEISLE_REPO/$THEMEISLE_VERSION"
+  upload-dir: $AWS_PRODUCTS_FOLDER/$THEMEISLE_REPO/$THEMEISLE_VERSION
   on:
-    repo: "$UPSTREAM_REPO"
-    branch: "$MASTER_BRANCH"
-    condition: "$TRAVIS_PHP_VERSION = $DEPLOY_BUILD"
+    repo: $UPSTREAM_REPO
+    branch: $MASTER_BRANCH
+    condition: $TRAVIS_PHP_VERSION = $DEPLOY_BUILD
 after_deploy:
 - chmod +x bin/deploy.sh
-- ". ./bin/deploy.sh"
+- . ./bin/deploy.sh
