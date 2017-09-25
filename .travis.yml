@@ -32,7 +32,7 @@ script:
 - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then  grunt travis; fi;
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_90f80cca920c_key -iv $encrypted_90f80cca920c_iv
-  -in key.enc -out key -d
+  -in key.enc -out /tmp/key -d
 - chmod +x bin/prepare-deploy.sh
 - . ./bin/prepare-deploy.sh
 deploy:
