@@ -42,7 +42,6 @@
 	height: 36px;
 	padding: 12px 16px;
 	border-top: 1px solid #dfdfdf;
-	-webkit-box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
 	text-align: right;
 }
@@ -180,7 +179,6 @@
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	background-color: rgba(0, 0, 0, 0.02);
-	-webkit-box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
 	font-weight: bold;
 	line-height: 22px;
@@ -250,7 +248,6 @@
 	background-image: url(../images/styles.jpg);
 	background-repeat: no-repeat;
 	background-position: top left;
-	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -311,7 +308,6 @@
 	width: 16px;
 	height: 16px;
 	margin: 4px 0 0 10px;
-	-webkit-box-shadow: 0 0 2px #aaa;
 	box-shadow: 0 0 2px #aaa;
 }
 
@@ -354,7 +350,6 @@
 	border: 2px solid #555;
 	border-radius: 3px;
 	background-color: white;
-	-webkit-box-shadow: 0 0 15px #555;
 	box-shadow: 0 0 15px #555;
 }
 
@@ -408,7 +403,6 @@
 	border: 1px solid #b0b0b0 !important;
 	color: #646464 !important;
 	background: #e6e6e6 url("../images/computer.png") no-repeat scroll 7px 1px !important;
-	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
@@ -421,8 +415,6 @@
 	border: 1px solid #2f8cea !important;
 	color: white !important;
 	background: #2f8cea url("../images/computer.png") no-repeat scroll 7px -36px !important;
-	-webkit-box-shadow: 0 1px 0 rgba(171, 171, 171, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15) !important;
-	-webkit-box-shadow: none !important;
 	box-shadow: 0 1px 0 rgba(171, 171, 171, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15) !important;
 	box-shadow: none !important;
 	-webkit-transition: all 0.3s ease 0s;

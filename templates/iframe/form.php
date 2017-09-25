@@ -45,9 +45,9 @@
 	<div id="intergeo_footer">
 		<a id="intergeo_go_to_address" class="button button-large"
 		   href="javascript:;"><?php esc_html_e( 'Go to address', 'intergeo-maps' ); ?></a>
-		<?php if ( $map_id ) : ?>
+
 			<input type="submit" class="button button-primary button-large" value="<?php echo $submit_text; ?>">
-		<?php endif; ?>
+
 	</div>
 </form>
 

@@ -34,8 +34,10 @@ add_filter( 'themeisle_sdk_products', 'intergeo_register_sdk', 10, 1 );
  */
 function intergeo_register_sdk( $products ) {
 	$products[] = __FILE__;
+
 	return $products;
 }
+
 if ( ! defined( 'INTERGEO_PRO_URL' ) ) {
 	define( 'INTERGEO_PRO_URL', 'http://themeisle.com/plugins/intergeo-maps/' );
 }
@@ -187,7 +189,6 @@ function intergeo_settings_init_adsense() {
 function intergeo_settings_print_field( array $args ) {
 	vprintf( array_shift( $args ), $args );
 }
-
 
 /**
  * Load libraries assets.
@@ -923,10 +924,11 @@ function intergeo_filter_input() {
 		'overlays_circle'                       => array(),
 		'directions'                            => array(),
 	);
-	global $IntergeoMaps_Adv;
-	$IntergeoMaps_Adv->addValidations( $validationArray, $defaults );
-	$options = filter_input_array( INPUT_POST, $validationArray );
-	$results = array();
+	$validated       = apply_filters( 'intergeo_validations', array( $validationArray, $defaults ) );
+	$validationArray = $validated[0];
+	$defaults        = $validated[1];
+	$options         = filter_input_array( INPUT_POST, $validationArray );
+	$results         = array();
 	foreach ( $options as $key => $value ) {
 		if ( array_key_exists( $key, $defaults ) ) {
 			$equals = $defaults[ $key ] == $value;
@@ -1289,7 +1291,6 @@ function intergeo_library_delete() {
 	}
 }
 
-
 /**
  * Count the current maps number.
  *
@@ -1310,6 +1311,65 @@ function intergeo_get_maps() {
 	);
 
 	return $query->post_count;
+}
+
+add_action( 'admin_notices', 'intergeo_print_messages' );
+/**
+ * Print messages.
+ */
+function intergeo_print_messages() {
+	global $pagenow;
+	if ( $pagenow != 'upload.php' ) {
+		return;
+	}
+	$messages = get_option( 'intergeo_messages', array() );
+	$user_id  = get_current_user_id();
+	if ( ! isset( $messages[ $user_id ] ) ) {
+		return;
+	}
+	foreach ( $messages[ $user_id ] as $message ) {
+		printf( $message[1] ? '<div class="updated"><p>%s</p></div>' : '<div class="error"><p>%s</p></div>', $message[0] );
+	}
+	$messages[ $user_id ] = array();
+	update_option( 'intergeo_messages', $messages );
+}
+/**
+ * Show message.
+ *
+ * @param   string $message Message.
+ * @param  string $is_normal Type.
+ * @param int    $user_id User id.
+ */
+function intergeo_set_message( $message, $is_normal, $user_id = false ) {
+	$messages = get_option( 'intergeo_messages', array() );
+	if ( $user_id === false ) {
+		$user_id = get_current_user_id();
+	}
+	if ( ! isset( $messages[ $user_id ] ) ) {
+		$messages[ $user_id ] = array();
+	}
+	$messages[ $user_id ][] = array( $message, $is_normal );
+	update_option( 'intergeo_messages', $messages );
+}
+
+/**
+ * Show info message.
+ *
+ * @param   string $message Message to show.
+ * @param int    $user_id User id.
+ */
+function intergeo_set_info( $message, $user_id = false ) {
+	intergeo_set_message( $message, 1, $user_id );
+}
+
+/**
+ * Error to show.
+ *
+ * @param string $message Message.
+ * @param int    $user_id User id.
+ */
+function intergeo_set_error( $message, $user_id = false ) {
+	intergeo_set_message( $message, 0, $user_id );
 }
 
 /**
