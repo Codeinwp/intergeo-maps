@@ -128,6 +128,12 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.2.0 - 2017-09-25  = 
+
+* Improved compatibility with the pro version.
+* Fixed various small bugs and ui issues.
+
+
 
 
 = 2.1.2 =
