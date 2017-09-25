@@ -344,7 +344,7 @@ function intergeo_map_popup_init() {
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_style( 'intergeo-editor', INTERGEO_ABSURL . 'css/editor.css', array(), INTERGEO_VERSION );
 	do_action(
-		'intergeo_enqueue_assets',array( 'intergeo-editor' ), array(
+		'intergeo_enqueue_assets', array( 'intergeo-editor' ), array(
 			'mapID' => $map_id,
 		)
 	);
@@ -961,7 +961,8 @@ function intergeo_filter_input() {
 			$results[ $overlay ] = array_filter( array_map( 'intergeo_filter_overlays_polyoverlay', $results[ $overlay ] ) );
 		}
 	}
-	$results = apply_filters( 'intergeo_process_results',$results );
+	$results = apply_filters( 'intergeo_process_results', $results );
+
 	return $results;
 }
 
@@ -1272,7 +1273,7 @@ function intergeo_library() {
 			),
 		)
 	);
-	do_action( 'intergeo_enqueue_assets',array( 'intergeo-rendering' ) );
+	do_action( 'intergeo_enqueue_assets', array( 'intergeo-rendering' ) );
 }
 
 /**
@@ -1340,6 +1341,7 @@ function intergeo_print_messages() {
 	$messages[ $user_id ] = array();
 	update_option( 'intergeo_messages', $messages );
 }
+
 /**
  * Show message.
  *
@@ -1426,6 +1428,16 @@ function intergeo_is_agency() {
 	}
 
 	return false;
+}
+
+add_filter( 'interge_maps_friendly_name', 'intergeo_maps_change_name' );
+/**
+ * Change notification name.
+ *
+ * @return string New name.
+ */
+function intergeo_maps_change_name() {
+	return 'Intergeo Maps';
 }
 
 add_filter( 'intergeo_themeisle_sdk_subscribe_list', 'intergeo_change_subscribe_list' );
