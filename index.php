@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Plugin Name: Intergeo - Google Maps Plugin
+ * Plugin Name: Intergeo - Google Maps Plugin - Lite
  * Plugin URI: http://themeisle.com/plugins/intergeo-maps-lite/
  * Description: A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages. The plugin allows you to deeply customize look and feel of a map, add overlays like markers, rectangles, circles, polylines and polygons to your map. It could even be integraded with your Google Adsense account and show ad on your maps.
  * Version: 2.1.3
