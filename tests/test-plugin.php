@@ -13,6 +13,6 @@ class Test_Plugin extends WP_Ajax_UnitTestCase {
 	 * Test SDK loading.
 	 */
 	public function test_generic() {
-		$this->assertTrue( true );
+		$this->c( true );
 	}
 }
