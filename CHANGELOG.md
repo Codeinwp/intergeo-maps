@@ -1,4 +1,8 @@
 
+ ### v2.2.1 - 2017-11-13 
+ **Changes:** 
+ * Fix minor issue with markers.
+ 
  ### v2.2.0 - 2017-09-25 
  **Changes:** 
  * Improved compatibility with the pro version.
