@@ -1456,3 +1456,9 @@ $vendor_file        = INTERGEO_ABSPATH . '/vendor/autoload.php';
 if ( is_readable( $vendor_file ) ) {
 	include_once( $vendor_file );
 }
+
+add_filter( 'pirate_parrot_log', 'intergeo_register_parrot', 10, 1 );
+function intergeo_register_parrot( $plugins ) {
+	$plugins[] = INTERGEO_PLUGIN_NAME;
+	return $plugins;
+}
