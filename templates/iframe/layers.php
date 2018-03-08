@@ -43,7 +43,7 @@
 			</div>
 		</li>
 		<?php
-		do_action( 'intergeo_add_layers','layers',$json );
+		do_action( 'intergeo_add_layers', 'layers', $json );
 	}
 ?>
 </ul>
