@@ -1020,6 +1020,12 @@ if (!window.intergeo.maps) {
             var f = this,
                 e = d('#intergeo_drctn_ppp'),
                 g = e.find('.intergeo_ppp_frm');
+
+            var from = new c.places.Autocomplete(e.find('.intergeo_tlbr_marker_address').get(0));
+            from.bindTo('bounds', f.map);
+            var to = new c.places.Autocomplete(e.find('.intergeo_tlbr_marker_address').get(1));
+            to.bindTo('bounds', f.map);
+
             g.bind('submit.firsttime', function() {
                 var h, i, j, l, k;
                 if (g.attr('data-position') !== '') {

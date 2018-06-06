@@ -197,7 +197,7 @@
 			<tr>
 				<td>
 					<input type="text" 
-						   id="intergeo_ppp_drctn_from" class="intergeo_tlbr_cntrl_txt"
+						   id="intergeo_ppp_drctn_from" class="intergeo_tlbr_marker_address intergeo_tlbr_cntrl_txt"
 						   title="<?php esc_attr_e( 'The start location from which to calculate directions', 'intergeo-maps' ); ?>"
 						   placeholder="<?php esc_attr_e( 'The start location from which to calculate directions', 'intergeo-maps' ); ?>">
 				</td>
@@ -205,7 +205,7 @@
 			<tr>
 				<td>
 					<input type="text" 
-						   id="intergeo_ppp_drctn_to" class="intergeo_tlbr_cntrl_txt"
+						   id="intergeo_ppp_drctn_to" class="intergeo_tlbr_marker_address intergeo_tlbr_cntrl_txt"
 						   title="<?php esc_attr_e( 'The end location to which to calculate directions', 'intergeo-maps' ); ?>"
 						   placeholder="<?php esc_attr_e( 'The end location to which to calculate directions', 'intergeo-maps' ); ?>">
 				</td>
