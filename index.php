@@ -56,7 +56,7 @@ function intergeo_action_links( $links, $file ) {
 		array_unshift(
 			$links,
 			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo-maps' ) ),
-			sprintf( '<a href="%s">%s</a>', admin_url( 'options-media.php' ), __( 'Settings', 'intergeo-maps' ) )
+			sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME ), __( 'Settings', 'intergeo-maps' ) )
 		);
 	}
 
