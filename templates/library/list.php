@@ -90,7 +90,7 @@
 							<a class="intergeo_lbrr_item_edit" href="javascript:;"
 							   title="<?php _e( 'Edit', 'intergeo-maps' ); ?>" data-map="<?php echo $id; ?>"></a>
 							<a class="intergeo_lbrr_item_copy" href="javascript:;"
-							   title="<?php _e( 'Copy', 'intergeo-maps' ); ?>" data-map="<?php echo $id; ?>"></a>
+							   title="<?php _e( 'Clone', 'intergeo-maps' ); ?>" data-map="<?php echo $id; ?>"></a>
 							<a class="intergeo_lbrr_item_delete" href="<?php echo esc_attr( $delete_url ); ?>"
 							   title="<?php _e( 'Delete', 'intergeo-maps' ); ?>"
 							   onclick="return showNotice.warn();"></a>

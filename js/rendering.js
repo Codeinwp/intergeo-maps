@@ -371,7 +371,7 @@
             mapTypeId: b.MapTypeId.ROADMAP
         }, d.options.map || {}));
         if (d.options.styles && d.options.styles.type) {
-            if (d.options.styles.type === -1) {
+            if (d.options.styles.type === '-1') {
                 try {
                     d.map.setOptions({
                         styles: d.options.styles.custom || []

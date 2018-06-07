@@ -1,6 +1,6 @@
 {
   "name": "intergeo-maps",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "description": "Intergeo Maps plugin",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
   },
   "devDependencies": {
-    "grunt-plugin-fleet": "codeinwp/grunt-plugin-fleet",
+    "grunt-plugin-fleet": "github:codeinwp/grunt-plugin-fleet",
     "load-project-config": "~0.2.0"
   }
 }

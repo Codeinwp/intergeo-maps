@@ -1,4 +1,9 @@
 
+ ### v2.2.2 - 2018-01-05 
+ **Changes:** 
+ * Improves compatibility with latest WordPress version.
+* Sync ThemeIsle SDK.
+ 
  ### v2.2.1 - 2017-11-13 
  **Changes:** 
  * Fix minor issue with markers.
