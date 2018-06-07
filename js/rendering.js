@@ -1,5 +1,6 @@
 /* global intergeo_options */
 /* global google */
+/* global alert */
 //noinspection JSUnresolvedVariable
 (function (c, b) {
     var a = function (d, f) {
