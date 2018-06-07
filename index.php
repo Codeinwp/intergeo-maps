@@ -340,7 +340,7 @@ function intergeo_map_popup_init() {
 					'shortcode' => __( 'Unable to render shortcode properly. Error: ', 'intergeo-maps' ),
 				),
 			),
-			'show_error'	=> is_user_logged_in() ? 1 : 0,
+			'show_error'    => is_user_logged_in() ? 1 : 0,
 		)
 	);
 	wp_enqueue_style( 'wp-color-picker' );
