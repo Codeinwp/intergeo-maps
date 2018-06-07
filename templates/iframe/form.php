@@ -33,7 +33,9 @@
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/adsense.php'; ?>
 			</li>
 			<?php
-			include INTERGEO_ABSPATH . '/templates/iframe/extra.php';
+			if ( intergeo_is_personal() ) {
+				include INTERGEO_ABSPATH . '/templates/iframe/extra.php';
+			}
 			?>
 		</ul>
 	</div>
