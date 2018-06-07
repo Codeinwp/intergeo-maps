@@ -72,56 +72,59 @@ $markers ++;
 
 	</li>
 
+<?php
+if ( intergeo_is_personal() ) {
+?>
 <li class="intergeo_tlbr_ul_li_ul_li">
-		<script id="intergeo_tlbr_polyline_tmpl" type="text/html">
+<script id="intergeo_tlbr_polyline_tmpl" type="text/html">
+	<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polyline" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>
+				#%num% <?php esc_html_e( 'polyline', 'intergeo-maps' ); ?>
+			</td>
+			<td>
+				<input type="hidden" class="intergeo_tlbr_polyline_path" name="overlays_polyline[%pos%][path]" data-position="%pos%">
+				<input type="hidden" class="intergeo_tlbr_polyline_weight" name="overlays_polyline[%pos%][weight]">
+				<input type="hidden" class="intergeo_tlbr_polyline_opacity" name="overlays_polyline[%pos%][opacity]">
+				<input type="hidden" class="intergeo_tlbr_polyline_color" name="overlays_polyline[%pos%][color]">
+
+				<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete polyline', 'intergeo-maps' ); ?>"></a>
+				<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit polyline', 'intergeo-maps' ); ?>"></a>
+
+				<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
+			</td>
+		</tr>
+	</table>
+</script>
+<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Polylines', 'intergeo-maps' ); ?></span>
+<div id="intergeo_tlbr_polylines" class="intergeo_tlbr_cntrl_items">
+<?php
+if ( ! empty( $json['overlays']['polyline'] ) ) :
+	$i = 0;
+	foreach ( $json['overlays']['polyline'] as $overlay ) :
+		$path = array();
+		foreach ( $overlay['path'] as $point ) :
+			$path[] = implode( ',', $point );
+			endforeach;
+			?>
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polyline" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td>
-						#%num% <?php esc_html_e( 'polyline', 'intergeo-maps' ); ?>
+						#<?php echo $i + 1; ?> <?php esc_html_e( 'polyline', 'intergeo-maps' ); ?>
 					</td>
 					<td>
-						<input type="hidden" class="intergeo_tlbr_polyline_path" name="overlays_polyline[%pos%][path]" data-position="%pos%">
-						<input type="hidden" class="intergeo_tlbr_polyline_weight" name="overlays_polyline[%pos%][weight]">
-						<input type="hidden" class="intergeo_tlbr_polyline_opacity" name="overlays_polyline[%pos%][opacity]">
-						<input type="hidden" class="intergeo_tlbr_polyline_color" name="overlays_polyline[%pos%][color]">
-
+						<input type="hidden" class="intergeo_tlbr_polyline_path" name="overlays_polyline[<?php echo $i; ?>][path]" value="<?php echo implode( ';', $path ); ?>" data-position="<?php echo $i; ?>">
+						<input type="hidden" class="intergeo_tlbr_polyline_weight" name="overlays_polyline[<?php echo $i; ?>][weight]" value="<?php echo esc_attr( $overlay['weight'] ); ?>">
+						<input type="hidden" class="intergeo_tlbr_polyline_opacity" name="overlays_polyline[<?php echo $i; ?>][opacity]" value="<?php echo esc_attr( $overlay['opacity'] ); ?>">
+						<input type="hidden" class="intergeo_tlbr_polyline_color" name="overlays_polyline[<?php echo $i++; ?>][color]" value="<?php echo esc_attr( $overlay['color'] ); ?>">
+								
 						<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete polyline', 'intergeo-maps' ); ?>"></a>
 						<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit polyline', 'intergeo-maps' ); ?>"></a>
 
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
+						<span class="intergeo_tlbr_clr_prvw" style="background-color:<?php echo esc_attr( $overlay['color'] ); ?>;opacity:<?php echo esc_attr( $overlay['opacity'] ); ?>"></span>
 					</td>
 				</tr>
-			</table>
-		</script>
-		<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Polylines', 'intergeo-maps' ); ?></span>
-		<div id="intergeo_tlbr_polylines" class="intergeo_tlbr_cntrl_items">
-		<?php
-		if ( ! empty( $json['overlays']['polyline'] ) ) :
-			$i = 0;
-			foreach ( $json['overlays']['polyline'] as $overlay ) :
-				$path = array();
-				foreach ( $overlay['path'] as $point ) :
-					$path[] = implode( ',', $point );
-					endforeach;
-					?>
-					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polyline" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td>
-								#<?php echo $i + 1; ?> <?php esc_html_e( 'polyline', 'intergeo-maps' ); ?>
-							</td>
-							<td>
-								<input type="hidden" class="intergeo_tlbr_polyline_path" name="overlays_polyline[<?php echo $i; ?>][path]" value="<?php echo implode( ';', $path ); ?>" data-position="<?php echo $i; ?>">
-								<input type="hidden" class="intergeo_tlbr_polyline_weight" name="overlays_polyline[<?php echo $i; ?>][weight]" value="<?php echo esc_attr( $overlay['weight'] ); ?>">
-								<input type="hidden" class="intergeo_tlbr_polyline_opacity" name="overlays_polyline[<?php echo $i; ?>][opacity]" value="<?php echo esc_attr( $overlay['opacity'] ); ?>">
-								<input type="hidden" class="intergeo_tlbr_polyline_color" name="overlays_polyline[<?php echo $i++; ?>][color]" value="<?php echo esc_attr( $overlay['color'] ); ?>">
-								
-								<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete polyline', 'intergeo-maps' ); ?>"></a>
-								<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit polyline', 'intergeo-maps' ); ?>"></a>
-
-								<span class="intergeo_tlbr_clr_prvw" style="background-color:<?php echo esc_attr( $overlay['color'] ); ?>;opacity:<?php echo esc_attr( $overlay['opacity'] ); ?>"></span>
-							</td>
-						</tr>
-					</table>
+				</table>
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
@@ -130,24 +133,24 @@ $markers ++;
 		<script id="intergeo_tlbr_rectangle_tmpl" type="text/html">
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_rectangle" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td>
-						#%num% <?php esc_html_e( 'rectangle', 'intergeo-maps' ); ?>
-					</td>
-					<td>
-						<input type="hidden" class="intergeo_tlbr_rectangle_path" name="overlays_rectangle[%pos%][path]" data-position="%pos%">
-						<input type="hidden" class="intergeo_tlbr_rectangle_weight" name="overlays_rectangle[%pos%][weight]">
-						<input type="hidden" class="intergeo_tlbr_rectangle_stroke_opacity" name="overlays_rectangle[%pos%][stroke_opacity]">
-						<input type="hidden" class="intergeo_tlbr_rectangle_position" name="overlays_rectangle[%pos%][position]">
-						<input type="hidden" class="intergeo_tlbr_rectangle_stroke_color" name="overlays_rectangle[%pos%][stroke_color]">
-						<input type="hidden" class="intergeo_tlbr_rectangle_fill_opacity" name="overlays_rectangle[%pos%][fill_opacity]">
-						<input type="hidden" class="intergeo_tlbr_rectangle_fill_color" name="overlays_rectangle[%pos%][fill_color]">
+				<td>
+				#%num% <?php esc_html_e( 'rectangle', 'intergeo-maps' ); ?>
+				</td>
+				<td>
+				<input type="hidden" class="intergeo_tlbr_rectangle_path" name="overlays_rectangle[%pos%][path]" data-position="%pos%">
+				<input type="hidden" class="intergeo_tlbr_rectangle_weight" name="overlays_rectangle[%pos%][weight]">
+				<input type="hidden" class="intergeo_tlbr_rectangle_stroke_opacity" name="overlays_rectangle[%pos%][stroke_opacity]">
+				<input type="hidden" class="intergeo_tlbr_rectangle_position" name="overlays_rectangle[%pos%][position]">
+				<input type="hidden" class="intergeo_tlbr_rectangle_stroke_color" name="overlays_rectangle[%pos%][stroke_color]">
+				<input type="hidden" class="intergeo_tlbr_rectangle_fill_opacity" name="overlays_rectangle[%pos%][fill_opacity]">
+				<input type="hidden" class="intergeo_tlbr_rectangle_fill_color" name="overlays_rectangle[%pos%][fill_color]">
 
-						<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete rectangle', 'intergeo-maps' ); ?>"></a>
-						<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit rectangle', 'intergeo-maps' ); ?>"></a>
+				<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete rectangle', 'intergeo-maps' ); ?>"></a>
+				<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit rectangle', 'intergeo-maps' ); ?>"></a>
 
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
-					</td>
+				<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
+				<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
+				</td>
 				</tr>
 			</table>
 		</script>
@@ -206,22 +209,22 @@ $markers ++;
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_circle" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td>
-						#%num% <?php esc_html_e( 'circle', 'intergeo-maps' ); ?>
+					#%num% <?php esc_html_e( 'circle', 'intergeo-maps' ); ?>
 					</td>
 					<td>
-						<input type="hidden" class="intergeo_tlbr_circle_path" name="overlays_circle[%pos%][path]" data-position="%pos%">
-						<input type="hidden" class="intergeo_tlbr_circle_weight" name="overlays_circle[%pos%][weight]">
-						<input type="hidden" class="intergeo_tlbr_circle_stroke_opacity" name="overlays_circle[%pos%][stroke_opacity]">
-						<input type="hidden" class="intergeo_tlbr_circle_position" name="overlays_circle[%pos%][position]">
-						<input type="hidden" class="intergeo_tlbr_circle_stroke_color" name="overlays_circle[%pos%][stroke_color]">
-						<input type="hidden" class="intergeo_tlbr_circle_fill_opacity" name="overlays_circle[%pos%][fill_opacity]">
-						<input type="hidden" class="intergeo_tlbr_circle_fill_color" name="overlays_circle[%pos%][fill_color]">
+					<input type="hidden" class="intergeo_tlbr_circle_path" name="overlays_circle[%pos%][path]" data-position="%pos%">
+					<input type="hidden" class="intergeo_tlbr_circle_weight" name="overlays_circle[%pos%][weight]">
+					<input type="hidden" class="intergeo_tlbr_circle_stroke_opacity" name="overlays_circle[%pos%][stroke_opacity]">
+					<input type="hidden" class="intergeo_tlbr_circle_position" name="overlays_circle[%pos%][position]">
+					<input type="hidden" class="intergeo_tlbr_circle_stroke_color" name="overlays_circle[%pos%][stroke_color]">
+					<input type="hidden" class="intergeo_tlbr_circle_fill_opacity" name="overlays_circle[%pos%][fill_opacity]">
+					<input type="hidden" class="intergeo_tlbr_circle_fill_color" name="overlays_circle[%pos%][fill_color]">
 
-						<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete rectangle', 'intergeo-maps' ); ?>"></a>
-						<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit rectangle', 'intergeo-maps' ); ?>"></a>
+					<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete rectangle', 'intergeo-maps' ); ?>"></a>
+					<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit rectangle', 'intergeo-maps' ); ?>"></a>
 
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
+					<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
+					<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
 					</td>
 				</tr>
 			</table>
@@ -281,22 +284,22 @@ $markers ++;
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polygon" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td>
-						#%num% <?php esc_html_e( 'polygon', 'intergeo-maps' ); ?>
+					#%num% <?php esc_html_e( 'polygon', 'intergeo-maps' ); ?>
 					</td>
 					<td>
-						<input type="hidden" class="intergeo_tlbr_polygon_path" name="overlays_polygon[%pos%][path]" data-position="%pos%">
-						<input type="hidden" class="intergeo_tlbr_polygon_weight" name="overlays_polygon[%pos%][weight]">
-						<input type="hidden" class="intergeo_tlbr_polygon_stroke_opacity" name="overlays_polygon[%pos%][stroke_opacity]">
-						<input type="hidden" class="intergeo_tlbr_polygon_position" name="overlays_polygon[%pos%][position]">
-						<input type="hidden" class="intergeo_tlbr_polygon_stroke_color" name="overlays_polygon[%pos%][stroke_color]">
-						<input type="hidden" class="intergeo_tlbr_polygon_fill_opacity" name="overlays_polygon[%pos%][fill_opacity]">
-						<input type="hidden" class="intergeo_tlbr_polygon_fill_color" name="overlays_polygon[%pos%][fill_color]">
+					<input type="hidden" class="intergeo_tlbr_polygon_path" name="overlays_polygon[%pos%][path]" data-position="%pos%">
+					<input type="hidden" class="intergeo_tlbr_polygon_weight" name="overlays_polygon[%pos%][weight]">
+					<input type="hidden" class="intergeo_tlbr_polygon_stroke_opacity" name="overlays_polygon[%pos%][stroke_opacity]">
+					<input type="hidden" class="intergeo_tlbr_polygon_position" name="overlays_polygon[%pos%][position]">
+					<input type="hidden" class="intergeo_tlbr_polygon_stroke_color" name="overlays_polygon[%pos%][stroke_color]">
+					<input type="hidden" class="intergeo_tlbr_polygon_fill_opacity" name="overlays_polygon[%pos%][fill_opacity]">
+					<input type="hidden" class="intergeo_tlbr_polygon_fill_color" name="overlays_polygon[%pos%][fill_color]">
 
-						<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete polygon', 'intergeo-maps' ); ?>"></a>
-						<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit polygon', 'intergeo-maps' ); ?>"></a>
+					<a class="intergeo_tlbr_actn_delete intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Delete polygon', 'intergeo-maps' ); ?>"></a>
+					<a class="intergeo_tlbr_actn_edit intergeo_tlbr_actn" href="javascript:;" title="<?php esc_attr_e( 'Edit polygon', 'intergeo-maps' ); ?>"></a>
 
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
-						<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
+					<span class="intergeo_tlbr_clr_prvw" style="background-color:black;opacity:0.3;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';filter:alpha(opacity=30);"></span>
+					<span class="intergeo_tlbr_clr_prvw" style="background-color:black;"></span>
 					</td>
 				</tr>
 			</table>
@@ -351,4 +354,7 @@ $markers ++;
 			<?php endif; ?>
 		</div>
 	</li>
+<?php
+}
+?>
 </ul>

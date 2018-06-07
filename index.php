@@ -56,7 +56,7 @@ function intergeo_action_links( $links, $file ) {
 		array_unshift(
 			$links,
 			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo-maps' ) ),
-			sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME ), __( 'Settings', 'intergeo-maps' ) )
+			sprintf( '<a href="%s">%s</a>', intergeo_settings_url(), __( 'Settings', 'intergeo-maps' ) )
 		);
 	}
 
@@ -336,9 +336,11 @@ function intergeo_map_popup_init() {
 				'marker' => __( 'marker', 'intergeo-maps' ),
 				'error'  => array(
 					'style'      => __( 'Styles are broken. Please, fix it and try again.', 'intergeo-maps' ),
-					'directions' => __( 'Direction was not found.', 'intergeo-maps' ),
+					'directions' => __( 'Directions were not found. Error: ', 'intergeo-maps' ),
+					'shortcode' => __( 'Unable to render shortcode properly. Error: ', 'intergeo-maps' ),
 				),
 			),
+			'show_error'    => is_user_logged_in() ? 1 : 0,
 		)
 	);
 	wp_enqueue_style( 'wp-color-picker' );
@@ -543,6 +545,16 @@ function intergeo_filter_overlays_marker( $marker ) {
 		'title'    => isset( $marker['title'] ) ? strip_tags( trim( $marker['title'] ) ) : '',
 		'loc'      => isset( $marker['loc'] ) ? strip_tags( trim( $marker['loc'] ) ) : '',
 	);
+}
+
+
+/**
+ * Returns the settings URL.
+ *
+ * @return string The settings URL.
+ */
+function intergeo_settings_url() {
+	return admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );
 }
 
 /**

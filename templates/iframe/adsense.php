@@ -11,7 +11,7 @@ if ( ! intergeo_is_agency() ) {
 		<li class="intergeo_tlbr_ul_li_ul_li">
 		<p class="intergeo_tlbr_grp_dsc">
 		<?php
-		printf( esc_html__( 'To make AdSense working on your maps, you have to setup your publisher ID. You can do it at the %1$ssettings page%2$s.', 'intergeo-maps' ), '<a href="' . admin_url( 'options-media.php' ) . '" target="_blank">', '</a>' )
+		printf( esc_html__( 'To make AdSense working on your maps, you have to setup your publisher ID. You can do it at the %1$ssettings page%2$s.', 'intergeo-maps' ), '<a href="' . intergeo_settings_url() . '" target="_blank">', '</a>' )
 		?>
 		</p>
 		</li>

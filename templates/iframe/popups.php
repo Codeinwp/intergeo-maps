@@ -44,8 +44,11 @@
 			<tr>
 				<td>
 					<select name="intergeo_tlbr_marker_icon_select" id="intergeo_tlbr_marker_icon_select" class="intergeo_tlbr_marker_icon_select intergeo_tlbr_cntrl_txt">
-						<option value="//maps.google.com/mapfiles/ms/icons/red-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/red-dot.png"><?php _e( 'Default', 'intergeo-maps' ); ?></option>
-						<option value="//maps.google.com/mapfiles/ms/icons/blue-dot.png" data-imagesrc="//maps.google.com/mapfiles/ms/icons/blue-dot.png"><?php _e( 'Blue', 'intergeo-maps' ); ?></option>
+						<option value="https://maps.google.com/mapfiles/ms/icons/red-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/red-dot.png"><?php _e( 'Default', 'intergeo-maps' ); ?></option>
+						<option value="https://maps.google.com/mapfiles/ms/icons/blue-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"><?php _e( 'Blue', 'intergeo-maps' ); ?></option>
+						<option value="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png"><?php _e( 'Yellow', 'intergeo-maps' ); ?></option>
+						<option value="https://maps.google.com/mapfiles/ms/icons/green-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/green-dot.png"><?php _e( 'Green', 'intergeo-maps' ); ?></option>
+						<option value="https://maps.google.com/mapfiles/ms/icons/orange-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/orange-dot.png"><?php _e( 'Orange', 'intergeo-maps' ); ?></option>
 						<?php
 						if ( intergeo_is_personal() ) :
 						?>
@@ -56,7 +59,7 @@
 						   class="intergeo_tlbr_marker_icon intergeo_tlbr_cntrl_txt" 
 						   placeholder="<?php esc_attr_e( 'Enter icon URL', 'intergeo-maps' ); ?>"
 						   title="<?php esc_attr_e( 'Enter icon URL', 'intergeo-maps' ); ?>"
-						   value="//maps.google.com/mapfiles/ms/icons/red-dot.png"
+						   value="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
 					>
 				</td>
 			</tr>
@@ -197,7 +200,7 @@
 			<tr>
 				<td>
 					<input type="text" 
-						   id="intergeo_ppp_drctn_from" class="intergeo_tlbr_cntrl_txt"
+						   id="intergeo_ppp_drctn_from" class="intergeo_tlbr_marker_address intergeo_tlbr_cntrl_txt"
 						   title="<?php esc_attr_e( 'The start location from which to calculate directions', 'intergeo-maps' ); ?>"
 						   placeholder="<?php esc_attr_e( 'The start location from which to calculate directions', 'intergeo-maps' ); ?>">
 				</td>
@@ -205,7 +208,7 @@
 			<tr>
 				<td>
 					<input type="text" 
-						   id="intergeo_ppp_drctn_to" class="intergeo_tlbr_cntrl_txt"
+						   id="intergeo_ppp_drctn_to" class="intergeo_tlbr_marker_address intergeo_tlbr_cntrl_txt"
 						   title="<?php esc_attr_e( 'The end location to which to calculate directions', 'intergeo-maps' ); ?>"
 						   placeholder="<?php esc_attr_e( 'The end location to which to calculate directions', 'intergeo-maps' ); ?>">
 				</td>
