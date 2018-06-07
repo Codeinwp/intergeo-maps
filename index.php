@@ -56,7 +56,7 @@ function intergeo_action_links( $links, $file ) {
 		array_unshift(
 			$links,
 			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo-maps' ) ),
-			sprintf( '<a href="%s">%s</a>', admin_url( 'options-media.php' ), __( 'Settings', 'intergeo-maps' ) )
+			sprintf( '<a href="%s">%s</a>', intergeo_settings_url(), __( 'Settings', 'intergeo-maps' ) )
 		);
 	}
 
@@ -545,6 +545,16 @@ function intergeo_filter_overlays_marker( $marker ) {
 		'title'    => isset( $marker['title'] ) ? strip_tags( trim( $marker['title'] ) ) : '',
 		'loc'      => isset( $marker['loc'] ) ? strip_tags( trim( $marker['loc'] ) ) : '',
 	);
+}
+
+
+/**
+ * Returns the settings URL.
+ *
+ * @return string The settings URL.
+ */
+function intergeo_settings_url() {
+	return admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );
 }
 
 /**
