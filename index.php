@@ -336,9 +336,11 @@ function intergeo_map_popup_init() {
 				'marker' => __( 'marker', 'intergeo-maps' ),
 				'error'  => array(
 					'style'      => __( 'Styles are broken. Please, fix it and try again.', 'intergeo-maps' ),
-					'directions' => __( 'Direction was not found.', 'intergeo-maps' ),
+					'directions' => __( 'Directions were not found. Error: ', 'intergeo-maps' ),
+					'shortcode' => __( 'Unable to render shortcode properly. Error: ', 'intergeo-maps' ),
 				),
 			),
+			'show_error'	=> is_user_logged_in() ? 1 : 0,
 		)
 	);
 	wp_enqueue_style( 'wp-color-picker' );

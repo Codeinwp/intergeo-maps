@@ -392,6 +392,8 @@
             }, function (l, e) {
                 if (e === b.GeocoderStatus.OK) {
                     d.map.setCenter(l[0].geometry.location);
+                } else if( intergeo_options.show_error === 1 ) {
+                    alert(intergeo_options.l10n.error.shortcode + e);
                 }
             });
         }

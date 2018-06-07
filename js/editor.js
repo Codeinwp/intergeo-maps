@@ -458,7 +458,7 @@ if (!window.intergeo.maps) {
                         '%mode%': f.find('#intergeo_ppp_drctn_mode > :selected').text()
                     }));
                 } else {
-                    alert(intergeo_options.l10n.error.directions);
+                    alert(intergeo_options.l10n.error.directions + j);
                 }
             });
             d.html.find('.intergeo_tlbr_drctn_from').val(i);
