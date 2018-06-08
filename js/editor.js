@@ -807,6 +807,7 @@ if (!window.intergeo.maps) {
             f[i].push(k);
             g.find('.intergeo_tlbr_' + i + '_path').val(k.pathToString());
             d('#intergeo_tlbr_' + i + 's').append(g);
+            f.drawing.setDrawingMode(null);
         },
         _normalize: function(h) {
             var g = function(j) {
@@ -1267,6 +1268,12 @@ if (!window.intergeo.maps) {
                     d('#intergeo_marker_ppp .intergeo_tlbr_marker_icon').val(data.selectedData.value).hide();
                 }
             }
+        });
+
+        d(".intergeo_add_drawing_tool_bttn").click(function() {
+            f.drawing.setDrawingMode(null);
+            f.drawing.setDrawingMode(d(this).attr('data-drawing-type'));
+            return false;
         });
     });
 
