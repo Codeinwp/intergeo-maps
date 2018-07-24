@@ -1,6 +1,8 @@
 /* global intergeo_options */
 /* global google */
 //noinspection JSUnresolvedVariable
+/* jshint ignore:start */
+
 (function (c, b) {
     var a = function (d, f) {
         var e = this;
