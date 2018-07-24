@@ -355,6 +355,33 @@
             });
         });
     };
+    a.prototype.drawImportedMarkers = function() {
+        var e = this;
+        var map = e.map;
+        var infoWindow = new b.InfoWindow();
+        b.event.addListener(map, 'click', function () {
+            infoWindow.close();
+        });
+
+        downloadUrl(e.options.xml, function (data) {
+            var markers = data.documentElement.getElementsByTagName("marker");
+            for (var i = 0; i < markers.length; i++) {
+                var latlng = new b.LatLng(parseFloat(markers[i].getAttribute("lat")),
+                                    parseFloat(markers[i].getAttribute("lng")));
+                var name = markers[i].getAttribute("name");
+                var icon = markers[i].getAttribute("icon");
+                var marker = new b.Marker({ position: latlng, map: map });
+                marker.setIcon(icon);
+                e.bindInfoWindow(marker, map, infoWindow, name);
+            }
+        });
+    };
+    a.prototype.bindInfoWindow = function(marker, map, infowindow, html) {
+        b.event.addListener(marker, 'click', function () {
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+        });
+    };
     a.prototype.render = function () {
         var d = this,
             j = d.options.layer || {},
@@ -398,6 +425,11 @@
         if (d.options.overlays) {
             d._renderOverlays();
         }
+
+        if(d.options.layer.importcsv == 1){
+            d.drawImportedMarkers();
+        }
+
         if (d.options.directions) {
             d._renderDirections();
         }
