@@ -1,8 +1,8 @@
 === Google Maps Plugin by Intergeo ===
-Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle,uriahs-victor,rozroz
+Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle,uriahs-victor,contactashish13
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -128,6 +128,12 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.2.3 - 2018-03-12  = 
+
+* Improves copy maps workflow. 
+* Update ThemeIsle SDK.
+
+
 = 2.2.2 - 2018-01-05  = 
 
 * Improves compatibility with latest WordPress version.
