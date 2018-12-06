@@ -78,7 +78,7 @@
 				</textarea>
 			</div>
 			<p class="intergeo_tlbr_cntrl_dsc">
-				<?php printf( esc_html__( 'Creating styles by hand and testing your code to see how they look is potentially time-consuming. Instead, you can use the %1$s Styled Map Wizard  %2$s to set up the JSON for your maps styles.', 'intergeo-maps' ), '<a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html" target="_blank">', '</a>' ); ?>
+				<?php printf( esc_html__( 'Creating styles by hand and testing your code to see how they look is potentially time-consuming. Instead, you can use the %1$s Styled Map Wizard  %2$s to set up the JSON for your maps styles.', 'intergeo-maps' ), '<a href="https://mapstyle.withgoogle.com" target="_blank">', '</a>' ); ?>
 			</p>
 		</div>
 	</li>

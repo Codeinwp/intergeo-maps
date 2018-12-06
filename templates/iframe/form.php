@@ -23,17 +23,29 @@
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/styles.php'; ?>
 			</li>
+			<?php
+			if ( intergeo_is_personal() ) {
+			?>
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/directions.php'; ?>
 			</li>
+			<?php
+			}
+			?>
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/layers.php'; ?>
 			</li>
+			<?php
+			if ( intergeo_is_personal() ) {
+			?>
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/adsense.php'; ?>
 			</li>
 			<?php
-			include INTERGEO_ABSPATH . '/templates/iframe/extra.php';
+			}
+			if ( intergeo_is_personal() ) {
+				include INTERGEO_ABSPATH . '/templates/iframe/extra.php';
+			}
 			?>
 		</ul>
 	</div>

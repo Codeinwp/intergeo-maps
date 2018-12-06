@@ -4,7 +4,7 @@
  * Plugin Name: Intergeo - Google Maps Plugin - Lite
  * Plugin URI: http://themeisle.com/plugins/intergeo-maps-lite/
  * Description: A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages. The plugin allows you to deeply customize look and feel of a map, add overlays like markers, rectangles, circles, polylines and polygons to your map. It could even be integraded with your Google Adsense account and show ad on your maps.
- * Version: 2.2.3
+ * Version: 2.2.4
  * Author: Themeisle
  * Author URI: http://themeisle.com
  * License: GPL v2.0 or later
@@ -16,7 +16,7 @@
  */
 
 define( 'INTERGEO_PLUGIN_NAME', 'intergeo' );
-define( 'INTERGEO_VERSION', '2.2.3' );
+define( 'INTERGEO_VERSION', '2.2.4' );
 define( 'INTERGEO_ABSPATH', dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL', plugins_url( '/', __FILE__ ) );
 defined( 'WPLANG' ) || define( 'WPLANG', '' );
@@ -56,7 +56,7 @@ function intergeo_action_links( $links, $file ) {
 		array_unshift(
 			$links,
 			sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ), __( 'Maps', 'intergeo-maps' ) ),
-			sprintf( '<a href="%s">%s</a>', admin_url( 'options-media.php' ), __( 'Settings', 'intergeo-maps' ) )
+			sprintf( '<a href="%s">%s</a>', intergeo_settings_url(), __( 'Settings', 'intergeo-maps' ) )
 		);
 	}
 
@@ -336,9 +336,11 @@ function intergeo_map_popup_init() {
 				'marker' => __( 'marker', 'intergeo-maps' ),
 				'error'  => array(
 					'style'      => __( 'Styles are broken. Please, fix it and try again.', 'intergeo-maps' ),
-					'directions' => __( 'Direction was not found.', 'intergeo-maps' ),
+					'directions' => __( 'Directions were not found. Error: ', 'intergeo-maps' ),
+					'shortcode' => __( 'Unable to render shortcode properly. Error: ', 'intergeo-maps' ),
 				),
 			),
+			'show_error'    => is_user_logged_in() ? 1 : 0,
 		)
 	);
 	wp_enqueue_style( 'wp-color-picker' );
@@ -543,6 +545,16 @@ function intergeo_filter_overlays_marker( $marker ) {
 		'title'    => isset( $marker['title'] ) ? strip_tags( trim( $marker['title'] ) ) : '',
 		'loc'      => isset( $marker['loc'] ) ? strip_tags( trim( $marker['loc'] ) ) : '',
 	);
+}
+
+
+/**
+ * Returns the settings URL.
+ *
+ * @return string The settings URL.
+ */
+function intergeo_settings_url() {
+	return admin_url( 'options-general.php?page=' . INTERGEO_PLUGIN_NAME );
 }
 
 /**

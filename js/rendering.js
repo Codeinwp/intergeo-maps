@@ -1,5 +1,6 @@
 /* global intergeo_options */
 /* global google */
+/* global alert */
 //noinspection JSUnresolvedVariable
 (function (c, b) {
     var a = function (d, f) {
@@ -371,7 +372,7 @@
             mapTypeId: b.MapTypeId.ROADMAP
         }, d.options.map || {}));
         if (d.options.styles && d.options.styles.type) {
-            if (d.options.styles.type === -1) {
+            if (d.options.styles.type === '-1') {
                 try {
                     d.map.setOptions({
                         styles: d.options.styles.custom || []
@@ -392,6 +393,8 @@
             }, function (l, e) {
                 if (e === b.GeocoderStatus.OK) {
                     d.map.setCenter(l[0].geometry.location);
+                } else if( intergeo_options.show_error === 1 ) {
+                    alert(intergeo_options.l10n.error.shortcode + e);
                 }
             });
         }
