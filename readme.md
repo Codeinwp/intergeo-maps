@@ -1,5 +1,5 @@
 # Google Maps Plugin by Intergeo #
-**Contributors:** [codeinwp](https://profiles.wordpress.org/codeinwp), [intergeomaps](https://profiles.wordpress.org/intergeomaps), [hardeepasrani](https://profiles.wordpress.org/hardeepasrani), [themeisle](https://profiles.wordpress.org/themeisle), [Madalin_ThemeIsle](https://profiles.wordpress.org/Madalin_ThemeIsle), [uriahs-victor](https://profiles.wordpress.org/uriahs-victor), [contactashish13](https://profiles.wordpress.org/rozroz)  
+**Contributors:** [codeinwp](https://profiles.wordpress.org/codeinwp), [intergeomaps](https://profiles.wordpress.org/intergeomaps), [hardeepasrani](https://profiles.wordpress.org/hardeepasrani), [themeisle](https://profiles.wordpress.org/themeisle), [Madalin_ThemeIsle](https://profiles.wordpress.org/Madalin_ThemeIsle), [uriahs-victor](https://profiles.wordpress.org/uriahs-victor), [contactashish13](https://profiles.wordpress.org/contactashish13)  
 **Tags:**  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering  
 **Requires at least:** 3.5  
 **Tested up to:** 5.0  
@@ -128,6 +128,14 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 ## Changelog ##
+### 2.2.4 - 2018-12-06  ###
+
+* Fixed problem with Custom Styles option not working
+* Fixed problem with markers colors not working properly
+* Fixed problem with maps with driving directions
+* Tested with WP 5.0
+
+
 ### 2.2.3 - 2018-03-12  ###
 
 * Improves copy maps workflow. 

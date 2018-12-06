@@ -128,6 +128,14 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.2.4 - 2018-12-06  = 
+
+* Fixed problem with Custom Styles option not working
+* Fixed problem with markers colors not working properly
+* Fixed problem with maps with driving directions
+* Tested with WP 5.0
+
+
 = 2.2.3 - 2018-03-12  = 
 
 * Improves copy maps workflow. 
