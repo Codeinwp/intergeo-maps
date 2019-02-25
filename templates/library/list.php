@@ -31,21 +31,6 @@
 	<div id="intergeo_library" class="intergeo_library">
 		<div id="intergeo_sidebar" class="intergeo_sidebar_right">
 			<?php
-			if ( ! intergeo_is_personal() ) :
-			?>
-			<div class="intergeo_sidebar_pro">
-				<h3>Extend your maps power.</h3>
-			<ul>
-				<li>Custom layers</li>
-				<li>Add directions</li>
-				<li>Adsense integrations</li>
-				<li>Import/export markers</li>
-				<li>Support and updates for 12 months</li>
-				</ul>
-				<a href="<?php echo INTERGEO_PRO_URL; ?>" target="_blank" class="btn">Upgrade Now</a>
-			</div>
-			<?php
-			endif;
 			do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
 			?>
 		</div>

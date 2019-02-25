@@ -106,7 +106,6 @@ function intergeo_settings() {
     <h2>
 		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span>' . __( 'Maps Settings', 'intergeo-maps' ) . '</div> ';
 	echo '<a   href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'Create New Map', 'intergeo-maps' ) . '</a>';
-	echo '<a  target="_blank" href="' . INTERGEO_PRO_URL . '" class="intergeo-pro-btn add-new-h2">' . __( 'Buy PRO version to add more maps', 'intergeo-maps' ) . '</a>';
 
 	echo '<a id="intergeo_lbrr_settings" href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'View Existing Maps', 'intergeo-maps' ) . '</a>
 	</h2>';
