@@ -3,7 +3,6 @@
 	<?php
 	if ( ! intergeo_is_developer() ) {
 		?>
-		<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>"   class="intergeo-pro-btn button"><?php _e( 'Available in Developer plan', 'intergeo-maps' ); ?></a>
 		<?php
 	} else {
 	?>
