@@ -32,36 +32,38 @@
 		<div id="intergeo_sidebar" class="intergeo_sidebar_right">
 			<?php
 			do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
-			do_action( TI_INTERGEO_PLUGIN_NAME . '_upsell_products', array(
+			do_action(
+				TI_INTERGEO_PLUGIN_NAME . '_upsell_products', array(
 					'optimole-wp' => 'OptiMole',
 					'visualizer' => 'Visualizer',
-				), array(), array( 'image' => 'icon' ) );
+				), array(), array( 'image' => 'icon' )
+			);
 			?>
 		</div>
 
 		<?php if ( $query->have_posts() ) : ?>
 
 		<div id="intergeo_lbrr_items" class="intergeo_sidebar_left">
-		<?php
+			<?php
 			$index = 0;
-		while ( $query->have_posts() ) :
-			$post = $query->next_post();
+			while ( $query->have_posts() ) :
+				$post = $query->next_post();
 
-			$id   = intergeo_encode( $post->ID );
-			$json = json_decode( $post->post_content, true );
+				$id   = intergeo_encode( $post->ID );
+				$json = json_decode( $post->post_content, true );
 
-			$delete_url = add_query_arg(
-				array(
-					'map'      => $id,
-					'do'       => 'delete',
-					'noheader' => 'true',
-					'nonce'    => wp_create_nonce( $post->ID . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ),
-				)
-			);
+				$delete_url = add_query_arg(
+					array(
+						'map'      => $id,
+						'do'       => 'delete',
+						'noheader' => 'true',
+						'nonce'    => wp_create_nonce( $post->ID . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ),
+					)
+				);
 
-			$libraries = intergeo_check_libraries( $json, $libraries );
+				$libraries = intergeo_check_libraries( $json, $libraries );
 
-		?>
+				?>
 		<div class="intergeo_lbrr_item"<?php echo $index != 0 && $index % 3 == 0 ? ' style="clear:both"' : ''; ?>>
 			<div class="intergeo_lbrr_wrapper">
 				<div class="intergeo_lbrr_map_wrapper">
@@ -106,16 +108,16 @@
 		</div>
 	</div>
 
-<?php if ( ! empty( $pagination ) ) : ?>
+			<?php if ( ! empty( $pagination ) ) : ?>
 	<div class="clear">
 		<ul id="intergeo_lbrr_pgntn">
-			<?php foreach ( $pagination as $page_item ) : ?>
+				<?php foreach ( $pagination as $page_item ) : ?>
 				<li><?php echo $page_item; ?></li>
 			<?php endforeach; ?>
 		</ul>
 		<div style="clear:both"></div>
 	</div>
-<?php endif; ?>
+			<?php endif; ?>
 
 <?php else : ?>
 	<p>
