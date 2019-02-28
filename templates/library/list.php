@@ -34,6 +34,7 @@
 			do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
 			do_action(
 				TI_INTERGEO_PLUGIN_NAME . '_upsell_products', array(
+					'otter-blocks' => 'Gutenberg Blocks',
 					'optimole-wp' => 'OptiMole',
 					'visualizer' => 'Visualizer',
 				), array(), array( 'install' => __( 'Install', 'intergeo-maps' ) ), array( 'image' => 'icon' )
