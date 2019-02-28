@@ -36,7 +36,7 @@
 				TI_INTERGEO_PLUGIN_NAME . '_upsell_products', array(
 					'optimole-wp' => 'OptiMole',
 					'visualizer' => 'Visualizer',
-				), array(), array( 'image' => 'icon' )
+				), array(), array( 'install' => __( 'Install', 'intergeo-maps' ) ), array( 'image' => 'icon' )
 			);
 			?>
 		</div>
