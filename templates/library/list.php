@@ -32,6 +32,10 @@
 		<div id="intergeo_sidebar" class="intergeo_sidebar_right">
 			<?php
 			do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
+			do_action( TI_INTERGEO_PLUGIN_NAME . '_upsell_products', array(
+					'optimole-wp' => 'OptiMole',
+					'visualizer' => 'Visualizer',
+				), array(), array( 'image' => 'icon' ) );
 			?>
 		</div>
 

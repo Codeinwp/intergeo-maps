@@ -16,6 +16,7 @@
  */
 
 define( 'INTERGEO_PLUGIN_NAME', 'intergeo' );
+define( 'TI_INTERGEO_PLUGIN_NAME', 'intergeo_maps' );
 define( 'INTERGEO_VERSION', '2.2.5' );
 define( 'INTERGEO_ABSPATH', dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL', plugins_url( '/', __FILE__ ) );
@@ -1475,4 +1476,10 @@ add_filter( 'pirate_parrot_log', 'intergeo_register_parrot', 10, 1 );
 function intergeo_register_parrot( $plugins ) {
 	$plugins[] = INTERGEO_PLUGIN_NAME;
 	return $plugins;
+}
+
+
+add_filter( TI_INTERGEO_PLUGIN_NAME . '_enqueue_upsell', 'intergeo_upsell_plugins', 10, 2 );
+function intergeo_upsell_plugins( $return, $screen_id ) {
+	return $screen_id === 'media_page_intergeo';
 }
