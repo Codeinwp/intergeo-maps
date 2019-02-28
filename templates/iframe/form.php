@@ -1,5 +1,5 @@
 <form id="intergeo_frm"
-      method="post"<?php echo ! $post_id ? ' origtarget="_parent" target="_parent"' : 'origtarget="self"'; ?>>
+	  method="post"<?php echo ! $post_id ? ' origtarget="_parent" target="_parent"' : 'origtarget="self"'; ?>>
 	<input type="hidden" id="intergeo_map_lat" name="lat"
 		   value="<?php echo isset( $json['lat'] ) ? esc_attr( $json['lat'] ) : 48.1366069; ?>">
 	<input type="hidden" id="intergeo_map_lng" name="lng"
@@ -25,11 +25,11 @@
 			</li>
 			<?php
 			if ( intergeo_is_personal() ) {
-			?>
+				?>
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/directions.php'; ?>
 			</li>
-			<?php
+				<?php
 			}
 			?>
 			<li class="intergeo_tlbr_ul_li">
@@ -37,11 +37,11 @@
 			</li>
 			<?php
 			if ( intergeo_is_personal() ) {
-			?>
+				?>
 			<li class="intergeo_tlbr_ul_li">
 				<?php include INTERGEO_ABSPATH . '/templates/iframe/adsense.php'; ?>
 			</li>
-			<?php
+				<?php
 			}
 			if ( intergeo_is_personal() ) {
 				include INTERGEO_ABSPATH . '/templates/iframe/extra.php';

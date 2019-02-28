@@ -1480,6 +1480,9 @@ function intergeo_register_parrot( $plugins ) {
 
 
 add_filter( TI_INTERGEO_PLUGIN_NAME . '_enqueue_upsell', 'intergeo_upsell_plugins', 10, 2 );
+/**
+ * Validates the correct screen on which the assets for upsell should be loaded.
+ */
 function intergeo_upsell_plugins( $return, $screen_id ) {
 	return $screen_id === 'media_page_intergeo';
 }

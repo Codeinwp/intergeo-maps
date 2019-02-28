@@ -51,7 +51,7 @@
 						<option value="https://maps.google.com/mapfiles/ms/icons/orange-dot.png" data-imagesrc="https://maps.google.com/mapfiles/ms/icons/orange-dot.png"><?php _e( 'Orange', 'intergeo-maps' ); ?></option>
 						<?php
 						if ( intergeo_is_personal() ) :
-						?>
+							?>
 						<option value="custom"><?php _e( 'Custom', 'intergeo-maps' ); ?></option>
 						<?php endif; ?>
 					</select>
@@ -75,7 +75,7 @@
 							'quicktags' => false,
 						)
 					);
-?>
+					?>
 				</td>
 			</tr>
 			<tr>
