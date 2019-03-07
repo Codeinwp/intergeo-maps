@@ -3,10 +3,9 @@
 	<?php
 	if ( ! intergeo_is_developer() ) {
 		?>
-		<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>"   class="intergeo-pro-btn button"><?php _e( 'Available in Developer plan', 'intergeo-maps' ); ?></a>
 		<?php
 	} else {
-	?>
+		?>
 
 		<li class="intergeo_tlbr_ul_li_ul_li">
 			<span class="intergeo_tlbr_cntrl_ttl"><?php esc_html_e( 'Traffic layer', 'intergeo-maps' ); ?></span>
@@ -45,5 +44,5 @@
 		<?php
 		do_action( 'intergeo_add_layers', 'layers', $json );
 	}
-?>
+	?>
 </ul>

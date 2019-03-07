@@ -19,14 +19,14 @@
     "issues": "https://github.com/Codeinwp/intergeo-maps/issues",
     "source": "https://github.com/Codeinwp/intergeo-maps"
   },
-  "require": {
-    "codeinwp/themeisle-sdk": "master"
-  },
   "autoload": {
     "files": [
       "vendor/codeinwp/themeisle-sdk/load.php"
     ]
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "require": {
+    "codeinwp/themeisle-sdk": "^3.0"
+  }
 }

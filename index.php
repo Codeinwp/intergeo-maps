@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * Plugin Name: Intergeo - Google Maps Plugin - Lite
+ * Plugin Name: Intergeo - Google Maps Plugin
  * Plugin URI: http://themeisle.com/plugins/intergeo-maps-lite/
  * Description: A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages. The plugin allows you to deeply customize look and feel of a map, add overlays like markers, rectangles, circles, polylines and polygons to your map. It could even be integraded with your Google Adsense account and show ad on your maps.
- * Version: 2.2.4
+ * Version: 2.3.0
  * Author: Themeisle
  * Author URI: http://themeisle.com
  * License: GPL v2.0 or later
@@ -16,7 +16,8 @@
  */
 
 define( 'INTERGEO_PLUGIN_NAME', 'intergeo' );
-define( 'INTERGEO_VERSION', '2.2.4' );
+define( 'TI_INTERGEO_PLUGIN_NAME', 'intergeo_maps' );
+define( 'INTERGEO_VERSION', '2.3.0' );
 define( 'INTERGEO_ABSPATH', dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL', plugins_url( '/', __FILE__ ) );
 defined( 'WPLANG' ) || define( 'WPLANG', '' );
@@ -106,7 +107,6 @@ function intergeo_settings() {
     <h2>
 		<div id="intergeo_lbrr_ttl">Inter<span style="color:#4067dc">g</span><span style="color:#e21b31">e</span><span style="color:#fcaa08">o</span>' . __( 'Maps Settings', 'intergeo-maps' ) . '</div> ';
 	echo '<a   href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'Create New Map', 'intergeo-maps' ) . '</a>';
-	echo '<a  target="_blank" href="' . INTERGEO_PRO_URL . '" class="intergeo-pro-btn add-new-h2">' . __( 'Buy PRO version to add more maps', 'intergeo-maps' ) . '</a>';
 
 	echo '<a id="intergeo_lbrr_settings" href="' . admin_url( 'upload.php?page=' . INTERGEO_PLUGIN_NAME ) . '" class="add-new-h2">' . __( 'View Existing Maps', 'intergeo-maps' ) . '</a>
 	</h2>';
@@ -1476,4 +1476,13 @@ add_filter( 'pirate_parrot_log', 'intergeo_register_parrot', 10, 1 );
 function intergeo_register_parrot( $plugins ) {
 	$plugins[] = INTERGEO_PLUGIN_NAME;
 	return $plugins;
+}
+
+
+add_filter( TI_INTERGEO_PLUGIN_NAME . '_enqueue_recommend', 'intergeo_upsell_plugins', 10, 2 );
+/**
+ * Validates the correct screen on which the assets for upsell should be loaded.
+ */
+function intergeo_upsell_plugins( $return, $screen_id ) {
+	return $screen_id === 'media_page_intergeo';
 }

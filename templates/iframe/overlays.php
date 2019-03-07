@@ -27,7 +27,7 @@
 			<?php
 			$markers = 0;
 			if ( ! empty( $json['overlays']['marker'] ) ) :
-			?>
+				?>
 				<?php foreach ( $json['overlays']['marker'] as $i => $overlay ) : ?>
 					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_marker" border="0" cellspacing="0" cellpadding="0" data-table-num="<?php echo $i + 1; ?>">
 						<tr>
@@ -36,10 +36,10 @@
 									#<?php echo $i + 1; ?> <?php esc_html_e( 'marker', 'intergeo-maps' ); ?>
 								<?php else : ?>
 									<?php echo esc_html( $overlay['title'] ); ?>
-								<?php
+									<?php
 								endif;
-$markers ++;
-?>
+								$markers ++;
+								?>
 							</td>
 							<td>
 								<input type="hidden" class="intergeo_tlbr_marker_location" name="overlays_marker[<?php echo $i; ?>][position]" value="<?php echo esc_attr( implode( ',', $overlay['position'] ) ); ?>" data-position="<?php echo $i; ?>">
@@ -74,7 +74,7 @@ $markers ++;
 
 <?php
 if ( intergeo_is_personal() ) {
-?>
+	?>
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<script id="intergeo_tlbr_polyline_tmpl" type="text/html">
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polyline" border="0" cellspacing="0" cellpadding="0">
@@ -106,14 +106,14 @@ if ( intergeo_is_personal() ) {
 			</p>
 
 			<div id="intergeo_tlbr_polylines">
-<?php
-if ( ! empty( $json['overlays']['polyline'] ) ) :
-	$i = 0;
-	foreach ( $json['overlays']['polyline'] as $overlay ) :
-		$path = array();
-		foreach ( $overlay['path'] as $point ) :
-			$path[] = implode( ',', $point );
-			endforeach;
+	<?php
+	if ( ! empty( $json['overlays']['polyline'] ) ) :
+		$i = 0;
+		foreach ( $json['overlays']['polyline'] as $overlay ) :
+			$path = array();
+			foreach ( $overlay['path'] as $point ) :
+				$path[] = implode( ',', $point );
+				endforeach;
 			?>
 			<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polyline" border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -204,7 +204,7 @@ if ( ! empty( $json['overlays']['polyline'] ) ) :
 				foreach ( $overlay['path'] as $point ) :
 					$path[] = implode( ',', $point );
 					endforeach;
-					?>
+				?>
 					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_rectangle" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
@@ -298,7 +298,7 @@ if ( ! empty( $json['overlays']['polyline'] ) ) :
 				foreach ( $overlay['path'] as $point ) :
 					$path[] = implode( ',', $point );
 					endforeach;
-					?>
+				?>
 					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_circle" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
@@ -392,7 +392,7 @@ if ( ! empty( $json['overlays']['polyline'] ) ) :
 				foreach ( $overlay['path'] as $point ) :
 					$path[] = implode( ',', $point );
 					endforeach;
-					?>
+				?>
 					<table class="intergeo_tlbr_cntrl_tbl intergeo_tlbr_overlay intergeo_tlbr_polygon" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
@@ -431,7 +431,7 @@ if ( ! empty( $json['overlays']['polyline'] ) ) :
 
 		</div>
 	</li>
-<?php
+	<?php
 }
 ?>
 </ul>
