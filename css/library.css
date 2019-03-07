@@ -107,7 +107,14 @@
 	width: 84%;
 }
 
+.intergeo_sidebar_right h2{
+
+	margin: 0px;
+	margin-bottom: 30px;
+	font-size: 1.5em;
+}
 .intergeo_sidebar_right {
+
 	float: right;
 	width: 16%;
 }

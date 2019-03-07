@@ -15,6 +15,7 @@ phpunit.xml
 npm-debug.log
 dist
 artifact
+docker-compose.yml
 composer.json
 package-lock.json
 composer.lock

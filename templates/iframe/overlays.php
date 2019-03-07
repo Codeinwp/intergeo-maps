@@ -39,7 +39,7 @@
 									<?php
 								endif;
 								$markers ++;
-?>
+								?>
 							</td>
 							<td>
 								<input type="hidden" class="intergeo_tlbr_marker_location" name="overlays_marker[<?php echo $i; ?>][position]" value="<?php echo esc_attr( implode( ',', $overlay['position'] ) ); ?>" data-position="<?php echo $i; ?>">
