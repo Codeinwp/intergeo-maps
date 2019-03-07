@@ -34,6 +34,7 @@
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
+        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
     </rule>
     <rule ref="WordPress-Docs">
 

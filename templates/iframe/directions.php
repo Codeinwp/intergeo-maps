@@ -3,10 +3,9 @@
 	<?php
 	if ( ! intergeo_is_developer() ) {
 		?>
-		<a  target="_blank" href="<?php echo INTERGEO_PRO_URL; ?>"   class="intergeo-pro-btn button"><?php _e( 'Available in Developer plan', 'intergeo-maps' ); ?></a>
 		<?php
 	} else {
-	?>
+		?>
 	<li class="intergeo_tlbr_ul_li_ul_li">
 		<p class="intergeo_tlbr_grp_dsc">
 			<?php esc_html_e( 'To add a new direction just click the button below', 'intergeo-maps' ); ?>:
@@ -84,7 +83,7 @@
 			<?php endif; ?>
 		</div>
 	</li>
-	<?php
+		<?php
 	}
 	?>
 </ul>

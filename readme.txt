@@ -2,7 +2,7 @@
 Contributors: codeinwp,intergeomaps,hardeepasrani,themeisle,Madalin_ThemeIsle,uriahs-victor,contactashish13
 Tags:  directions, easy map, google, google map, google map plugin, google maps, latitude, location, longitude, map, map directions, map markers, map plugin, map widget, maps, marker, polygons, polylines, routes, store locator, streetview, wp google map, wp google maps, wp maps,plugin,admin,widget,shortcode,google maps, maps, map, map markers, google, google map, maps api, wp maps, wp google maps, easy map, embed, marker, placemark, icon, geocode, shortcode, custom post type, multisite, marker clustering
 Requires at least: 3.5
-Tested up to: 5.0
+Tested up to: 5.1
 Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -22,17 +22,6 @@ The powerful UI builder allows users to:
 * WordPress location custom map 
 * Setup map color styles by using predefined color schemes or by using custom color settings;
 * Add markers;
-
-> **Time-saving features available in the FULL version:**
->
-> * Add overlays like  rectangles, circles, polylines and polygons using the build or the drawing tools;
-> * Create directions routes from A address to B address;
-> * Integrate AdSense service into your maps and earn money by displaying ads on maps.
-> * Import/Export Markers
-> * Custom Layers
-> * Support and updates for 12 months
->
-> **[Learn more about Intergeo Maps Pro version]( https://themeisle.com/plugins/intergeo-maps/ )**
 
 
 ### Create Google maps with shortcode ###
@@ -128,6 +117,14 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.2.4 - 2018-12-06  = 
+
+* Fixed problem with Custom Styles option not working
+* Fixed problem with markers colors not working properly
+* Fixed problem with maps with driving directions
+* Tested with WP 5.0
+
+
 = 2.2.3 - 2018-03-12  = 
 
 * Improves copy maps workflow. 
