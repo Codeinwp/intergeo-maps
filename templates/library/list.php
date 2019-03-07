@@ -34,11 +34,11 @@
 
 			do_action(
 				TI_INTERGEO_PLUGIN_NAME . '_recommend_products', array(
-				'otter-blocks' => 'Otter',
-				'optimole-wp'  => 'OptiMole',
-			), array(
-				'neve' => 'Neve'
-			), array( 'install' => __( 'More details', 'intergeo-maps' ) ), array( 'image' => 'icon' )
+					'otter-blocks' => 'Otter',
+					'optimole-wp'  => 'OptiMole',
+				), array(
+					'neve' => 'Neve',
+				), array( 'install' => __( 'More details', 'intergeo-maps' ) ), array( 'image' => 'icon' )
 			);
 
 			do_action( INTERGEO_PLUGIN_NAME . '_render_subscribe_box' );
@@ -81,7 +81,7 @@
 							<tr>
 								<td>
 									<input type="text" class="intergeo_lbrr_code"
-									       value="[intergeo id=&quot;<?php echo $id; ?>&quot;]<?php echo ! empty( $json['address'] ) ? esc_attr( $json['address'] ) : ''; ?>[/intergeo]">
+										   value="[intergeo id=&quot;<?php echo $id; ?>&quot;]<?php echo ! empty( $json['address'] ) ? esc_attr( $json['address'] ) : ''; ?>[/intergeo]">
 								</td>
 								<td class="intergeo_lbrr_item_actions">
 									<a class="intergeo_lbrr_item_edit" href="javascript:;"
