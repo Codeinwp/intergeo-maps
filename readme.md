@@ -23,6 +23,7 @@ The powerful UI builder allows users to:
 * Setup map color styles by using predefined color schemes or by using custom color settings;
 * Add markers;
 
+
 ### Create Google maps with shortcode ###
 
 To create new WordPress maps you just can input simple shortcode into your post, page, text widget or taxonomy description:
@@ -116,6 +117,11 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 ## Changelog ##
+### 2.3.0 - 2019-03-07  ###
+
+* Develop
+
+
 ### 2.2.4 - 2018-12-06  ###
 
 * Fixed problem with Custom Styles option not working
