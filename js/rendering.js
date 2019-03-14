@@ -431,7 +431,7 @@
             d._renderOverlays();
         }
 
-        if(d.options.layer.importcsv == 1){
+        if(d.options.layer && d.options.layer.importcsv == 1){
             d.drawImportedMarkers();
         }
 
