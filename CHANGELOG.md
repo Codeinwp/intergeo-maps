@@ -1,4 +1,8 @@
 
+ ### v2.3.0 - 2019-03-07 
+ **Changes:** 
+ * Develop
+ 
  ### v2.2.4 - 2018-12-06 
  **Changes:** 
  * Fixed problem with Custom Styles option not working

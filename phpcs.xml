@@ -35,6 +35,7 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
         <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
     </rule>
     <rule ref="WordPress-Docs">
 

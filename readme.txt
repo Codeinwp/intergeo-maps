@@ -117,6 +117,12 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.3.0 - 2019-03-07  = 
+
+* Adds compatibility with WordPress 5.1
+* Remove occurrence of the Pro plugin, discontinue support of the Premium addon.
+
+
 = 2.2.4 - 2018-12-06  = 
 
 * Fixed problem with Custom Styles option not working
