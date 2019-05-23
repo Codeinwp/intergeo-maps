@@ -1,4 +1,9 @@
 
+ ### v2.3.1 - 2019-05-23 
+ **Changes:** 
+ * Fix issue with editing map
+* Tested upto WP 5.2
+ 
  ### v2.3.0 - 2019-03-07 
  **Changes:** 
  * Develop

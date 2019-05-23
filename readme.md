@@ -117,9 +117,16 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 ## Changelog ##
+### 2.3.1 - 2019-05-23  ###
+
+* Fix issue with editing map
+* Tested upto WP 5.2
+
+
 ### 2.3.0 - 2019-03-07  ###
 
-* Develop
+* Adds compatibility with WordPress 5.1
+* Remove occurrence of the Pro plugin, discontinue support of the Premium addon.
 
 
 ### 2.2.4 - 2018-12-06  ###
