@@ -366,18 +366,20 @@
             infoWindow.close();
         });
 
-        downloadUrl(e.options.xml, function (data) {
-            var markers = data.documentElement.getElementsByTagName("marker");
-            for (var i = 0; i < markers.length; i++) {
-                var latlng = new b.LatLng(parseFloat(markers[i].getAttribute("lat")),
-                                    parseFloat(markers[i].getAttribute("lng")));
-                var name = markers[i].getAttribute("name");
-                var icon = markers[i].getAttribute("icon");
-                var marker = new b.Marker({ position: latlng, map: map });
-                marker.setIcon(icon);
-                e.bindInfoWindow(marker, map, infoWindow, name);
-            }
-        });
+        if(typeof downloadUrl !== 'undefined' ){
+            downloadUrl(e.options.xml, function (data) {
+                var markers = data.documentElement.getElementsByTagName("marker");
+                for (var i = 0; i < markers.length; i++) {
+                    var latlng = new b.LatLng(parseFloat(markers[i].getAttribute("lat")),
+                                        parseFloat(markers[i].getAttribute("lng")));
+                    var name = markers[i].getAttribute("name");
+                    var icon = markers[i].getAttribute("icon");
+                    var marker = new b.Marker({ position: latlng, map: map });
+                    marker.setIcon(icon);
+                    e.bindInfoWindow(marker, map, infoWindow, name);
+                }
+            });
+        }
     };
     a.prototype.bindInfoWindow = function(marker, map, infowindow, html) {
         b.event.addListener(marker, 'click', function () {
@@ -431,7 +433,7 @@
             d._renderOverlays();
         }
 
-        if(d.options.layer.importcsv == 1){
+        if(d.options.layer && d.options.layer.importcsv == 1){
             d.drawImportedMarkers();
         }
 
