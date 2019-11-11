@@ -308,7 +308,7 @@ function intergeo_map_popup_init() {
 		} else {
 			$args = array(
 				'page'    => INTERGEO_PLUGIN_NAME,
-				'updated' => date( 'YmdHis' ),
+				'updated' => current_time( 'mysql' ),
 			);
 			wp_redirect( add_query_arg( $args, admin_url( 'upload.php' ) ) );
 			exit;
