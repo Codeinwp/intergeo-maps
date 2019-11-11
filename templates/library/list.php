@@ -48,8 +48,9 @@
 
 		<div id="intergeo_lbrr_items" class="intergeo_sidebar_left">
 
-		<?php
-			if ( ! defined( 'OTTER_BLOCKS_VERSION' ) && current_user_can( 'manage_options' ) && version_compare( get_bloginfo( 'version' ), '5.0', '>=' ) && ! get_option( 'intergeo_maps_otter_notice', false ) ) :
+		<?php if ( ! defined( 'OTTER_BLOCKS_VERSION' ) && current_user_can( 'manage_options' ) && version_compare( get_bloginfo( 'version' ), '5.0', '>=' ) && ! get_option( 'intergeo_maps_otter_notice', false ) ) : ?>
+
+			<?php
 				$index = 0;
 
 				$url = add_query_arg(
@@ -70,36 +71,28 @@
 						'nonce'    => wp_create_nonce( 'dismiss-notice' . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ),
 					)
 				);
-		?>
+
+				$index ++;
+			?>
 			<div class="intergeo_lbrr_item intergeo_otter">
 				<div class="intergeo_lbrr_wrapper">
 					<img src="https://ps.w.org/otter-blocks/assets/icon-256x256.png?rev=2019293"/>
 
 					<div class="intergeo_otter_details">
-						<p class="intergeo_otter_title">
-							<?php _e( 'Intergeo recommends Otter', 'intergeo-maps' ); ?>
-						</p>
-						<p class="intergeo_otter_info">
-							<?php _e( 'Intergeo recommends Otter for best in class Google Maps Builder for WordPress\'s new Block Editor.', 'intergeo-maps' ); ?>
-						</p>
+						<p class="intergeo_otter_title"><?php _e( 'Intergeo recommends Otter', 'intergeo-maps' ); ?></p>
+						<p class="intergeo_otter_info"><?php _e( 'Intergeo recommends Otter for best in class Google Maps Builder for WordPress\'s new Block Editor.', 'intergeo-maps' ); ?></p>
 					</div>
 
 					<div class="intergeo_otter_actions">
-						<a class="button button-default" href="<?php echo $dismiss; ?>">
-							<?php _e( 'Dismiss', 'intergeo-maps' ) ?>
-						</a>
+						<a class="button button-default" href="<?php echo $dismiss; ?>"><?php _e( 'Dismiss', 'intergeo-maps' ); ?></a>
 
 						<a class="button button-primary thickbox open-plugin-details-modal" href="<?php echo $url; ?>">
-							<span class="dashicons dashicons-external"></span>
-							<?php _e( 'More details', 'intergeo-maps' ) ?>
+							<span class="dashicons dashicons-external"></span><?php _e( 'More details', 'intergeo-maps' ); ?>
 						</a>
 					</div>
 				</div>
 			</div>
-		<?php
-			$index ++;
-			endif;
-		?>
+		<?php endif; ?>
 
 		<?php if ( $query->have_posts() ) : ?>
 

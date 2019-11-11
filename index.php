@@ -1368,7 +1368,7 @@ function intergeo_print_messages() {
  */
 function intergeo_register_settings() {
 	add_option( 'intergeo_maps_otter_notice', false );
-} 
+}
 add_action( 'admin_init', 'intergeo_register_settings' );
 
 /**
