@@ -117,6 +117,11 @@ function filter_intergeo_map_settings( $options ) {
 }`
 
 == Changelog ==
+= 2.3.2 - 2019-11-14  = 
+
+* Adds tested up with WordPress 5.3
+
+
 = 2.3.1 - 2019-05-23  = 
 
 * Fix issue with editing map

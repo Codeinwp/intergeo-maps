@@ -1,4 +1,8 @@
 
+ ### v2.3.2 - 2019-11-14 
+ **Changes:** 
+ * Adds tested up with WordPress 5.3
+ 
  ### v2.3.1 - 2019-05-23 
  **Changes:** 
  * Fix issue with editing map
