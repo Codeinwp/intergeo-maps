@@ -191,3 +191,57 @@
 	margin: 10px 20px 15px;
 	list-style-type: disc;
 }
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper {
+	background: #ffffff;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+    margin-bottom: 20px;
+	padding: 15px;
+	flex-direction: column;
+}
+
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper img {
+    width: 128px;
+    height: 128px;
+    margin: auto;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_details {
+	padding: 5px;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_details .intergeo_otter_title {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_details .intergeo_otter_info {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 13px;
+	color: #777;
+	line-height: 1.6;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_actions {
+	display: flex;
+	justify-content: center;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_actions .button:first-child {
+	margin-right: 5px;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_actions .button:last-child {
+	margin-left: 5px;
+}
+
+.intergeo_lbrr_item.intergeo_otter .intergeo_lbrr_wrapper .intergeo_otter_actions .dashicons {
+	margin-top: 2px;
+	margin-right: 7px;
+}

@@ -4,7 +4,7 @@
  * Plugin Name: Intergeo - Google Maps Plugin
  * Plugin URI: http://themeisle.com/plugins/intergeo-maps-lite/
  * Description: A simple, easy and quite powerful Google Map tool to create, manage and embed custom Google Maps into your WordPress posts and pages. The plugin allows you to deeply customize look and feel of a map, add overlays like markers, rectangles, circles, polylines and polygons to your map. It could even be integraded with your Google Adsense account and show ad on your maps.
- * Version: 2.3.1
+ * Version: 2.3.2
  * Author: Themeisle
  * Author URI: http://themeisle.com
  * License: GPL v2.0 or later
@@ -17,7 +17,7 @@
 
 define( 'INTERGEO_PLUGIN_NAME', 'intergeo' );
 define( 'TI_INTERGEO_PLUGIN_NAME', 'intergeo_maps' );
-define( 'INTERGEO_VERSION', '2.3.1' );
+define( 'INTERGEO_VERSION', '2.3.2' );
 define( 'INTERGEO_ABSPATH', dirname( __FILE__ ) );
 define( 'INTERGEO_ABSURL', plugins_url( '/', __FILE__ ) );
 defined( 'WPLANG' ) || define( 'WPLANG', '' );
@@ -308,7 +308,7 @@ function intergeo_map_popup_init() {
 		} else {
 			$args = array(
 				'page'    => INTERGEO_PLUGIN_NAME,
-				'updated' => date( 'YmdHis' ),
+				'updated' => current_time( 'mysql' ),
 			);
 			wp_redirect( add_query_arg( $args, admin_url( 'upload.php' ) ) );
 			exit;
@@ -1233,6 +1233,15 @@ function intergeo_library() {
 	if ( filter_input( INPUT_GET, 'do' ) == 'delete' ) {
 		intergeo_library_delete();
 	}
+
+	if ( filter_input( INPUT_GET, 'do' ) == 'dismiss-notice' && current_user_can( 'manage_options' ) ) {
+		if ( wp_verify_nonce( filter_input( INPUT_GET, 'nonce' ), 'dismiss-notice' . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ) ) {
+			update_option( 'intergeo_maps_otter_notice', true );
+			wp_redirect( add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ) );
+			exit;
+		}
+	}
+
 	$query      = new WP_Query(
 		array(
 			'orderby'        => 'ID',
@@ -1353,6 +1362,14 @@ function intergeo_print_messages() {
 	$messages[ $user_id ] = array();
 	update_option( 'intergeo_messages', $messages );
 }
+
+/**
+ * Add options.
+ */
+function intergeo_register_settings() {
+	add_option( 'intergeo_maps_otter_notice', false );
+}
+add_action( 'admin_init', 'intergeo_register_settings' );
 
 /**
  * Show message.
