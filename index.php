@@ -308,7 +308,7 @@ function intergeo_map_popup_init() {
 		} else {
 			$args = array(
 				'page'    => INTERGEO_PLUGIN_NAME,
-				'updated' => date( 'YmdHis' ),
+				'updated' => current_time( 'mysql' ),
 			);
 			wp_redirect( add_query_arg( $args, admin_url( 'upload.php' ) ) );
 			exit;
@@ -1233,6 +1233,15 @@ function intergeo_library() {
 	if ( filter_input( INPUT_GET, 'do' ) == 'delete' ) {
 		intergeo_library_delete();
 	}
+
+	if ( filter_input( INPUT_GET, 'do' ) == 'dismiss-notice' && current_user_can( 'manage_options' ) ) {
+		if ( wp_verify_nonce( filter_input( INPUT_GET, 'nonce' ), 'dismiss-notice' . filter_input( INPUT_SERVER, 'REMOTE_ADDR', FILTER_VALIDATE_IP ) ) ) {
+			update_option( 'intergeo_maps_otter_notice', true );
+			wp_redirect( add_query_arg( 'page', INTERGEO_PLUGIN_NAME, admin_url( 'upload.php' ) ) );
+			exit;
+		}
+	}
+
 	$query      = new WP_Query(
 		array(
 			'orderby'        => 'ID',
@@ -1353,6 +1362,14 @@ function intergeo_print_messages() {
 	$messages[ $user_id ] = array();
 	update_option( 'intergeo_messages', $messages );
 }
+
+/**
+ * Add options.
+ */
+function intergeo_register_settings() {
+	add_option( 'intergeo_maps_otter_notice', false );
+}
+add_action( 'admin_init', 'intergeo_register_settings' );
 
 /**
  * Show message.
